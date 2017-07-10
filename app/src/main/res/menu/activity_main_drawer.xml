@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/week"
+            android:icon="@drawable/ic_home"
+            android:title="Week by week" />
+        <item
+            android:id="@+id/calendar"
+            android:icon="@drawable/ic_calendar"
+            android:title="Calendar" />
+        <item
+            android:id="@+id/tools"
+            android:icon="@drawable/ic_pregnant_black"
+            android:title="Pregnancy tools" />
+        <item
+            android:id="@+id/items"
+            android:icon="@drawable/ic_items"
+            android:title="Pregnancy items" />
+        <item
+            android:id="@+id/settings"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Settings" />
+    </group>
+
+
+
+</menu>
