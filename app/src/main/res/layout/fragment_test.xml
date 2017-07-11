@@ -1,6 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:card="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="8dp"
+    >
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+
+        card:elevation="4dp"
+        card_view:cardCornerRadius="4dp"
+
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/img1"
+            android:text="Hello Card" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="210dp"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="How many weeks is a normal term pregnancy?"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="pregnancy lasts about 40 weeks, counting from the first day of your last normal period. The weeks are grouped into three trimesters (TREYE-mess-turs). Find out what's happening with you and your baby in these three stages.your body changes, you might need to make changes to your daily routine, such as going to bed earlier or eating frequent, small meals. Fortunately, most of these discomforts will go away as your pregnancy progresses. And some women might not feel any discomfort at all! If you have been pregnant before, you might feel differently this time around. Just as each woman is different, so is each pregnancy"
+                android:textSize="14dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Share"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:textColor="#87c91f13"
+                    />
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </android.support.v7.widget.CardView>
 
 </LinearLayout>
