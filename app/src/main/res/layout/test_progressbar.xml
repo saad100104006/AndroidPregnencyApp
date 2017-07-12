@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Custom ProgressBar Demo from CoderzHeaven"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        />
+
+    <info.androidhive.instantapps.pregnency.TextProgressBar
+
+
+        android:id="@+id/pb"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="0"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:maxHeight="20dip"
+        android:minHeight="20dip"
+        />
+
+</LinearLayout>

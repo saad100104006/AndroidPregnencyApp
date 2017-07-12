@@ -1,4 +1,4 @@
-package info.androidhive.instantapps.saadtest;
+package info.androidhive.instantapps.pregnency;
 
 import org.junit.Test;
 

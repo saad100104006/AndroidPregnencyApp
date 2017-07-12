@@ -1,4 +1,4 @@
-package info.androidhive.instantapps.saadtest;
+package info.androidhive.instantapps.pregnency;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

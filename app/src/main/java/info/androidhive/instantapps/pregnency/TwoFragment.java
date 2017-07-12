@@ -1,5 +1,4 @@
-package info.androidhive.instantapps.saadtest;
-
+package info.androidhive.instantapps.pregnency;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,11 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * Created by Saad on 7/10/17.
+ * Created by Saad on 7/12/17.
  */
 
 
-public class OneFragment extends Fragment {
+public class TwoFragment extends Fragment {
     //2
     public static OneFragment newInstance() {
         return new OneFragment();
@@ -25,4 +24,3 @@ public class OneFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_test, container, false);
     }
 }
-

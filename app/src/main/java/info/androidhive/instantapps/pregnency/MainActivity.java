@@ -1,6 +1,8 @@
-package info.androidhive.instantapps.saadtest;
+package info.androidhive.instantapps.pregnency;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    int myProgress = 0;
+    TextProgressBar pb;
     private int[] tabIcons = {
             R.drawable.ic_week_info,
             R.drawable.ic_woman_white,
@@ -45,6 +49,10 @@ public class MainActivity extends AppCompatActivity
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
 
+        pb = new TextProgressBar(this);
+        pb = (TextProgressBar) findViewById(R.id.pb);
+        new Thread(myThread).start();
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
             this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -54,6 +62,31 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
+    private Runnable myThread = new Runnable(){
+        @Override
+        public void run() {
+            while (myProgress<32){
+                try{
+                    System.out.println("SSS");
+                    pb.setProgress(myProgress);
+                    pb.setText(myProgress+"/32");
+                    myHandle.sendMessage(myHandle.obtainMessage());
+                    Thread.sleep(500);
+                }
+                catch(Throwable t){
+                }
+            }
+        }
+
+        Handler myHandle = new Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                myProgress++;
+                pb.setProgress(myProgress);
+                pb.setText(myProgress+"/32");
+            }
+        };
+    };
 
     @Override
     public void onBackPressed() {
