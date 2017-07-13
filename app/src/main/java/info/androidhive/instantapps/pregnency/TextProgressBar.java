@@ -5,14 +5,13 @@ package info.androidhive.instantapps.pregnency;
  */
 
 
-
 import android.content.Context;
-        import android.graphics.Canvas;
-        import android.graphics.Color;
-        import android.graphics.Paint;
-        import android.graphics.Rect;
-        import android.util.AttributeSet;
-        import android.widget.ProgressBar;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.util.AttributeSet;
+import android.widget.ProgressBar;
 
 public class TextProgressBar extends ProgressBar {
     private String text;
@@ -20,21 +19,27 @@ public class TextProgressBar extends ProgressBar {
 
     public TextProgressBar(Context context) {
         super(context);
-        text = "0/100";
+        text = "0/32";
         textPaint = new Paint();
         textPaint.setColor(Color.BLACK);
+
+
     }
 
     public TextProgressBar(Context context, AttributeSet attrs) {
         super(context, attrs);
-        text = "0/100";
+        text = "0/32";
         textPaint = new Paint();
         textPaint.setColor(Color.BLACK);
+       /* int spSize = 17;
+        float scaledSizeInPixels = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,
+                spSize, getResources().getDisplayMetrics());
+        textPaint.setTextSize(scaledSizeInPixels);*/
     }
 
     public TextProgressBar(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        text = "0/100";
+        text = "0/32";
         textPaint = new Paint();
         textPaint.setColor(Color.BLACK);
     }

@@ -16,6 +16,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +25,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+
+private ImageButton next;
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -33,6 +37,14 @@ public class MainActivity extends AppCompatActivity
             R.drawable.ic_woman_white,
             R.drawable.ic_baby_white
     };
+
+    private int[] textureArrayWin = {
+            R.drawable.ic_week_info,
+            R.drawable.ic_woman_white,
+            R.drawable.ic_baby_white,
+    };
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,12 +57,16 @@ public class MainActivity extends AppCompatActivity
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
 
+        next=(ImageButton) findViewById(R.id.next);
+
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
 
         pb = new TextProgressBar(this);
         pb = (TextProgressBar) findViewById(R.id.pb);
+
+        pb.setScaleY(2.7f);
         new Thread(myThread).start();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -61,6 +77,16 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+
     }
     private Runnable myThread = new Runnable(){
         @Override
@@ -70,6 +96,7 @@ public class MainActivity extends AppCompatActivity
                     System.out.println("SSS");
                     pb.setProgress(myProgress);
                     pb.setText(myProgress+"/32");
+                 //   pb.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
                     myHandle.sendMessage(myHandle.obtainMessage());
                     Thread.sleep(500);
                 }
