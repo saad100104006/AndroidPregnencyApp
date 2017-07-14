@@ -13,7 +13,9 @@
     <include
         layout="@layout/app_bar_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content" />
+
+
 
 
     <android.support.design.widget.NavigationView
@@ -25,65 +27,70 @@
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer" />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:gravity="bottom"
-        android:orientation="horizontal">
-
-
+        android:orientation="vertical">
 
         <android.support.v7.widget.CardView
             android:id="@+id/card_view"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             card:elevation="4dp"
             card_view:cardCornerRadius="4dp"
 
             >
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="1"
-                >
-            <ImageButton
-                android:id="@+id/previous"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:src="@drawable/previous"
-                android:layout_weight=".2"
-                android:background="@color/colorAccent"
-                />
+                android:weightSum="1">
+
+                <ImageButton
+                    android:id="@+id/previous"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight=".2"
+                    android:background="@color/colorAccent"
+                    android:src="@drawable/previous" />
 
 
+                <info.androidhive.instantapps.pregnency.TextProgressBar
+                    android:id="@+id/pb"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".6"
+                    android:max="32"
+                    android:maxHeight="80dip"
+                    android:minHeight="50dip"
+                    android:progress="0" />
 
-            <info.androidhive.instantapps.pregnency.TextProgressBar
-                android:id="@+id/pb"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:maxHeight="80dip"
-                android:minHeight="50dip"
-                android:layout_weight=".6"
-                android:max="32"
-                android:progress="0" />
-
-            <ImageButton
-                android:id="@+id/next"
-                android:layout_width="0dp"
-                android:layout_weight=".2"
-                android:layout_height="50dp"
-                android:src="@drawable/next"
-                android:background="@color/colorAccent"
-                />
+                <ImageButton
+                    android:id="@+id/next"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight=".2"
+                    android:background="@color/colorAccent"
+                    android:src="@drawable/next" />
 
             </LinearLayout>
 
 
         </android.support.v7.widget.CardView>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="50dp"
+            android:layout_height="50dp"
 
-    </LinearLayout>
+            ></RelativeLayout>
+
+
+    </RelativeLayout>
+
 
 </android.support.v4.widget.DrawerLayout>

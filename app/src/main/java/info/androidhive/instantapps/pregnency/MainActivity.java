@@ -1,5 +1,6 @@
 package info.androidhive.instantapps.pregnency;
 
+
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -16,8 +17,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,14 +33,17 @@ private ImageButton next;
     private ViewPager viewPager;
     int myProgress = 0;
     TextProgressBar pb;
+    OneFragment myFragment;
+    ImageView img1;
     private int[] tabIcons = {
             R.drawable.ic_week_info,
             R.drawable.ic_woman_white,
             R.drawable.ic_baby_white
     };
+    int i=0;
 
     private int[] textureArrayWin = {
-            R.drawable.ic_week_info,
+            R.drawable.img1,
             R.drawable.ic_woman_white,
             R.drawable.ic_baby_white,
     };
@@ -53,7 +57,7 @@ private ImageButton next;
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         //ddd
-        
+
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
 
@@ -63,11 +67,11 @@ private ImageButton next;
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
 
-        pb = new TextProgressBar(this);
+  /*      pb = new TextProgressBar(this);
         pb = (TextProgressBar) findViewById(R.id.pb);
 
         pb.setScaleY(2.7f);
-        new Thread(myThread).start();
+        new Thread(myThread).start();*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -79,12 +83,12 @@ private ImageButton next;
         navigationView.setNavigationItemSelectedListener(this);
 
 
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.viewpager, new OneFragment())
+                .commit();
 
-            }
-        });
+
+
 
 
     }
@@ -175,8 +179,8 @@ private ImageButton next;
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new OneFragment(), "ONE");
-        adapter.addFragment(new OneFragment(), "TWO");
-        adapter.addFragment(new OneFragment(), "THREE");
+        adapter.addFragment(new TwoFragment(), "TWO");
+        adapter.addFragment(new ThreeFragment(), "THREE");
         viewPager.setAdapter(adapter);
     }
 
