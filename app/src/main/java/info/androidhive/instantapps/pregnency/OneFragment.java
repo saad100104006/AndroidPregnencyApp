@@ -3,8 +3,6 @@ package info.androidhive.instantapps.pregnency;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -83,42 +81,6 @@ public class OneFragment extends Fragment {
 
     }
 
-    @Override
-    public void onActivityCreated (Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
 
-      /*   text=(TextView)getActivity().findViewById(R.id.text1) ;
-        img1=(ImageView)getActivity().findViewById(R.id.image1) ;*/
-
-
-
-    }
-
-    private Runnable myThread = new Runnable(){
-        @Override
-        public void run() {
-            while (myProgress<32){
-                try{
-                    System.out.println("SSS");
-                    pb.setProgress(myProgress);
-                    pb.setText(myProgress+"/32");
-                    //   pb.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-                    myHandle.sendMessage(myHandle.obtainMessage());
-                    Thread.sleep(500);
-                }
-                catch(Throwable t){
-                }
-            }
-        }
-
-        Handler myHandle = new Handler(){
-            @Override
-            public void handleMessage(Message msg) {
-                myProgress++;
-                pb.setProgress(myProgress);
-                pb.setText(myProgress+"/32");
-            }
-        };
-    };
 }
 

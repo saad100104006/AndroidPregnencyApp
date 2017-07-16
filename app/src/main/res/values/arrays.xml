@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="ten_eleven">
+        <item>TextView 1</item>
+        <item>TextView 2</item>
+        <item>TextView 3</item>
+    </array>
+    <array name="pregnanncy">
+
+    <item>@drawable/one_week_pregnant</item>
+    <item>@drawable/two_weeks_pregnant</item>
+    <item>@drawable/three_weeks_pregnant</item>
+    <item>@drawable/four_weeks_pregnant</item>
+    <item>@drawable/five_weeks_pregnant</item>
+    <item>@drawable/six_weeks_pregnant</item>
+    <item>@drawable/seven_weeks_pregnant</item>
+    <item>@drawable/eight_weeks_pregnant</item>
+    <item>@drawable/nine_weeks_pregnant</item>
+    <item>@drawable/ten_weeks_pregnant</item>
+
+
+    <item>@drawable/eleven_weeks_pregnant</item>
+    <item>@drawable/twelve_weeks_pregnant</item>
+    <item>@drawable/thirteen_weeks_pregnant</item>
+    <item>@drawable/forteen_weeks_pregnant</item>
+    <item>@drawable/fifteen_weeks_pregnant</item>
+    <item>@drawable/sixteen_weeks_pregnant</item>
+    <item>@drawable/seventeen_weeks_pregnant</item>
+    <item>@drawable/eighteen_weeks_pregant</item>
+    <item>@drawable/nineteen_weeks_pregnant</item>
+    <item>@drawable/twenty_weeks_pregnant</item>
+
+
+    <item>@drawable/twentyone_weeks_regnant</item>
+    <item>@drawable/twentytwo_weeks_pregnant</item>
+    <item>@drawable/twentythree_weeks_pregnant</item>
+    <item>@drawable/twentyfour_weeks_pregnant</item>
+    <item>@drawable/twentyfive_weeks_pregnant</item>
+    <item>@drawable/twentysix_weeks_pregnant</item>
+    <item>@drawable/twentyseven_weeks_pregnant</item>
+    <item>@drawable/twentyeight_weeks_pregnant</item>
+    <item>@drawable/twenrtnine_weeks_pregnant</item>
+    <item>@drawable/thirty_weeks_pregnant</item>
+
+
+
+    <item>@drawable/thirtyone_weeks_pregnant</item>
+    <item>@drawable/thirtytwo_weeks_pregnant</item>
+    <item>@drawable/thirtythree_weeks_pregnant</item>
+    <item>@drawable/thirtyfour_weeks_pregnant</item>
+    <item>@drawable/thirtyfive_weeks_pregnant</item>
+    <item>@drawable/thirtysix_week_pregnant</item>
+    <item>@drawable/thirtyseven_weeks_pregnant</item>
+    <item>@drawable/thirtyeight_weeks_pregnant</item>
+    <item>@drawable/thirtynine_weeks_pregnant</item>
+    <item>@drawable/forty_weeks_pregnancy</item>
+
+</array>
+
+
+    <array name="pregnanncy_fruits">
+
+        <item>@drawable/one_week_pregnant</item>
+        <item>@drawable/two_weeks_pregnant</item>
+        <item>@drawable/three_weeks_pregnant</item>
+        <item>@drawable/week4_poppyseeds101995928</item>
+        <item>@drawable/week5_peppercorns101995924</item>
+        <item>@drawable/week6_pomseeds101995921</item>
+        <item>@drawable/week7_blueberry101995920</item>
+        <item>@drawable/week8_cranberrybeans101995918</item>
+        <item>@drawable/week9_cherry101995916</item>
+        <item>@drawable/week10_kumquats101995915</item>
+
+
+        <item>@drawable/week11_sprouts101995892</item>
+        <item>@drawable/week12_passionfruit101995890</item>
+        <item>@drawable/week13_meyerlemon101995887</item>
+        <item>@drawable/week14_nectarine101995886</item>
+        <item>@drawable/week15_apple101995883</item>
+        <item>@drawable/week16_avocado101995881</item>
+        <item>@drawable/week17_pear101995885</item>
+        <item>@drawable/week18_sweetpotato101995894</item>
+        <item>@drawable/week19_mango101995893</item>
+        <item>@drawable/week20_artichoke101995880</item>
+
+
+        <item>@drawable/week21_carrot101995909</item>
+        <item>@drawable/week22_papaya101995912</item>
+        <item>@drawable/week23_eggplant101995899</item>
+        <item>@drawable/week24_corn101995910</item>
+        <item>@drawable/week25_acornsquash101995874</item>
+        <item>@drawable/week26_zucchini101995907</item>
+        <item>@drawable/week27_cauliflower101995871</item>
+        <item>@drawable/week28_kabochasquash101995869</item>
+        <item>@drawable/week29_butternut101995872</item>
+        <item>@drawable/week30_cabbage101995913</item>
+
+
+
+        <item>@drawable/week31_leeks101995905</item>
+        <item>@drawable/week32_napacabbage101995875</item>
+        <item>@drawable/week33_pineapple101995868</item>
+        <item>@drawable/week34_cantaloupe101995866</item>
+        <item>@drawable/week35_honeydew101995867</item>
+        <item>@drawable/week36_canarymelon101995864</item>
+        <item>@drawable/week37_swisschard101995902</item>
+        <item>@drawable/week38_rhubarb101995901</item>
+        <item>@drawable/week39_watermelon101995863</item>
+        <item>@drawable/week40_42_watermelon_101995878</item>
+
+
+
+    </array>
+
+
+</resources>
