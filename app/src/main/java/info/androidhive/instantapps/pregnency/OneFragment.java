@@ -1,6 +1,7 @@
 package info.androidhive.instantapps.pregnency;
 
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -47,7 +48,10 @@ public class OneFragment extends Fragment {
         imgBtn =(ImageButton) getActivity().findViewById(R.id.next);
         pb = new TextProgressBar(getActivity());
         pb = (TextProgressBar) getActivity().findViewById(R.id.pb);
-        pb.setScaleY(3f);
+        pb.setScaleY(3.5f);
+        Drawable draw=getResources().getDrawable(R.drawable.custom_progressbar);
+// set the drawable as progress drawable
+        pb.setProgressDrawable(draw);
 
 
 
@@ -60,7 +64,7 @@ public class OneFragment extends Fragment {
             public void onClick(View view) {
 
                 System.out.println("Saad");
-                img1.setImageDrawable(getActivity().getResources().getDrawable(textureArrayWin[0]));
+                img1.setImageResource(textureArrayWin[0]);
                 text.setText("saaaad");
 
                 myProgress++;
