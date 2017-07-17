@@ -23,17 +23,23 @@ public class BasicActivity extends AppCompatActivity implements OnDateSelectedLi
 
     private static final DateFormat FORMATTER = SimpleDateFormat.getDateInstance();
 
-    @BindView(R.id.calendarView)
+
+    MaterialCalendarView c;
+
+  //  @BindView(R.id.calendarView)
     MaterialCalendarView widget;
 
-    @BindView(R.id.textView)
     TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_basic);
-        ButterKnife.bind(this);
+
+        textView=(TextView)findViewById(R.id.textView);
+        c=(MaterialCalendarView)findViewById(R.id.calendarView);
+
+       // ButterKnife.bind(this);
 
         widget.setOnDateChangedListener(this);
         widget.setOnMonthChangedListener(this);
