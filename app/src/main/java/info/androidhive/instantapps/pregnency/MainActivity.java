@@ -2,8 +2,6 @@ package info.androidhive.instantapps.pregnency;
 
 
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -23,6 +21,8 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.R.attr.fragment;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -33,7 +33,7 @@ private ImageButton next;
     private ViewPager viewPager;
     int myProgress = 0;
     TextProgressBar pb;
-    OneFragment myFragment;
+    PregnantWomenFragment myFragment;
     ImageView img1;
     private int[] tabIcons = {
             R.drawable.ic_week_info,
@@ -83,10 +83,10 @@ private ImageButton next;
         navigationView.setNavigationItemSelectedListener(this);
 
 
-        getSupportFragmentManager().beginTransaction()
-                .add(R.id.viewpager, new NotesFragment())
+     /*   getSupportFragmentManager().beginTransaction()
+                .add(R.id.viewpager, new PregnantWomenFragment())
                 .commit();
-
+*/
 
 
     }
@@ -130,19 +130,30 @@ private ImageButton next;
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-       /* if (id == R.id.nav_camera) {
+        Fragment fragment;
+       // FragmentManager fragmentManager = getFragmentManager();
+
+        if (id == R.id.week) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.calendar) {
 
-        } else if (id == R.id.nav_slideshow) {
+            fragment = new CalendarFragment();
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.viewpager, fragment)
+                    .commit();
 
-        } else if (id == R.id.nav_manage) {
 
-        } else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_send) {
 
-        }*/
+        } else if (id == R.id.tools) {
+
+        } else if (id == R.id.items) {
+
+        } else if (id == R.id.settings) {
+
+        }
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -151,8 +162,8 @@ private ImageButton next;
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new NotesFragment(), "ONE");
-        adapter.addFragment(new OneFragment(), "TWO");
+        adapter.addFragment(new PregnantWomenFragment(), "ONE");
+        adapter.addFragment(new TwoFragment(), "TWO");
         adapter.addFragment(new NotesFragment(), "THREE");
         viewPager.setAdapter(adapter);
     }

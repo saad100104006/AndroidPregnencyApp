@@ -16,7 +16,7 @@ import android.widget.TextView;
  */
 
 
-public class OneFragment extends Fragment {
+public class PregnantWomenFragment extends Fragment {
 
     ImageButton imgBtn;
     ImageView img1;
@@ -30,8 +30,8 @@ public class OneFragment extends Fragment {
     int myProgress = 0;
 
     //2
-    public  OneFragment newInstance() {
-        return new OneFragment();
+    public PregnantWomenFragment newInstance() {
+        return new PregnantWomenFragment();
     }
 
     //3
@@ -40,7 +40,7 @@ public class OneFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
      //   return inflater.inflate(R.layout.fragment_test, container, false);
 
-        View view = inflater.inflate(R.layout.fragment_note, container, false);
+        View view = inflater.inflate(R.layout.fragment_women, container, false);
         text=(TextView)view.findViewById(R.id.text1) ;
         img1=(ImageView)view.findViewById(R.id.image1) ;
         imgBtn =(ImageButton) getActivity().findViewById(R.id.next);

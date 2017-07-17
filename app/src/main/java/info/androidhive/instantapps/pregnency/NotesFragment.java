@@ -37,7 +37,7 @@ public class NotesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
 
-        View view = inflater.inflate(R.layout.fragment_one, container, false);
+        View view = inflater.inflate(R.layout.fragment_note, container, false);
         fruitArray = getResources().obtainTypedArray(R.array.pregnanncy_fruits);
 
         mWeekArray =   getResources().getStringArray(R.array.note);
@@ -46,9 +46,6 @@ public class NotesFragment extends Fragment {
         mSizeOfArray=   getResources().getStringArray(R.array.sizeof);
 
         img1 = (ImageView) view.findViewById(R.id.image1);
-        nextBtn = (ImageButton) getActivity().findViewById(R.id.next);
-        previousBtn = (ImageButton) getActivity().findViewById(R.id.previous);
-
         weekCalc=(TextView)view.findViewById(R.id.pregnancyText2);
         lengthCalc=(TextView)view.findViewById(R.id.length);
         weightCalc=(TextView)view.findViewById(R.id.weight);
@@ -57,6 +54,8 @@ public class NotesFragment extends Fragment {
 
         pb = new TextProgressBar(getActivity());
         pb = (TextProgressBar) getActivity().findViewById(R.id.pb);
+        nextBtn = (ImageButton) getActivity().findViewById(R.id.next);
+        previousBtn = (ImageButton) getActivity().findViewById(R.id.previous);
         pb.setScaleY(3.5f);
         Drawable draw = getResources().getDrawable(R.drawable.custom_progressbar);
         pb.setProgressDrawable(draw);
@@ -64,6 +63,9 @@ public class NotesFragment extends Fragment {
 
         img1.setImageResource(fruitArray.getResourceId(0, -1));
         weekCalc.setText(mWeekArray[i]);
+        lengthCalc.setText(mLengthArray[i]);
+        weightCalc.setText(mWeightArray[i]);
+        sizeOfCalc.setText(mSizeOfArray[i]);
 
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +84,7 @@ public class NotesFragment extends Fragment {
                     pb.setText("Selected week " + myProgress + "/42");
                     if(i==42){
                         i=41;
+                        myProgress=41;
                     }
                 }
 
@@ -109,6 +112,7 @@ public class NotesFragment extends Fragment {
 
                     if(i==-1){
                         i=0;
+                        myProgress=0;
                     }
                 }
 
@@ -117,8 +121,6 @@ public class NotesFragment extends Fragment {
 
         return view;
 
-
-        //   new Thread(myThread).start();
 
     }
 }

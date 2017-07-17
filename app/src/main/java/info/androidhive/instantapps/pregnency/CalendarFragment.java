@@ -7,20 +7,20 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * Created by Saad on 7/12/17.
+ * Created by md.tanvirsaad on 7/17/17.
  */
 
 
-public class TwoFragment extends Fragment {
+public class CalendarFragment extends Fragment {
     //2
-    public static TwoFragment newInstance() {
-        return new TwoFragment();
+    public static CalendarFragment newInstance() {
+        return new CalendarFragment();
     }
 
     //3
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_women, container, false);
+        return inflater.inflate(R.layout.fragment_note, container, false);
     }
 }
