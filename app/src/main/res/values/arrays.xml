@@ -6,6 +6,201 @@
         <item>TextView 2</item>
         <item>TextView 3</item>
     </array>
+
+
+    <array name="length">
+
+        <item>@string/week_1</item>
+        <item>@string/week_2</item>
+        <item>@string/week_3</item>
+        <item>@string/week_4</item>
+        <item>@string/week_5</item>
+        <item>@string/week_6</item>
+        <item>@string/week_7</item>
+        <item>@string/week_8</item>
+        <item>@string/week_9</item>
+        <item>@string/week_10</item>
+        <item>@string/week_11</item>
+        <item>@string/week_12</item>
+        <item>@string/week_13</item>
+        <item>@string/week_14</item>
+        <item>@string/week_15</item>
+        <item>@string/week_16</item>
+        <item>@string/week_17</item>
+        <item>@string/week_18</item>
+        <item>@string/week_19</item>
+        <item>@string/week_20</item>
+        <item>@string/week_21</item>
+        <item>@string/week_22</item>
+        <item>@string/week_23</item>
+        <item>@string/week_24</item>
+        <item>@string/week_25</item>
+        <item>@string/week_26</item>
+        <item>@string/week_27</item>
+        <item>@string/week_28</item>
+        <item>@string/week_29</item>
+        <item>@string/week_30</item>
+        <item>@string/week_31</item>
+        <item>@string/week_32</item>
+        <item>@string/week_33</item>
+        <item>@string/week_34</item>
+        <item>@string/week_35</item>
+        <item>@string/week_36</item>
+        <item>@string/week_37</item>
+        <item>@string/week_38</item>
+        <item>@string/week_39</item>
+        <item>@string/week_40</item>
+        <item>@string/week_41</item>
+        <item>@string/week_42</item>
+
+
+    </array>
+
+    <array name="sizeof">
+
+        <item>@string/week_1size</item>
+        <item>@string/week_2size</item>
+        <item>@string/week_3size</item>
+        <item>@string/week_4size</item>
+        <item>@string/week_5size</item>
+        <item>@string/week_6size</item>
+        <item>@string/week_7size</item>
+        <item>@string/week_8size</item>
+        <item>@string/week_9size</item>
+        <item>@string/week_10size</item>
+        <item>@string/week_11size</item>
+        <item>@string/week_12size</item>
+        <item>@string/week_13size</item>
+        <item>@string/week_14size</item>
+        <item>@string/week_15size</item>
+        <item>@string/week_16size</item>
+        <item>@string/week_17size</item>
+        <item>@string/week_18size</item>
+        <item>@string/week_19size</item>
+        <item>@string/week_20size</item>
+        <item>@string/week_21size</item>
+        <item>@string/week_22size</item>
+        <item>@string/week_23size</item>
+        <item>@string/week_24size</item>
+        <item>@string/week_25size</item>
+        <item>@string/week_26size</item>
+        <item>@string/week_27size</item>
+        <item>@string/week_28size</item>
+        <item>@string/week_29size</item>
+        <item>@string/week_30size</item>
+        <item>@string/week_31size</item>
+        <item>@string/week_32size</item>
+        <item>@string/week_33size</item>
+        <item>@string/week_34size</item>
+        <item>@string/week_35size</item>
+        <item>@string/week_36size</item>
+        <item>@string/week_37size</item>
+        <item>@string/week_38size</item>
+        <item>@string/week_39size</item>
+        <item>@string/week_40size</item>
+        <item>@string/week_41size</item>
+        <item>@string/week_42size</item>
+
+
+    </array>
+
+
+    <array name="weight">
+
+
+        <item>@string/week_1oz</item>
+        <item>@string/week_2oz</item>
+        <item>@string/week_3oz</item>
+        <item>@string/week_4oz</item>
+        <item>@string/week_5oz</item>
+        <item>@string/week_6oz</item>
+        <item>@string/week_7oz</item>
+        <item>@string/week_8oz</item>
+        <item>@string/week_9oz</item>
+        <item>@string/week_10oz</item>
+        <item>@string/week_11oz</item>
+        <item>@string/week_12oz</item>
+        <item>@string/week_13oz</item>
+        <item>@string/week_14oz</item>
+        <item>@string/week_15oz</item>
+        <item>@string/week_16oz</item>
+        <item>@string/week_17oz</item>
+        <item>@string/week_18oz</item>
+        <item>@string/week_19oz</item>
+        <item>@string/week_20oz</item>
+        <item>@string/week_21oz</item>
+        <item>@string/week_22oz</item>
+        <item>@string/week_23oz</item>
+        <item>@string/week_24oz</item>
+        <item>@string/week_25oz</item>
+        <item>@string/week_26oz</item>
+        <item>@string/week_27oz</item>
+        <item>@string/week_28oz</item>
+        <item>@string/week_29oz</item>
+        <item>@string/week_30oz</item>
+        <item>@string/week_31oz</item>
+        <item>@string/week_32oz</item>
+        <item>@string/week_33oz</item>
+        <item>@string/week_34oz</item>
+        <item>@string/week_35oz</item>
+        <item>@string/week_36oz</item>
+        <item>@string/week_37oz</item>
+        <item>@string/week_38oz</item>
+        <item>@string/week_39oz</item>
+        <item>@string/week_40oz</item>
+        <item>@string/week_41oz</item>
+        <item>@string/week_42oz</item>
+
+    </array>
+
+    <array name="note">
+
+        <item>@string/first_week</item>
+        <item>@string/second_week</item>
+        <item>@string/third_week</item>
+        <item>@string/fourth_week</item>
+        <item>@string/fifth_week</item>
+        <item>@string/sixth_week</item>
+        <item>@string/seventh_week</item>
+        <item>@string/eight_week</item>
+        <item>@string/nineth_week</item>
+        <item>@string/ten_week</item>
+        <item>@string/eleven_week</item>
+        <item>@string/twelve_week</item>
+        <item>@string/thirteen_week</item>
+        <item>@string/fourteen_week</item>
+        <item>@string/fifteen_week</item>
+        <item>@string/sixteen_week</item>
+        <item>@string/seventeen_week</item>
+        <item>@string/eighteen_week</item>
+        <item>@string/nineteen_week</item>
+        <item>@string/twenty_week</item>
+        <item>@string/twentyone_week</item>
+        <item>@string/twentytwo_week</item>
+        <item>@string/twentythree_week</item>
+        <item>@string/twentyfour_week</item>
+        <item>@string/twentyfive_week</item>
+        <item>@string/twentysix_week</item>
+        <item>@string/twentyseven_week</item>
+        <item>@string/twentyeight_week</item>
+        <item>@string/twentynine_week</item>
+        <item>@string/thirty_week</item>
+        <item>@string/thirtyone_week</item>
+        <item>@string/thirtytwo_week</item>
+        <item>@string/thirtythree_week</item>
+        <item>@string/thirtyfour_week</item>
+        <item>@string/thirtyfive_week</item>
+        <item>@string/thirtysix_week</item>
+        <item>@string/thirtyseven_week</item>
+        <item>@string/thirtyeight_week</item>
+        <item>@string/thirtynine_week</item>
+        <item>@string/fourty_week</item>
+        <item>@string/fourtyone_week</item>
+        <item>@string/fourtytwo_week</item>
+
+    </array>
+
+
     <array name="pregnanncy">
 
     <item>@drawable/one_week_pregnant</item>
@@ -107,6 +302,8 @@
         <item>@drawable/week37_swisschard101995902</item>
         <item>@drawable/week38_rhubarb101995901</item>
         <item>@drawable/week39_watermelon101995863</item>
+        <item>@drawable/week40_42_watermelon_101995878</item>
+        <item>@drawable/week40_42_watermelon_101995878</item>
         <item>@drawable/week40_42_watermelon_101995878</item>
 
 

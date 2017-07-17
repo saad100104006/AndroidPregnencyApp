@@ -27,19 +27,18 @@
 
         >
 
-
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
          >
 
-
             <ImageView
                 android:id="@+id/image1"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="250dp"
+
+                android:background="@drawable/week4_poppyseeds101995928"
 
                 android:text="Hello Card" />
 

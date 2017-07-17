@@ -84,40 +84,13 @@ private ImageButton next;
 
 
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.viewpager, new OneFragment())
+                .add(R.id.viewpager, new NotesFragment())
                 .commit();
 
 
 
-
-
     }
-    private Runnable myThread = new Runnable(){
-        @Override
-        public void run() {
-            while (myProgress<32){
-                try{
-                    System.out.println("SSS");
-                    pb.setProgress(myProgress);
-                    pb.setText(myProgress+"/32");
-                 //   pb.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-                    myHandle.sendMessage(myHandle.obtainMessage());
-                    Thread.sleep(500);
-                }
-                catch(Throwable t){
-                }
-            }
-        }
 
-        Handler myHandle = new Handler(){
-            @Override
-            public void handleMessage(Message msg) {
-                myProgress++;
-                pb.setProgress(myProgress);
-                pb.setText(myProgress+"/32");
-            }
-        };
-    };
 
     @Override
     public void onBackPressed() {
@@ -178,9 +151,9 @@ private ImageButton next;
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new OneFragment(), "ONE");
-        adapter.addFragment(new NotesFragment(), "TWO");
-        adapter.addFragment(new ThreeFragment(), "THREE");
+        adapter.addFragment(new NotesFragment(), "ONE");
+        adapter.addFragment(new OneFragment(), "TWO");
+        adapter.addFragment(new NotesFragment(), "THREE");
         viewPager.setAdapter(adapter);
     }
 

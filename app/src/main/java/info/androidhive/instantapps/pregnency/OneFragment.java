@@ -40,7 +40,7 @@ public class OneFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
      //   return inflater.inflate(R.layout.fragment_test, container, false);
 
-        View view = inflater.inflate(R.layout.fragment_test, container, false);
+        View view = inflater.inflate(R.layout.fragment_note, container, false);
         text=(TextView)view.findViewById(R.id.text1) ;
         img1=(ImageView)view.findViewById(R.id.image1) ;
         imgBtn =(ImageButton) getActivity().findViewById(R.id.next);

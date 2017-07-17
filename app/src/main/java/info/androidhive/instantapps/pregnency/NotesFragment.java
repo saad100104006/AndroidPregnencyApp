@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * Created by Saad on 7/16/17.
@@ -17,71 +18,104 @@ import android.widget.ImageView;
 
 public class NotesFragment extends Fragment {
 
-    ImageButton imgBtn;
+    ImageButton nextBtn, previousBtn;
     ImageView img1;
-  //  TextView text;
     TextProgressBar pb;
     int myProgress = 0;
-    int i=0;
-    //int[] fruitArray;
+    int i = 0;
     TypedArray fruitArray;
-    //2
+    TextView weekCalc,lengthCalc,weightCalc,sizeOfCalc;
+    String[] mWeekArray,mLengthArray,mWeightArray,mSizeOfArray;
+
+
     public static NotesFragment newInstance() {
         return new NotesFragment();
     }
 
-    //3
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-       // return inflater.inflate(R.layout.fragment_one, container, false);
-
-        View view = inflater.inflate(R.layout.fragment_test, container, false);
-       // text=(TextView)view.findViewById(R.id.text1) ;
 
 
-         final TypedArray fruitArray = getResources().obtainTypedArray(R.array.pregnanncy_fruits);
+        View view = inflater.inflate(R.layout.fragment_one, container, false);
+        fruitArray = getResources().obtainTypedArray(R.array.pregnanncy_fruits);
 
-        //fruitArray = getActivity().getResources().getIntArray(R.array.pregnanncy_fruits);
+        mWeekArray =   getResources().getStringArray(R.array.note);
+        mLengthArray=   getResources().getStringArray(R.array.length);
+        mWeightArray=   getResources().getStringArray(R.array.weight);
+        mSizeOfArray=   getResources().getStringArray(R.array.sizeof);
 
-        img1=(ImageView)view.findViewById(R.id.image1) ;
-        imgBtn =(ImageButton) getActivity().findViewById(R.id.next);
+        img1 = (ImageView) view.findViewById(R.id.image1);
+        nextBtn = (ImageButton) getActivity().findViewById(R.id.next);
+        previousBtn = (ImageButton) getActivity().findViewById(R.id.previous);
+
+        weekCalc=(TextView)view.findViewById(R.id.pregnancyText2);
+        lengthCalc=(TextView)view.findViewById(R.id.length);
+        weightCalc=(TextView)view.findViewById(R.id.weight);
+        sizeOfCalc=(TextView)view.findViewById(R.id.sizeof);
+
+
         pb = new TextProgressBar(getActivity());
         pb = (TextProgressBar) getActivity().findViewById(R.id.pb);
         pb.setScaleY(3.5f);
-        Drawable draw=getResources().getDrawable(R.drawable.custom_progressbar);
-// set the drawable as progress drawable
+        Drawable draw = getResources().getDrawable(R.drawable.custom_progressbar);
         pb.setProgressDrawable(draw);
 
 
+        img1.setImageResource(fruitArray.getResourceId(0, -1));
+        weekCalc.setText(mWeekArray[i]);
 
-
-       // text.setText("jdhgewuhg");
-          img1.setImageResource(fruitArray.getResourceId(0, -1));
-
-        imgBtn.setOnClickListener(new View.OnClickListener() {
+        nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-if(i<41) {
-    System.out.println("Saad");
-    img1.getLayoutParams().width = ViewGroup.LayoutParams.MATCH_PARENT;
-    img1.setImageResource(fruitArray.getResourceId(i, -1));
+                if (i <= 41) {
+                    img1.setImageResource(fruitArray.getResourceId(i, -1));
+                    weekCalc.setText(mWeekArray[i]);
+                    lengthCalc.setText(mLengthArray[i]);
+                    weightCalc.setText(mWeightArray[i]);
+                    sizeOfCalc.setText(mSizeOfArray[i]);
 
-
-    //text.setText("saaaad");
-
-    myProgress++;
-    i++;
-    pb.setProgress(myProgress);
-    pb.setText("week " + myProgress + "/32");
-}
+                    myProgress++;
+                    i++;
+                    pb.setProgress(myProgress);
+                    pb.setText("Selected week " + myProgress + "/42");
+                    if(i==42){
+                        i=41;
+                    }
+                }
 
 
             }
         });
 
-        return  view;
+
+        previousBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+                if (i >= 0) {
+                    img1.setImageResource(fruitArray.getResourceId(i, -1));
+                    weekCalc.setText(mWeekArray[i]);
+                    lengthCalc.setText(mLengthArray[i]);
+                    weightCalc.setText(mWeightArray[i]);
+                    sizeOfCalc.setText(mSizeOfArray[i]);
+                    myProgress--;
+                    i--;
+                    pb.setProgress(myProgress);
+                    pb.setText("Selected week " + myProgress + "/42");
+
+                    if(i==-1){
+                        i=0;
+                    }
+                }
+
+            }
+        });
+
+        return view;
 
 
         //   new Thread(myThread).start();
