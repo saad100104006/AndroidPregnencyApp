@@ -7,6 +7,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -20,8 +21,6 @@ import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static android.R.attr.fragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -83,10 +82,10 @@ private ImageButton next;
         navigationView.setNavigationItemSelectedListener(this);
 
 
-     /*   getSupportFragmentManager().beginTransaction()
+       getSupportFragmentManager().beginTransaction()
                 .add(R.id.viewpager, new PregnantWomenFragment())
                 .commit();
-*/
+
 
 
     }
@@ -124,7 +123,7 @@ private ImageButton next;
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
+
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
@@ -137,10 +136,16 @@ private ImageButton next;
             // Handle the camera action
         } else if (id == R.id.calendar) {
 
+
             fragment = new CalendarFragment();
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.content_frame, fragment);
+            ft.commit();
+
+           /* fragment = new CalendarFragment();
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.viewpager, fragment)
-                    .commit();
+                    .commit();*/
 
 
 
@@ -201,9 +206,9 @@ private ImageButton next;
     }
 
     private void setupTabIcons() {
-        tabLayout.getTabAt(0).setIcon(tabIcons[0]);
+        tabLayout.getTabAt(0).setIcon(tabIcons[2]);
         tabLayout.getTabAt(1).setIcon(tabIcons[1]);
-        tabLayout.getTabAt(2).setIcon(tabIcons[2]);
+        tabLayout.getTabAt(2).setIcon(tabIcons[0]);
     }
 
 
