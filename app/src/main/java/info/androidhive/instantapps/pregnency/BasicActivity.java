@@ -28,7 +28,6 @@ public class BasicActivity extends AppCompatActivity implements OnDateSelectedLi
 
   //  @BindView(R.id.calendarView)
     MaterialCalendarView widget;
-
     TextView textView;
 
     @Override
@@ -37,7 +36,7 @@ public class BasicActivity extends AppCompatActivity implements OnDateSelectedLi
         setContentView(R.layout.activity_basic);
 
         textView=(TextView)findViewById(R.id.textView);
-        c=(MaterialCalendarView)findViewById(R.id.calendarView);
+        widget=(MaterialCalendarView)findViewById(R.id.calendarView);
 
        // ButterKnife.bind(this);
 
