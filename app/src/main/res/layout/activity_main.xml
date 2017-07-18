@@ -10,20 +10,18 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
-
-    <FrameLayout
-        android:id="@+id/content_frame"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
-
-        />
-
     <include
         layout="@layout/app_bar_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/frag"
+        android:layout_above="@+id/replace"
+
+        ></RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/replace"

@@ -5,6 +5,8 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
 
+    <string name="add_note">Add Note</string>
+
 
 <!--
 //pregnancy
@@ -191,6 +193,6 @@
     <string name="week_39size">small pumpkin</string>
     <string name="week_40size">watermelon</string>
     <string name="week_41size">big watermelon</string>
-    <string name="week_42size">big watermelon</string>
 
+    <string name="week_42size">big watermelon</string>
 </resources>

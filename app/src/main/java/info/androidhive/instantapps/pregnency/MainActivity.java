@@ -1,13 +1,13 @@
 package info.androidhive.instantapps.pregnency;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -137,15 +137,19 @@ private ImageButton next;
         } else if (id == R.id.calendar) {
 
 
-            fragment = new CalendarFragment();
+      /*      fragment = new CalendarFragment();
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.content_frame, fragment);
-            ft.commit();
+            ft.commit();*/
 
            /* fragment = new CalendarFragment();
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.viewpager, fragment)
                     .commit();*/
+
+
+           Intent intent=new Intent(MainActivity.this,BasicActivity.class);
+            startActivity(intent);
 
 
 
