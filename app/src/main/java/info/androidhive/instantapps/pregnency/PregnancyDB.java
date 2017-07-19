@@ -31,7 +31,7 @@ public class PregnancyDB extends SQLiteOpenHelper {
 	 * */
 	public void insertCalendar( String calDate, String calNote
 		) {
-		String query = "insert into " + CALENDAR_TBL+" (id,caldate,calnote)"+ " values ('" + calDate + "','" + calNote + "')";
+		String query = "insert into " + CALENDAR_TBL+" (caldate,calnote)"+ " values ('" + calDate + "','" + calNote + "')";
 		System.out.println("query" + query);
 		db.execSQL(query);
 	}
@@ -187,7 +187,7 @@ public class PregnancyDB extends SQLiteOpenHelper {
 
 		db.execSQL("CREATE TABLE IF NOT EXISTS "
 				+ CALENDAR_TBL
-				+ "(id INTEGER AUTOINCREMENT , caldate TEXT NOT NULL ,calnote TEXT NOT NULL );");
+				+ "(id TEXT PRIMARY KEY , caldate TEXT NOT NULL ,calnote TEXT NOT NULL );");
 		
 		
 		db.execSQL("CREATE TABLE IF NOT EXISTS "

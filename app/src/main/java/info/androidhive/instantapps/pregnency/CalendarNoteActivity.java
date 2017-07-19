@@ -33,6 +33,7 @@ public class CalendarNoteActivity extends AppCompatActivity {
     MaterialCalendarView widget;
     EditText textView;
     Toolbar toolbar;
+    PregnancyDB db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,11 +46,19 @@ public class CalendarNoteActivity extends AppCompatActivity {
       //  toolbar.setTitle(itemType);
       setSupportActionBar(toolbar);
 
+
+        db=new PregnancyDB(this);
+
         textView=(EditText) findViewById(R.id.note);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+
+
+                db.insertCalendar("dattt",textView.getText().toString());
+
+
                 Toast.makeText(CalendarNoteActivity.this, "Back clicked!",     Toast.LENGTH_SHORT).show();
             }
         });

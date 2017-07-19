@@ -37,6 +37,7 @@ public class CalendarNoteShowActivity extends AppCompatActivity {
     private CalendarAdapter mAdapter;
     EditText textView;
     Toolbar toolbar;
+    PregnancyDB db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,14 +46,17 @@ public class CalendarNoteShowActivity extends AppCompatActivity {
 
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setNavigationIcon(R.drawable.ic_checked);
+      //  toolbar.setNavigationIcon(R.drawable.ic_checked);
         //  toolbar.setTitle(itemType);
         setSupportActionBar(toolbar);
+
+        db=new PregnancyDB(this);
+
 
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
-        mAdapter = new CalendarAdapter(movieList);
+        mAdapter = new CalendarAdapter( db.GetAllCalendar());
 
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());

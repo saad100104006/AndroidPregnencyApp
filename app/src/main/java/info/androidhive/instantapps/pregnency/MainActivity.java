@@ -156,6 +156,9 @@ private ImageButton next;
 
         } else if (id == R.id.tools) {
 
+            Intent intent=new Intent(MainActivity.this,CalendarNoteShowActivity.class);
+            startActivity(intent);
+
         } else if (id == R.id.items) {
 
         } else if (id == R.id.settings) {
