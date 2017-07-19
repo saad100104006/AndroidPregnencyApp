@@ -75,7 +75,7 @@ public class CalendarFragemntActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new BasicFragment(), "ONE");
-        adapter.addFragment(new TwoFragment(), "TWO");
+        adapter.addFragment(new CalendarNoteShowFragement(), "TWO");
      //   adapter.addFragment(new NotesFragment(), "THREE");
         viewPager.setAdapter(adapter);
     }
