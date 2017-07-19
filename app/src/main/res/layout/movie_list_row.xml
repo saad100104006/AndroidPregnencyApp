@@ -16,6 +16,7 @@
         android:textColor="@color/colorBlue"
         android:textSize="16dp"
         android:textStyle="bold"
+        android:text="date"
         android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -24,6 +25,7 @@
         android:id="@+id/genre"
         android:layout_below="@id/title"
         android:layout_width="match_parent"
+        android:text="note"
         android:layout_height="wrap_content" />
 
     <TextView
