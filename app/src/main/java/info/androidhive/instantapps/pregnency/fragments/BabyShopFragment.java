@@ -12,10 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import info.androidhive.instantapps.pregnency.Calendar;
 import info.androidhive.instantapps.pregnency.CalendarAdapter;
 import info.androidhive.instantapps.pregnency.R;
