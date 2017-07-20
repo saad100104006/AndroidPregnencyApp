@@ -15,8 +15,11 @@ import android.widget.EditText;
 import java.util.ArrayList;
 import java.util.List;
 
+import info.androidhive.instantapps.pregnency.adapter.CalendarAdapter;
+import info.androidhive.instantapps.pregnency.fragments.BabyShopFragment;
 import info.androidhive.instantapps.pregnency.fragments.BasicFragment;
 import info.androidhive.instantapps.pregnency.fragments.CalendarNoteShowFragement;
+import info.androidhive.instantapps.pregnency.model.Calendar;
 
 
 /**
@@ -61,7 +64,7 @@ public class PrenencyItemsActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new BasicFragment(), "ONE");
+        adapter.addFragment(new BabyShopFragment(), "ONE");
         adapter.addFragment(new CalendarNoteShowFragement(), "TWO");
         //   adapter.addFragment(new NotesFragment(), "THREE");
         viewPager.setAdapter(adapter);

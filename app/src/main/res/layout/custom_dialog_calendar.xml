@@ -56,6 +56,7 @@ android:layout_marginBottom="10dp"
         android:background="#e1c8ba"
         android:layout_marginRight="5dp"
         android:layout_marginTop="5dp"
+        style="?android:attr/borderlessButtonStyle"
         android:text="close" />
 
 </RelativeLayout>

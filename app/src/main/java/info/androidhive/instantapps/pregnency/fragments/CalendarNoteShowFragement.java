@@ -16,8 +16,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import info.androidhive.instantapps.pregnency.Calendar;
-import info.androidhive.instantapps.pregnency.CalendarAdapter;
+import info.androidhive.instantapps.pregnency.model.Calendar;
+import info.androidhive.instantapps.pregnency.adapter.CalendarAdapter;
 import info.androidhive.instantapps.pregnency.utils.PregnancyDB;
 import info.androidhive.instantapps.pregnency.R;
 import info.androidhive.instantapps.pregnency.utils.RecyclerTouchListener;

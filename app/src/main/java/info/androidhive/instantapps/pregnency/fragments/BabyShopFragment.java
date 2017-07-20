@@ -1,5 +1,6 @@
 package info.androidhive.instantapps.pregnency.fragments;
 
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -14,9 +15,12 @@ import android.widget.EditText;
 import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
-import info.androidhive.instantapps.pregnency.Calendar;
-import info.androidhive.instantapps.pregnency.CalendarAdapter;
+
+import info.androidhive.instantapps.pregnency.adapter.ShopAdapter;
+import info.androidhive.instantapps.pregnency.model.Calendar;
+import info.androidhive.instantapps.pregnency.adapter.CalendarAdapter;
 import info.androidhive.instantapps.pregnency.R;
+import info.androidhive.instantapps.pregnency.model.Shop;
 import info.androidhive.instantapps.pregnency.utils.PregnancyDB;
 import info.androidhive.instantapps.pregnency.utils.RecyclerTouchListener;
 
@@ -28,12 +32,13 @@ import info.androidhive.instantapps.pregnency.utils.RecyclerTouchListener;
 
 public class BabyShopFragment extends Fragment {
 
-    private List<Calendar> movieList = new ArrayList<>();
+    private List<Shop> movieList = new ArrayList<>();
     private RecyclerView recyclerView;
-    private CalendarAdapter mAdapter;
+    private ShopAdapter mAdapter;
     EditText textView;
     Toolbar toolbar;
     PregnancyDB db;
+    TypedArray fruitArray;
     //2
     public static BabyShopFragment newInstance() {
         return new BabyShopFragment();
@@ -45,14 +50,19 @@ public class BabyShopFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
 
+        fruitArray = getActivity().getResources().obtainTypedArray(R.array.pregnanncy_fruits);
+
+
         View view = inflater.inflate(R.layout.fragment_baby_shop, container, false);
 
 
-        db=new PregnancyDB(getActivity());
-        movieList=db.GetAllCalendar();
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
-        mAdapter = new CalendarAdapter( movieList);
+        mAdapter = new ShopAdapter( movieList,getActivity());
+
+
+        prepareMovieData();
+
 
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
@@ -64,8 +74,8 @@ public class BabyShopFragment extends Fragment {
         recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getActivity().getApplicationContext(), recyclerView, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
-                Calendar movie = movieList.get(position);
-                Toast.makeText(getActivity().getApplicationContext(), movie.getCal_date() + " is selected!", Toast.LENGTH_SHORT).show();
+                Shop movie = movieList.get(position);
+                Toast.makeText(getActivity().getApplicationContext(), movie.getTitle() + " is selected!", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -77,6 +87,40 @@ public class BabyShopFragment extends Fragment {
 
 
         return  view;
+    }
+
+    private void prepareMovieData() {
+        Shop movie = new Shop("Mad Max: Fury Road", "Action & Adventure");
+        movieList.add(movie);
+
+        movie = new Shop("Inside Out", "Animation, Kids & Family");
+        movieList.add(movie);
+
+        movie = new Shop("Star Wars: Episode VII - The Force Awakens", "Action");
+        movieList.add(movie);
+
+        movie = new Shop("Shaun the Sheep", "Animation");
+        movieList.add(movie);
+
+        movie = new Shop("The Martian", "Science Fiction & Fantasy");
+        movieList.add(movie);
+
+        movie = new Shop("Mission: Impossible Rogue Nation", "Action");
+        movieList.add(movie);
+
+        movie = new Shop("Up", "Animation");
+        movieList.add(movie);
+
+        movie = new Shop("Star Trek", "Science Fiction");
+        movieList.add(movie);
+
+        movie = new Shop("The LEGO Movie", "Animation");
+        movieList.add(movie);
+
+
+        movieList.add(movie);
+
+        mAdapter.notifyDataSetChanged();
     }
 }
 

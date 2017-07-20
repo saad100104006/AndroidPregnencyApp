@@ -1,4 +1,4 @@
-package info.androidhive.instantapps.pregnency;
+package info.androidhive.instantapps.pregnency.model;
 
 /**
  * Created by Saad on 7/18/17.

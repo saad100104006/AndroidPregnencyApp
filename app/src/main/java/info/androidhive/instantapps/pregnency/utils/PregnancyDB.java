@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-import info.androidhive.instantapps.pregnency.Calendar;
+import info.androidhive.instantapps.pregnency.model.Calendar;
 
 public class PregnancyDB extends SQLiteOpenHelper {
 
