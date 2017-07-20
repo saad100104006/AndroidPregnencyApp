@@ -22,6 +22,11 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 import java.util.List;
 
+import info.androidhive.instantapps.pregnency.fragments.NotesFragment;
+import info.androidhive.instantapps.pregnency.fragments.PregnantWomenFragment;
+import info.androidhive.instantapps.pregnency.fragments.TwoFragment;
+import info.androidhive.instantapps.pregnency.utils.TextProgressBar;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -116,9 +121,9 @@ private ImageButton next;
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+       /* if (id == R.id.action_settings) {
             return true;
-        }
+        }*/
 
         return super.onOptionsItemSelected(item);
     }
@@ -154,12 +159,12 @@ private ImageButton next;
 
 
 
-        } else if (id == R.id.tools) {
+        }  else if (id == R.id.items) {
 
-            Intent intent=new Intent(MainActivity.this,CalendarNoteShowActivity.class);
+            Intent intent=new Intent(MainActivity.this,PrenencyItemsActivity.class);
             startActivity(intent);
 
-        } else if (id == R.id.items) {
+
 
         } else if (id == R.id.settings) {
 

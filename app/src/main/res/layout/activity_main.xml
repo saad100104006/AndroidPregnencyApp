@@ -63,7 +63,7 @@
                         android:src="@drawable/previous" />
 
 
-                    <info.androidhive.instantapps.pregnency.TextProgressBar
+                    <info.androidhive.instantapps.pregnency.utils.TextProgressBar
                         android:id="@+id/pb"
                         style="?android:attr/progressBarStyleHorizontal"
                         android:layout_width="0dp"

@@ -1,4 +1,4 @@
-package info.androidhive.instantapps.pregnency;
+package info.androidhive.instantapps.pregnency.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,6 +15,12 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import info.androidhive.instantapps.pregnency.Calendar;
+import info.androidhive.instantapps.pregnency.CalendarAdapter;
+import info.androidhive.instantapps.pregnency.utils.PregnancyDB;
+import info.androidhive.instantapps.pregnency.R;
+import info.androidhive.instantapps.pregnency.utils.RecyclerTouchListener;
 
 /**
  * Created by md.tanvirsaad on 7/19/17.
@@ -44,12 +50,10 @@ public class CalendarNoteShowFragement extends Fragment {
 
 
         db=new PregnancyDB(getActivity());
-
-
+        movieList=db.GetAllCalendar();
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
-
-        mAdapter = new CalendarAdapter( db.GetAllCalendar());
+        mAdapter = new CalendarAdapter( movieList);
 
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());

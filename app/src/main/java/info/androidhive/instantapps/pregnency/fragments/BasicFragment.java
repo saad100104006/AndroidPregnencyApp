@@ -1,4 +1,4 @@
-package info.androidhive.instantapps.pregnency;
+package info.androidhive.instantapps.pregnency.fragments;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +19,9 @@ import com.prolificinteractive.materialcalendarview.OnMonthChangedListener;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+
+import info.androidhive.instantapps.pregnency.CalendarNoteActivity;
+import info.androidhive.instantapps.pregnency.R;
 
 /**
  * Created by Saad on 7/12/17.
@@ -73,8 +75,6 @@ public class BasicFragment extends Fragment implements OnDateSelectedListener, O
     public void onDateSelected(@NonNull MaterialCalendarView widget, @Nullable CalendarDay date, boolean selected) {
         // textView.setText(getSelectedDatesString());
 
-        ///
-        // create a Dialog component
 
         final Dialog dialog = new Dialog(getContext());
 
@@ -89,16 +89,17 @@ public class BasicFragment extends Fragment implements OnDateSelectedListener, O
         txt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent intent=new Intent(getActivity(),CalendarNoteActivity.class);
+                intent.putExtra("note",getSelectedDatesString());
                 startActivity(intent);
+                dialog.dismiss();
             }
         });
 
 
         txt.setText(getSelectedDatesString());
-
         Button dialogButton = (Button) dialog.findViewById(R.id.close);
-
         dialogButton.setOnClickListener(new View.OnClickListener() {
 
             @Override

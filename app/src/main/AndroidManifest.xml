@@ -19,11 +19,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name="info.androidhive.instantapps.pregnency.BasicActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
 
 
         <activity
@@ -37,12 +32,13 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-
         <activity
-            android:name="info.androidhive.instantapps.pregnency.CalendarNoteShowActivity"
+            android:name="info.androidhive.instantapps.pregnency.PrenencyItemsActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+
+
 
 
 

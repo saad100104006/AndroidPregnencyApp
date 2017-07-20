@@ -1,4 +1,4 @@
-package info.androidhive.instantapps.pregnency;
+package info.androidhive.instantapps.pregnency.utils;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

@@ -1,28 +1,22 @@
 package info.androidhive.instantapps.pregnency;
 
-import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.GestureDetector;
+import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 
+import info.androidhive.instantapps.pregnency.utils.PregnancyDB;
+
 /**
  * Created by Saad on 7/18/17.
  */
 
-
-
-/**
- * Created by md.tanvirsaad on 7/17/17.
- */
 
 
 public class CalendarNoteActivity extends AppCompatActivity {
@@ -34,49 +28,49 @@ public class CalendarNoteActivity extends AppCompatActivity {
     EditText textView;
     Toolbar toolbar;
     PregnancyDB db;
+    String note;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calendar_note);
-
+        setContentView(R.layout.fragment_notes);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setNavigationIcon(R.drawable.ic_checked);
-      //  toolbar.setTitle(itemType);
-      setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        db=new PregnancyDB(this);
+        Intent intent = getIntent();
+       // If your extra data is represented as strings, then you can use intent.getStringExtra(String name) method. In your case:
 
-        textView=(EditText) findViewById(R.id.note);
-
-        toolbar.setNavigationOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
+         note = intent.getStringExtra("note");
 
 
-                db.insertCalendar("dattt",textView.getText().toString());
 
-
-                Toast.makeText(CalendarNoteActivity.this, "Back clicked!",     Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
+        db = new PregnancyDB(this);
+        textView = (EditText) findViewById(R.id.note);
 
     }
 
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.note_menu, menu);//Menu Resource, Menu
+        return true;
+    }
 
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        switch (id){
-            case android.R.id.home:
-                finish();
-                break;
+
+        if(id==R.id.check){
+            db.insertCalendar(note, textView.getText().toString());
+            Toast.makeText(CalendarNoteActivity.this, "Note Added!", Toast.LENGTH_SHORT).show();
+            finish();
+        }
+       else{
+            finish();
         }
         return super.onOptionsItemSelected(item);
     }

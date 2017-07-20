@@ -8,7 +8,13 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyViewHolder> {
+/**
+ * Created by md.tanvirsaad on 7/20/17.
+ */
+
+
+
+public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.MyViewHolder> {
 
     private List<Calendar> moviesList;
 
@@ -23,7 +29,7 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
     }
 
 
-    public CalendarAdapter(List<Calendar> moviesList) {
+    public ShopAdapter(List<Calendar> moviesList) {
         this.moviesList = moviesList;
     }
 
@@ -38,7 +44,7 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Calendar movie = moviesList.get(position);
-      //  holder.title.setText(movie.getTitle());
+        //  holder.title.setText(movie.getTitle());
         holder.genre.setText(movie.getCal_date());
         holder.year.setText(movie.getCal_note());
     }
@@ -48,3 +54,4 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyView
         return moviesList.size();
     }
 }
+

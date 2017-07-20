@@ -12,18 +12,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import info.androidhive.instantapps.pregnency.fragments.BasicFragment;
 import info.androidhive.instantapps.pregnency.fragments.CalendarNoteShowFragement;
-
-/**
- * Created by md.tanvirsaad on 7/19/17.
- */
-
-
 
 
 /**
@@ -31,7 +24,7 @@ import info.androidhive.instantapps.pregnency.fragments.CalendarNoteShowFragemen
  */
 
 
-public class CalendarFragemntActivity extends AppCompatActivity {
+public class PrenencyItemsActivity extends AppCompatActivity {
 
 
     private List<Calendar> movieList = new ArrayList<>();
@@ -67,10 +60,10 @@ public class CalendarFragemntActivity extends AppCompatActivity {
     }
 
     private void setupViewPager(ViewPager viewPager) {
-       ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new BasicFragment(), "ONE");
         adapter.addFragment(new CalendarNoteShowFragement(), "TWO");
-     //   adapter.addFragment(new NotesFragment(), "THREE");
+        //   adapter.addFragment(new NotesFragment(), "THREE");
         viewPager.setAdapter(adapter);
     }
 
@@ -124,7 +117,7 @@ public class CalendarFragemntActivity extends AppCompatActivity {
         int id = item.getItemId();
 
 
-            finish();
+        finish();
 
         return super.onOptionsItemSelected(item);
     }
@@ -135,6 +128,7 @@ public class CalendarFragemntActivity extends AppCompatActivity {
 
 
 }
+
 
 
 

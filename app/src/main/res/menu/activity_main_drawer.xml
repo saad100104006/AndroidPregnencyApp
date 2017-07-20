@@ -10,10 +10,7 @@
             android:id="@+id/calendar"
             android:icon="@drawable/ic_calendar"
             android:title="Calendar" />
-        <item
-            android:id="@+id/tools"
-            android:icon="@drawable/ic_pregnant_black"
-            android:title="Pregnancy tools" />
+
         <item
             android:id="@+id/items"
             android:icon="@drawable/ic_items"
