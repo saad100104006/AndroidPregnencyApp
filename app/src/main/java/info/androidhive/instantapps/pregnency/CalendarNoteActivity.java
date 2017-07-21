@@ -68,9 +68,11 @@ public class CalendarNoteActivity extends AppCompatActivity {
             db.insertCalendar(note, textView.getText().toString());
             Toast.makeText(CalendarNoteActivity.this, "Note Added!", Toast.LENGTH_SHORT).show();
             finish();
+            overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_right);
         }
        else{
             finish();
+            overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_right);
         }
         return super.onOptionsItemSelected(item);
     }

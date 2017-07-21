@@ -37,7 +37,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.MyViewHolder> 
             super(view);
             title = (TextView) view.findViewById(R.id.title);
             description = (TextView) view.findViewById(R.id.description);
-            image= (ImageView) view.findViewById(R.id.image1);
+            image= (ImageView) view.findViewById(R.id.image);
         }
     }
 
@@ -58,13 +58,13 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.MyViewHolder> 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
 
-        fruitArray = context.getResources().obtainTypedArray(R.array.pregnanncy_fruits);
+        fruitArray = context.getResources().obtainTypedArray(R.array.pregnanncy);
 
         Shop movie = moviesList.get(position);
         //  holder.title.setText(movie.getTitle());
         holder.title.setText(movie.getTitle());
         holder.description.setText(movie.getDescription());
-        holder.image.setImageResource(fruitArray.getResourceId(0, -1));
+        holder.image.setImageResource(fruitArray.getResourceId(position, -1));
 
 
     }

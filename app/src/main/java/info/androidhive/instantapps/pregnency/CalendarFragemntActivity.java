@@ -26,8 +26,6 @@ import info.androidhive.instantapps.pregnency.model.Calendar;
  */
 
 
-
-
 /**
  * Created by md.tanvirsaad on 7/17/17.
  */
@@ -69,10 +67,10 @@ public class CalendarFragemntActivity extends AppCompatActivity {
     }
 
     private void setupViewPager(ViewPager viewPager) {
-       ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new BasicFragment(), "ONE");
         adapter.addFragment(new CalendarNoteShowFragement(), "TWO");
-     //   adapter.addFragment(new NotesFragment(), "THREE");
+        //   adapter.addFragment(new NotesFragment(), "THREE");
         viewPager.setAdapter(adapter);
     }
 
@@ -125,15 +123,11 @@ public class CalendarFragemntActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-
-            finish();
+        finish();
+        overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_right);
 
         return super.onOptionsItemSelected(item);
     }
-
-
-
-
 
 
 }

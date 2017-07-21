@@ -1,6 +1,7 @@
 package info.androidhive.instantapps.pregnency;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -22,6 +23,7 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import info.androidhive.instantapps.pregnency.fragments.NotesFragment;
 import info.androidhive.instantapps.pregnency.fragments.PregnantWomenFragment;
 import info.androidhive.instantapps.pregnency.fragments.TwoFragment;
@@ -31,7 +33,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
 
-private ImageButton next;
+    private ImageButton next;
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -44,14 +46,13 @@ private ImageButton next;
             R.drawable.ic_woman_white,
             R.drawable.ic_baby_white
     };
-    int i=0;
+    int i = 0;
 
     private int[] textureArrayWin = {
             R.drawable.img1,
             R.drawable.ic_woman_white,
             R.drawable.ic_baby_white,
     };
-
 
 
     @Override
@@ -65,7 +66,7 @@ private ImageButton next;
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
 
-        next=(ImageButton) findViewById(R.id.next);
+        next = (ImageButton) findViewById(R.id.next);
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
@@ -79,7 +80,7 @@ private ImageButton next;
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-            this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
@@ -87,10 +88,9 @@ private ImageButton next;
         navigationView.setNavigationItemSelectedListener(this);
 
 
-       getSupportFragmentManager().beginTransaction()
+        getSupportFragmentManager().beginTransaction()
                 .add(R.id.viewpager, new PregnantWomenFragment())
                 .commit();
-
 
 
     }
@@ -135,7 +135,7 @@ private ImageButton next;
         int id = item.getItemId();
 
         Fragment fragment;
-       // FragmentManager fragmentManager = getFragmentManager();
+        // FragmentManager fragmentManager = getFragmentManager();
 
         if (id == R.id.week) {
             // Handle the camera action
@@ -153,23 +153,40 @@ private ImageButton next;
                     .commit();*/
 
 
-           Intent intent=new Intent(MainActivity.this,CalendarFragemntActivity.class);
+            Intent intent = new Intent(MainActivity.this, CalendarFragemntActivity.class);
             startActivity(intent);
+            overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
 
 
+        } else if (id == R.id.items) {
 
-
-        }  else if (id == R.id.items) {
-
-            Intent intent=new Intent(MainActivity.this,PrenencyItemsActivity.class);
+            Intent intent = new Intent(MainActivity.this, PrenencyItemsActivity.class);
             startActivity(intent);
-
+            overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
 
 
         } else if (id == R.id.settings) {
 
-        }
+        } else if (id == R.id.exit) {
+            new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
+                    .setTitleText("Are you sure to Quit?").setCancelText("No").setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                @Override
+                public void onClick(SweetAlertDialog sDialog) {
+                    sDialog.dismissWithAnimation();
+                }
+            })
+                    .setConfirmText("Yes!")
+                    .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                        @Override
+                        public void onClick(SweetAlertDialog sDialog) {
+                            sDialog.dismissWithAnimation();
+                            finish();
+                        }
+                    })
+                    .show();
 
+
+        }
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -222,8 +239,6 @@ private ImageButton next;
         tabLayout.getTabAt(1).setIcon(tabIcons[1]);
         tabLayout.getTabAt(2).setIcon(tabIcons[0]);
     }
-
-
 
 
 }

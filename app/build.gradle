@@ -30,4 +30,6 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
     compile 'com.prolificinteractive:material-calendarview:1.4.3'
+    compile 'com.github.ViksaaSkool:AwesomeSplash:v1.0.0'
+    compile 'cn.pedant.sweetalert:library:1.3'
 }

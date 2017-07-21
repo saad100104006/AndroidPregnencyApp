@@ -65,7 +65,7 @@ public class PrenencyItemsActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new BabyShopFragment(), "ONE");
-        adapter.addFragment(new CalendarNoteShowFragement(), "TWO");
+        adapter.addFragment(new BabyShopFragment(), "TWO");
         //   adapter.addFragment(new NotesFragment(), "THREE");
         viewPager.setAdapter(adapter);
     }
@@ -121,6 +121,7 @@ public class PrenencyItemsActivity extends AppCompatActivity {
 
 
         finish();
+        overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_right);
 
         return super.onOptionsItemSelected(item);
     }
