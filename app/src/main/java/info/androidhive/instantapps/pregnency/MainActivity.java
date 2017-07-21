@@ -167,6 +167,12 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.settings) {
 
+            Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
+
+
+
         } else if (id == R.id.exit) {
             new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
                     .setTitleText("Are you sure to Quit?").setCancelText("No").setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
