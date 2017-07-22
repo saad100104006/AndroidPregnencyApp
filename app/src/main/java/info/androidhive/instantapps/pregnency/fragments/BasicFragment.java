@@ -13,12 +13,14 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.prolificinteractive.materialcalendarview.CalendarDay;
+import com.prolificinteractive.materialcalendarview.CalendarMode;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
 import com.prolificinteractive.materialcalendarview.OnMonthChangedListener;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import info.androidhive.instantapps.pregnency.CalendarNoteActivity;
 import info.androidhive.instantapps.pregnency.R;
@@ -36,7 +38,7 @@ public class BasicFragment extends Fragment implements OnDateSelectedListener, O
 
     //  @BindView(R.id.calendarView)
     MaterialCalendarView widget;
-    TextView textView;
+   // TextView textView;
     //2
     public static BasicFragment newInstance() {
         return new BasicFragment();
@@ -48,7 +50,7 @@ public class BasicFragment extends Fragment implements OnDateSelectedListener, O
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.activity_basic, container, false);
-        textView=(TextView)view.findViewById(R.id.textView);
+     //   textView=(TextView)view.findViewById(R.id.textView);
         widget=(MaterialCalendarView)view.findViewById(R.id.calendarView);
 
 
@@ -62,11 +64,19 @@ public class BasicFragment extends Fragment implements OnDateSelectedListener, O
 
         // ButterKnife.bind(this);
 
+        widget.state().edit()
+                .setFirstDayOfWeek(Calendar.SUNDAY)
+               // .setMinimumDate(CalendarDay.from(2016, 4, 3))
+                //.setMaximumDate(CalendarDay.from(2016, 5, 12))
+                .setCalendarDisplayMode(CalendarMode.WEEKS)
+                //.setSaveCurrentPosition(true)
+                .commit();
+
         widget.setOnDateChangedListener(this);
         widget.setOnMonthChangedListener(this);
 
         //Setup initial text
-        textView.setText(getSelectedDatesString());
+      //  textView.setText(getSelectedDatesString());
         return view;
     }
 

@@ -18,287 +18,313 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="10dp"
+        android:weightSum="1"
         >
 
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/card_view"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            card:elevation="4dp"
-            card_view:cardCornerRadius="4dp"
-            card_view:cardPreventCornerOverlap="false"
-            card_view:cardUseCompatPadding="true"
-
-
+            android:layout_height="0dp"
+            android:layout_weight=".9"
+            android:orientation="vertical"
+            android:padding="10dp"
             >
 
-            <LinearLayout
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_gravity="top"
+                card:elevation="4dp"
+                card_view:cardCornerRadius="4dp"
+                card_view:cardPreventCornerOverlap="false"
+                card_view:cardUseCompatPadding="true"
 
 
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/image1"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:text="Personalization"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="16dp"
-                    android:textStyle="bold" />
+                >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:orientation="vertical">
+
 
                     <TextView
 
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/image1"
                         android:layout_marginBottom="5dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
-                        android:layout_weight=".5"
-                        android:text="Due date"
+                        android:text="Personalization"
+                        android:textColor="@color/colorPrimary"
                         android:textSize="16dp"
-                        android:textStyle="bold"
+                        android:textStyle="bold" />
 
-                        />
-
-                    <EditText
-
-                        android:layout_width="0dp"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/image1"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="5dp"
-                        android:drawablePadding="10dp"
-                        android:layout_weight=".5"
-                        android:drawableRight="@drawable/ic_calendar"
-                        android:gravity="right"
-                        android:hint="Personalization"
-                        android:textSize="16dp"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
 
-                        android:textStyle="bold"
+                        <TextView
 
-                        />
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/image1"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight=".5"
+                            android:text="Due date"
+                            android:textSize="16dp"
+                            android:textStyle="bold"
+
+                            />
+
+                        <EditText
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/image1"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:drawablePadding="10dp"
+                            android:layout_weight=".5"
+                            android:drawableRight="@drawable/ic_calendar"
+                            android:gravity="right"
+                            android:hint="Personalization"
+                            android:textSize="16dp"
+
+                            android:textStyle="bold"
+
+                            />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/image1"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight=".5"
+                            android:text="Notifications"
+                            android:textSize="16dp"
+                            android:textStyle="bold"
+
+                            />
+
+                        <android.support.v7.widget.SwitchCompat
+                            android:id="@+id/compatSwitch"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".5"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:drawablePadding="15dp"
+                            />
+
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/image1"
+
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight=".98"
+                            android:text="Start tracking pregnancy"
+                            android:textSize="16dp"
+                            android:textStyle="bold"
+
+                            />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_weight=".01"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/right"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+
+                            />
+
+
+
+
+                    </LinearLayout>
 
 
                 </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                card:elevation="4dp"
+                android:layout_marginTop="15dp"
+                card_view:cardCornerRadius="4dp"
+                card_view:cardPreventCornerOverlap="false"
+                card_view:cardUseCompatPadding="true"
+
+
+                >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+                    android:orientation="vertical">
+
 
                     <TextView
 
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/image1"
                         android:layout_marginBottom="5dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
-                        android:layout_weight=".5"
-                        android:text="Notifications"
+                        android:text="Feedback"
+                        android:textColor="@color/colorPrimary"
                         android:textSize="16dp"
-                        android:textStyle="bold"
+                        android:textStyle="bold" />
 
-                        />
 
-                    <android.support.v7.widget.SwitchCompat
-                        android:id="@+id/compatSwitch"
-                        android:layout_width="0dp"
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight=".5"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="5dp"
-                        android:drawablePadding="15dp"
-                        />
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/image1"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight=".98"
+                            android:text="Send feedback"
+                            android:textSize="16dp"
+                            android:textStyle="bold"
+
+                            />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_weight=".01"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/right"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+
+                            />
 
 
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/image1"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight=".98"
+                            android:text="Rate Us"
+                            android:textSize="16dp"
+                            android:textStyle="bold"
+
+                            />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_weight=".01"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/right"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+
+                            />
+
+
+
+
+                    </LinearLayout>
 
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
 
-                    <TextView
+            </android.support.v7.widget.CardView>
 
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/image1"
+        </LinearLayout>
 
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_weight=".98"
-                        android:text="Start tracking pregnancy"
-                        android:textSize="16dp"
-                        android:textStyle="bold"
-
-                        />
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_weight=".01"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/right"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="5dp"
-
-                        />
-
-
-
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/card_view2"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            card:elevation="4dp"
-            android:layout_marginTop="15dp"
-            card_view:cardCornerRadius="4dp"
-            card_view:cardPreventCornerOverlap="false"
-            card_view:cardUseCompatPadding="true"
+            android:layout_height="0dp"
+            android:layout_weight=".1"
 
-
+            android:background="@color/colorPrimaryDark"
             >
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
 
 
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/image1"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:text="Feedback"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="16dp"
-                    android:textStyle="bold" />
-
-
-
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
-
-                    <TextView
-
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/image1"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_weight=".98"
-                        android:text="Send feedback"
-                        android:textSize="16dp"
-                        android:textStyle="bold"
-
-                        />
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_weight=".01"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/right"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="5dp"
-
-                        />
-
-
-
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
-
-                    <TextView
-
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/image1"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_weight=".98"
-                        android:text="Rate Us"
-                        android:textSize="16dp"
-                        android:textStyle="bold"
-
-                        />
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_weight=".01"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/right"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="5dp"
-
-                        />
-
-
-
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-
-        </android.support.v7.widget.CardView>
+        </LinearLayout>
 
     </LinearLayout>
+
+
+
+
 
 
 
