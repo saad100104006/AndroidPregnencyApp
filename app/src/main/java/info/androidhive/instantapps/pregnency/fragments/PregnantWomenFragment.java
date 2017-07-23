@@ -1,6 +1,7 @@
 package info.androidhive.instantapps.pregnency.fragments;
 
 
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,9 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.util.Calendar;
+import java.util.TimeZone;
 
 import info.androidhive.instantapps.pregnency.R;
 import info.androidhive.instantapps.pregnency.utils.TextProgressBar;
@@ -23,7 +27,7 @@ public class PregnantWomenFragment extends Fragment {
 
     ImageButton imgBtn;
     ImageView img1;
-    TextView text;
+    TextView text,today,week,month,expected;
     TextProgressBar pb;
     private int[] textureArrayWin = {
             R.drawable.img1,
@@ -31,6 +35,7 @@ public class PregnantWomenFragment extends Fragment {
             R.drawable.ic_baby_white,
     };
     int myProgress = 0;
+    Calendar calendar2;
 
     //2
     public PregnantWomenFragment newInstance() {
@@ -45,6 +50,11 @@ public class PregnantWomenFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_women, container, false);
         text=(TextView)view.findViewById(R.id.text1) ;
+        today=(TextView)view.findViewById(R.id.today);
+        week=(TextView)view.findViewById(R.id.week);
+        month=(TextView)view.findViewById(R.id.month);
+        expected=(TextView)view.findViewById(R.id.expected);
+
         img1=(ImageView)view.findViewById(R.id.image1) ;
         imgBtn =(ImageButton) getActivity().findViewById(R.id.next);
         pb = new TextProgressBar(getActivity());
@@ -53,6 +63,69 @@ public class PregnantWomenFragment extends Fragment {
         Drawable draw=getResources().getDrawable(R.drawable.custom_progressbar);
 // set the drawable as progress drawable
         pb.setProgressDrawable(draw);
+
+
+
+     /*   SharedPreferences prefs = getActivity().getPreferences(MODE_PRIVATE);
+        String restoredText = prefs.getString("DATE", null);
+        if (restoredText != null)
+        {
+            //mSaved.setText(restoredText, TextView.BufferType.EDITABLE);
+            int selectionStart = prefs.getInt("selection-start", -1);
+            int selectionEnd = prefs.getInt("selection-end", -1);
+  *//*if (selectionStart != -1 && selectionEnd != -1)
+  {
+     mSaved.setSelection(selectionStart, selectionEnd);
+  }*//*
+        }
+*/
+
+
+        calendar2 = Calendar.getInstance(TimeZone.getDefault());
+        int i = calendar2.get(Calendar.MONTH);
+        int j = calendar2.get(Calendar.DAY_OF_MONTH);
+        int k = calendar2.get(Calendar.YEAR);
+
+        calendar2.set(k, i, j);
+
+
+        long milliseconds2 = calendar2.getTimeInMillis();
+
+        SharedPreferences prfs = getActivity().getSharedPreferences("AUTHENTICATION_FILE_NAME", getActivity().MODE_PRIVATE);
+        String Astatus = prfs.getString("DATE", "");
+        long milliseconds1 = prfs.getLong("milliseconds1", 0);
+
+        String expected_date = prfs.getString("expected_date", "");
+
+
+       // editor.putString("expected_date",String.valueOf(myCalendar.getTime()));
+
+
+        long diff = milliseconds2 - milliseconds1;
+        int diffWeeks = (int) diff / (7 * 24 * 60 * 60 * 1000);
+
+        int days = (int)(diff / (1000*60*60*24));
+
+        int weeks=(int)days/7;
+
+        int mon=(int)weeks/4;
+
+        today.setText("Today is your "+days+ " th "+"day");
+        week.setText("You are in your "+weeks+ " "+"weeks");
+        month.setText("You are in your "+mon+ " "+"months");
+        expected.setText("Expected Delivery Date "+expected_date+ " ");
+
+
+
+
+
+
+     /*   SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        String name = preferences.getString("Name", "");
+        if(!name.equalsIgnoreCase(""))
+        {
+            name = name + "  Sethi";  *//* Edit the value here*//*
+        }*/
 
 
 

@@ -2,6 +2,7 @@ package info.androidhive.instantapps.pregnency;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -31,6 +32,7 @@ public class SetDateActivity extends AppCompatActivity {
     DatePickerDialog.OnDateSetListener date;
     Calendar calendar1, calendar2, calendar3;
     TextView greetings;
+    long milliseconds1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +42,7 @@ public class SetDateActivity extends AppCompatActivity {
         setDate = (Button) findViewById(R.id.okay);
         lastDate = (EditText) findViewById(R.id.lastDate);
         dueDate = (EditText) findViewById(R.id.dueDate);
-        greetings=(TextView)findViewById(R.id.greetings);
+        greetings = (TextView) findViewById(R.id.greetings);
 
 
         setDate.setOnClickListener(new View.OnClickListener() {
@@ -68,6 +70,7 @@ public class SetDateActivity extends AppCompatActivity {
 
         myCalendar = Calendar.getInstance();
         calendar1 = Calendar.getInstance();
+        calendar2=Calendar.getInstance();
 
         date = new DatePickerDialog.OnDateSetListener() {
 
@@ -84,23 +87,22 @@ public class SetDateActivity extends AppCompatActivity {
                 calendar1.set(Calendar.DAY_OF_MONTH, dayOfMonth);*/
 
 
-
                 calendar2 = Calendar.getInstance(TimeZone.getDefault());
-                int i= calendar2.get(Calendar.MONTH);
-                int j=calendar2.get(Calendar.DAY_OF_MONTH);
-                int k=calendar2.get(Calendar.YEAR);
+                int i = calendar2.get(Calendar.MONTH);
+                int j = calendar2.get(Calendar.DAY_OF_MONTH);
+                int k = calendar2.get(Calendar.YEAR);
 
                 calendar2.set(k, i, j);
-                myCalendar.set(year,monthOfYear,dayOfMonth);
-              //  calendar1.set(year,monthOfYear,dayOfMonth);
-                long milliseconds1 = myCalendar.getTimeInMillis();
+                myCalendar.set(year, monthOfYear, dayOfMonth);
+                //  calendar1.set(year,monthOfYear,dayOfMonth);
+                milliseconds1 = myCalendar.getTimeInMillis();
                 long milliseconds2 = calendar2.getTimeInMillis();
                 //calendar1.clear();
-               calendar2.clear();
+                calendar2.clear();
                 long diff = milliseconds2 - milliseconds1;
                 int diffWeeks = (int) diff / (7 * 24 * 60 * 60 * 1000);
 
-               // greetings.setText(getResources().getString(R.string.greetings1)+" "+String.valueOf(diffWeeks)+" "+getResources().getString(R.string.greetings2));
+              //  greetings.setText(getResources().getString(R.string.greetings1)+" "+String.valueOf(diffWeeks)+" "+getResources().getString(R.string.greetings2));
 
                 Log.d("SAAAAD", String.valueOf(diffWeeks));
 
@@ -119,13 +121,23 @@ public class SetDateActivity extends AppCompatActivity {
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
         lastDate.setText(sdf.format(myCalendar.getTime()));
+
+       /* SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("DATE",myCalendar.getTime().toString());
+        editor.apply();*/
+
         myCalendar.add(Calendar.DATE, 294);
+        SharedPreferences preferences = getSharedPreferences("AUTHENTICATION_FILE_NAME", this.MODE_WORLD_WRITEABLE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("DATE", myCalendar.getTime().toString());
+        editor.putLong("milliseconds1", milliseconds1);
+        editor.putString("expected_date",String.valueOf(myCalendar.getTime()));
+        editor.apply();
+
+
         dueDate.setText(sdf.format(myCalendar.getTime()));
         myCalendar.add(Calendar.DATE, -294);
-
-
-
-
 
 
     }
