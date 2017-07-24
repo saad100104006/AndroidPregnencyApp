@@ -12,7 +12,9 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 import java.util.TimeZone;
 
 import info.androidhive.instantapps.pregnency.R;
@@ -83,6 +85,12 @@ public class PregnantWomenFragment extends Fragment {
 
 
         // editor.putString("expected_date",String.valueOf(myCalendar.getTime()));
+
+
+        String myFormat = "MM/dd/yy"; //In which you need put here
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+
+        //lastDate.setText(sdf.format(myCalendar.getTime()));
 
 
         long diff = milliseconds2 - milliseconds1;

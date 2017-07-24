@@ -132,7 +132,7 @@ public class SetDateActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString("DATE", myCalendar.getTime().toString());
         editor.putLong("milliseconds1", milliseconds1);
-        editor.putString("expected_date",String.valueOf(myCalendar.getTime()));
+        editor.putString("expected_date",String.valueOf(sdf.format(myCalendar.getTime())));
         editor.apply();
 
         dueDate.setText(sdf.format(myCalendar.getTime()));

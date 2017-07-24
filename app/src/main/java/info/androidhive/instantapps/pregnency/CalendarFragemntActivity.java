@@ -42,9 +42,8 @@ public class CalendarFragemntActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private int[] tabIcons = {
-            R.drawable.ic_week_info,
-            R.drawable.ic_woman_white,
-            R.drawable.ic_baby_white
+            R.drawable.ic_calendar,
+            R.drawable.ic_note
     };
 
     @Override
@@ -107,7 +106,7 @@ public class CalendarFragemntActivity extends AppCompatActivity {
     }
 
     private void setupTabIcons() {
-        tabLayout.getTabAt(0).setIcon(tabIcons[2]);
+        tabLayout.getTabAt(0).setIcon(tabIcons[0]);
         tabLayout.getTabAt(1).setIcon(tabIcons[1]);
 
     }

@@ -14,14 +14,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import info.androidhive.instantapps.pregnency.adapter.BabyShopAdapter;
 import info.androidhive.instantapps.pregnency.R;
+import info.androidhive.instantapps.pregnency.adapter.BabyShopAdapter;
+import info.androidhive.instantapps.pregnency.adapter.WomenShopAdapter;
 import info.androidhive.instantapps.pregnency.model.Shop;
 import info.androidhive.instantapps.pregnency.utils.PregnancyDB;
 import info.androidhive.instantapps.pregnency.utils.RecyclerTouchListener;
+
+/**
+ * Created by md.tanvirsaad on 7/24/17.
+ */
 
 
 /**
@@ -29,18 +35,18 @@ import info.androidhive.instantapps.pregnency.utils.RecyclerTouchListener;
  */
 
 
-public class BabyShopFragment extends Fragment {
+public class WomenShopFragment extends Fragment {
 
     private List<Shop> movieList = new ArrayList<>();
     private RecyclerView recyclerView;
-    private BabyShopAdapter mAdapter;
+    private WomenShopAdapter mAdapter;
     EditText textView;
     Toolbar toolbar;
     PregnancyDB db;
     TypedArray fruitArray;
     //2
-    public static BabyShopFragment newInstance() {
-        return new BabyShopFragment();
+    public static WomenShopFragment newInstance() {
+        return new WomenShopFragment();
     }
 
     //3
@@ -52,12 +58,12 @@ public class BabyShopFragment extends Fragment {
         fruitArray = getActivity().getResources().obtainTypedArray(R.array.pregnanncy_fruits);
 
 
-        View view = inflater.inflate(R.layout.fragment_baby_shop, container, false);
+        View view = inflater.inflate(R.layout.fragment_women_shop, container, false);
 
 
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
-        mAdapter = new BabyShopAdapter( movieList,getActivity());
+        mAdapter = new WomenShopAdapter( movieList,getActivity());
 
 
         prepareMovieData();
@@ -130,4 +136,5 @@ public class BabyShopFragment extends Fragment {
         mAdapter.notifyDataSetChanged();
     }
 }
+
 

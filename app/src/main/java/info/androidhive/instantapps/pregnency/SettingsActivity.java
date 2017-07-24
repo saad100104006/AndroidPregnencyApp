@@ -1,6 +1,7 @@
 package info.androidhive.instantapps.pregnency;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -8,15 +9,21 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Locale;
+import java.util.TimeZone;
 
 /**
  * Created by md.tanvirsaad on 7/21/17.
@@ -31,6 +38,16 @@ public class SettingsActivity extends AppCompatActivity {
     Button setDate;
     private static Locale myLocale;
     TextView dueDate;
+
+
+
+    Calendar myCalendar;
+    EditText dueDates;
+    DatePickerDialog.OnDateSetListener date;
+    Calendar calendar1, calendar2, calendar3;
+    TextView greetings;
+    long milliseconds1;
+
 
     //Shared Preferences Variables
     private static final String Locale_Preference = "Locale Preference";
@@ -48,9 +65,56 @@ public class SettingsActivity extends AppCompatActivity {
         toolbar.setTitleTextColor(0xFFFFFFFF);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        dueDates=(EditText)findViewById(R.id.dueDates) ;
+
          Spinner language = (Spinner)findViewById(R.id.spinner1);
 
-         dueDate= (TextView) findViewById(R.id.textView);
+
+        dueDates.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new DatePickerDialog(SettingsActivity.this, date, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+
+
+        });
+
+        myCalendar = Calendar.getInstance();
+
+
+        date = new DatePickerDialog.OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                  int dayOfMonth) {
+                // TODO Auto-generated method stub
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH, monthOfYear);
+                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+
+
+
+                SharedPreferences preferences = getSharedPreferences("AUTHENTICATION_FILE_NAME", MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("DATE", myCalendar.getTime().toString());
+                editor.putLong("milliseconds1", milliseconds1);
+                editor.putString("expected_date",String.valueOf(myCalendar.getTime()));
+                editor.apply();
+
+                String myFormat = "MM/dd/yy"; //In which you need put here
+                SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+
+                dueDates.setText(sdf.format(myCalendar.getTime()));
+
+            }
+
+        };
+
+
+        dueDate= (TextView) findViewById(R.id.textView);
         sharedPreferences = getSharedPreferences(Locale_Preference, Activity.MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
@@ -66,6 +130,7 @@ public class SettingsActivity extends AppCompatActivity {
                 int pos =position ;
 
                 if(position==0) {
+                    changeLocale("en");
 
                     //changeLocale("en");
 
@@ -74,8 +139,20 @@ public class SettingsActivity extends AppCompatActivity {
                 }
                 else if(position==1){
 
-                    changeLocale("de");
+                    changeLocale("fr");
                 }
+
+                else if(position==2){
+
+                    changeLocale("ar");
+                }
+                else if(position==3){
+
+                    changeLocale("ja");
+                }
+
+
+
                 else{
 
                     changeLocale("en");

@@ -12,7 +12,6 @@ import android.widget.TextView;
 import java.util.List;
 
 import info.androidhive.instantapps.pregnency.R;
-import info.androidhive.instantapps.pregnency.model.Calendar;
 import info.androidhive.instantapps.pregnency.model.Shop;
 
 /**
@@ -21,11 +20,12 @@ import info.androidhive.instantapps.pregnency.model.Shop;
 
 
 
-public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.MyViewHolder> {
+public class BabyShopAdapter extends RecyclerView.Adapter<BabyShopAdapter.MyViewHolder> {
 
-    private List<Shop> moviesList;
+   private List<Shop> moviesList;
     TypedArray fruitArray;
     Context context;
+    String[] mTitleArray,mDescriptionArray;
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
@@ -42,7 +42,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.MyViewHolder> 
     }
 
 
-    public ShopAdapter(List<Shop> moviesList,Context c) {
+    public BabyShopAdapter(List<Shop> moviesList, Context c) {
         this.moviesList = moviesList;
         this.context=c;
     }
@@ -58,12 +58,16 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.MyViewHolder> 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
 
-        fruitArray = context.getResources().obtainTypedArray(R.array.pregnanncy);
+        fruitArray = context.getResources().obtainTypedArray(R.array.babyshop);
+
+        mTitleArray =   context.getResources().getStringArray(R.array.babyshoptitle);
+
+        mDescriptionArray =   context.getResources().getStringArray(R.array.babyshopdes);
 
         Shop movie = moviesList.get(position);
         //  holder.title.setText(movie.getTitle());
-        holder.title.setText(movie.getTitle());
-        holder.description.setText(movie.getDescription());
+        holder.title.setText(mTitleArray[position]);
+        holder.description.setText(mDescriptionArray[position]);
         holder.image.setImageResource(fruitArray.getResourceId(position, -1));
 
 
@@ -71,7 +75,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.MyViewHolder> 
 
     @Override
     public int getItemCount() {
-        return moviesList.size();
+        return 4;
     }
 }
 

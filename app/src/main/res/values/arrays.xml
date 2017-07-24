@@ -319,4 +319,51 @@
     </array>
 
 
+    <array name="babyshop">
+        <item>@drawable/babyshop1</item>
+        <item>@drawable/babyshop2</item>
+        <item>@drawable/babyshop3</item>
+        <item>@drawable/babyshop4</item>
+    </array>
+
+
+    <array name="womenshop">
+        <item>@drawable/p1</item>
+        <item>@drawable/p2</item>
+        <item>@drawable/p3</item>
+        <item>@drawable/p4</item>
+    </array>
+
+
+
+    <array name="babyshoptitle">
+        <item>@string/babyshoptitle1</item>
+        <item>@string/babyshoptitle2</item>
+        <item>@string/babyshoptitle3</item>
+        <item>@string/babyshoptitle4</item>
+    </array>
+
+    <array name="babyshopdes">
+        <item>@string/babyshopdes1</item>
+        <item>@string/babyshopdes2</item>
+        <item>@string/babyshopdes3</item>
+        <item>@string/babyshopdes4</item>
+    </array>
+
+
+    <array name="womenshopdes">
+        <item>@string/womenshopdes1</item>
+        <item>@string/womenshopdes2</item>
+        <item>@string/womenshopdes3</item>
+        <item>@string/womenshopdes4</item>
+    </array>
+
+    <array name="womenshoptitle">
+        <item>@string/womenshoptitle1</item>
+        <item>@string/womenshoptitle2</item>
+        <item>@string/womenshoptitle3</item>
+        <item>@string/womenshoptitle4</item>
+    </array>
+
+
 </resources>
