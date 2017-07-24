@@ -42,8 +42,8 @@ public class CalendarFragemntActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private int[] tabIcons = {
-            R.drawable.ic_calendar,
-            R.drawable.ic_note
+            R.drawable.calendar_white,
+            R.drawable.note_white
     };
 
     @Override
