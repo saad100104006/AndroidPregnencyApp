@@ -38,7 +38,7 @@
                     android:text="Hello Card" />
 
                 <TextView
-                    android:id="@+id/text1"
+                    android:id="@+id/title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignLeft="@+id/text2"
@@ -49,11 +49,11 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/text2"
+                    android:id="@+id/description"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
-                    android:layout_below="@+id/text1"
+                    android:layout_below="@+id/title"
                     android:layout_marginBottom="10dp"
                     android:layout_marginLeft="10dp"
                     android:text="pregnancy lasts about 40 weeks, counting from the first day of your last normal period. The weeks are grouped into three trimesters (TREYE-mess-turs). Find out what's happening with you and your baby in these three stages.your body changes, you might need to make changes to your daily routine, such as going to bed earlier or eating frequent, small meals. Fortunately, most of these discomforts will go away as your pregnancy progresses. And some women might not feel any discomfort at all! If you have been pregnant before, you might feel differently this time around. Just as each woman is different, so is each pregnancy"

@@ -12,30 +12,41 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Calendar;
+
 import info.androidhive.instantapps.pregnency.R;
 import info.androidhive.instantapps.pregnency.utils.TextProgressBar;
 
 /**
- * Created by Saad on 7/16/17.
+ * Created by Saad on 7/12/17.
  */
 
 
-public class NotesFragment extends Fragment {
+public class BabyFragment extends Fragment {
 
-    ImageButton nextBtn, previousBtn;
+    ImageButton next, previous;
     ImageView img1;
+    TextView title, description, today, week, month, expected;
     TextProgressBar pb;
-    private  int myProgress = 1;
-    private int i = 0;
+    private int[] textureArrayWin = {
+            R.drawable.img1,
+            R.drawable.ic_woman_white,
+            R.drawable.ic_baby_white,
+    };
+
+    Calendar calendar2;
+
+    String[] mWeekArray, mLengthArray, mWeightArray, mSizeOfArray;
     TypedArray fruitArray;
-    TextView weekCalc,lengthCalc,weightCalc,sizeOfCalc;
-    String[] mWeekArray,mLengthArray,mWeightArray,mSizeOfArray;
+
+  private  int myProgress = 1;
+   private int i = 0;
 
 
-    public static NotesFragment newInstance() {
-        return new NotesFragment();
+    //2
+    public static BabyFragment newInstance() {
+        return new BabyFragment();
     }
-
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -43,45 +54,37 @@ public class NotesFragment extends Fragment {
 
 
         fruitArray = getResources().obtainTypedArray(R.array.pregnanncy_fruits);
-        mWeekArray =   getResources().getStringArray(R.array.note);
-        mLengthArray=   getResources().getStringArray(R.array.length);
-      mWeightArray=   getResources().getStringArray(R.array.weight);
-       mSizeOfArray=   getResources().getStringArray(R.array.sizeof);
+        mWeekArray = getResources().getStringArray(R.array.note);
+        mLengthArray = getResources().getStringArray(R.array.length);
+       // mWeightArray = getResources().getStringArray(R.array.weight);
+       // mSizeOfArray = getResources().getStringArray(R.array.sizeof);
 
 
         pb = new TextProgressBar(getActivity());
         pb = (TextProgressBar) getActivity().findViewById(R.id.pb);
-        nextBtn = (ImageButton) getActivity().findViewById(R.id.next);
-        previousBtn = (ImageButton) getActivity().findViewById(R.id.previous);
+        next = (ImageButton) getActivity().findViewById(R.id.next);
+        previous = (ImageButton) getActivity().findViewById(R.id.previous);
         pb.setScaleY(3.5f);
         Drawable draw = getResources().getDrawable(R.drawable.custom_progressbar);
         pb.setProgressDrawable(draw);
 
 
         img1.setImageResource(fruitArray.getResourceId(0, -1));
-        weekCalc.setText(mWeekArray[i]);
-        lengthCalc.setText(mLengthArray[i]);
-       weightCalc.setText(mWeightArray[i]);
-        sizeOfCalc.setText(mSizeOfArray[i]);
+        title.setText(mWeekArray[i]);
+        description.setText(mLengthArray[i]);
+        // weightCalc.setText(mWeightArray[i]);
+        //  sizeOfCalc.setText(mSizeOfArray[i]);
 
 
-
-        nextBtn.setOnClickListener(new View.OnClickListener() {
+        next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-/*
-                Intent intent=new Intent(getActivity(), MainActivity.class);
-                startActivity(intent);
-                getActivity().finish();*/
-
 
                 if (i < 40 && i>=0) {
-                    img1.setImageResource(fruitArray.getResourceId(i, 0));
-                    weekCalc.setText(mWeekArray[i]);
-                    lengthCalc.setText(mLengthArray[i]);
-                    weightCalc.setText(mWeightArray[i]);
-                    sizeOfCalc.setText(mSizeOfArray[i]);
+                    img1.setImageResource(fruitArray.getResourceId(i, -1));
+                    title.setText(mWeekArray[i]);
+                    description.setText(mLengthArray[i]);
                     pb.setProgress(myProgress);
                     pb.setText("Selected week " + myProgress + "/40");
 
@@ -111,18 +114,16 @@ public class NotesFragment extends Fragment {
         });
 
 
-        previousBtn.setOnClickListener(new View.OnClickListener() {
+        previous.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
 
 
                 if (i >= 0 && i<40) {
-                    img1.setImageResource(fruitArray.getResourceId(i, 0));
-                    weekCalc.setText(mWeekArray[i]);
-                    lengthCalc.setText(mLengthArray[i]);
-                    weightCalc.setText(mWeightArray[i]);
-                    sizeOfCalc.setText(mSizeOfArray[i]);
+                    img1.setImageResource(fruitArray.getResourceId(i, -1));
+                    title.setText(mWeekArray[i]);
+                    description.setText(mLengthArray[i]);
 
 
                     pb.setProgress(myProgress);
@@ -152,32 +153,20 @@ public class NotesFragment extends Fragment {
         });
 
 
-
-
     }
+
+
+    //3
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_baby, container, false);
 
-
-        View view = inflater.inflate(R.layout.fragment_note, container, false);
-
-
-
-
+        title = (TextView) view.findViewById(R.id.title);
+        description = (TextView) view.findViewById(R.id.description);
         img1 = (ImageView) view.findViewById(R.id.image1);
-        weekCalc=(TextView)view.findViewById(R.id.pregnancyText2);
-        lengthCalc=(TextView)view.findViewById(R.id.length);
-        weightCalc=(TextView)view.findViewById(R.id.weight);
-        sizeOfCalc=(TextView)view.findViewById(R.id.sizeof);
-
-
-
-
 
         return view;
 
-
     }
 }
-

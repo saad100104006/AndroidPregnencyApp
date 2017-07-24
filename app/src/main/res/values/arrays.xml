@@ -58,8 +58,8 @@
         <item>@string/week_38</item>
         <item>@string/week_39</item>
         <item>@string/week_40</item>
-        <item>@string/week_41</item>
-        <item>@string/week_42</item>
+    <!--    <item>@string/week_41</item>
+        <item>@string/week_42</item>-->
 
 
     </array>
@@ -106,8 +106,8 @@
         <item>@string/week_38size</item>
         <item>@string/week_39size</item>
         <item>@string/week_40size</item>
-        <item>@string/week_41size</item>
-        <item>@string/week_42size</item>
+     <!--   <item>@string/week_41size</item>
+        <item>@string/week_42size</item>-->
 
 
     </array>
@@ -156,8 +156,8 @@
         <item>@string/week_38oz</item>
         <item>@string/week_39oz</item>
         <item>@string/week_40oz</item>
-        <item>@string/week_41oz</item>
-        <item>@string/week_42oz</item>
+    <!--    <item>@string/week_41oz</item>
+        <item>@string/week_42oz</item>-->
 
     </array>
 
@@ -203,8 +203,8 @@
         <item>@string/thirtyeight_week</item>
         <item>@string/thirtynine_week</item>
         <item>@string/fourty_week</item>
-        <item>@string/fourtyone_week</item>
-        <item>@string/fourtytwo_week</item>
+     <!--   <item>@string/fourtyone_week</item>
+        <item>@string/fourtytwo_week</item>-->
 
     </array>
 
@@ -311,8 +311,8 @@
         <item>@drawable/week38_rhubarb101995901</item>
         <item>@drawable/week39_watermelon101995863</item>
         <item>@drawable/week40_42_watermelon_101995878</item>
-        <item>@drawable/week40_42_watermelon_101995878</item>
-        <item>@drawable/week40_42_watermelon_101995878</item>
+      <!--  <item>@drawable/week40_42_watermelon_101995878</item>
+        <item>@drawable/week40_42_watermelon_101995878</item>-->
 
 
 

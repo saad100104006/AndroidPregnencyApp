@@ -27,10 +27,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
+import info.androidhive.instantapps.pregnency.fragments.BabyFragment;
 import info.androidhive.instantapps.pregnency.fragments.NotesFragment;
 import info.androidhive.instantapps.pregnency.fragments.PregnantWomenFragment;
-import info.androidhive.instantapps.pregnency.fragments.TwoFragment;
-import info.androidhive.instantapps.pregnency.utils.TextProgressBar;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -41,7 +40,6 @@ public class MainActivity extends AppCompatActivity
     private TabLayout tabLayout;
     private ViewPager viewPager;
     int myProgress = 0;
-    TextProgressBar pb;
     PregnantWomenFragment myFragment;
     ImageView img1;
     private int[] tabIcons = {
@@ -99,9 +97,17 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
-        getSupportFragmentManager().beginTransaction()
-                .add(R.id.viewpager, new PregnantWomenFragment())
-                .commit();
+      /*  Fragment frg = new NotesFragment();
+        frg = getSupportFragmentManager().findFragmentByTag("ONE");
+        final FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.detach(frg);
+        ft.attach(frg);
+        ft.commit();
+*/
+
+        /*getSupportFragmentManager().beginTransaction()
+                .add(R.id.viewpager, new NotesFragment())
+                .commit();*/
 
 
     }
@@ -213,9 +219,9 @@ public class MainActivity extends AppCompatActivity
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new PregnantWomenFragment(), "ONE");
-        adapter.addFragment(new TwoFragment(), "TWO");
-        adapter.addFragment(new NotesFragment(), "THREE");
+        adapter.addFragment(new NotesFragment(), "ONE");
+        adapter.addFragment(new PregnantWomenFragment(), "TWO");
+        adapter.addFragment(new BabyFragment(), "THREE");
         viewPager.setAdapter(adapter);
     }
 
@@ -252,9 +258,9 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void setupTabIcons() {
-        tabLayout.getTabAt(0).setIcon(tabIcons[1]);
-        tabLayout.getTabAt(1).setIcon(tabIcons[2]);
-        tabLayout.getTabAt(2).setIcon(tabIcons[0]);
+        tabLayout.getTabAt(0).setIcon(tabIcons[0]);
+        tabLayout.getTabAt(1).setIcon(tabIcons[1]);
+        tabLayout.getTabAt(2).setIcon(tabIcons[2]);
     }
 
 

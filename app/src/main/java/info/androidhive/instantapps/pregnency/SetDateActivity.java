@@ -1,15 +1,19 @@
 package info.androidhive.instantapps.pregnency;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
@@ -33,6 +37,15 @@ public class SetDateActivity extends AppCompatActivity {
     Calendar calendar1, calendar2, calendar3;
     TextView greetings;
     long milliseconds1;
+    Spinner language;
+    private static Locale myLocale;;
+
+    //Shared Preferences Variables
+    private static final String Locale_Preference = "Locale Preference";
+    private static final String Locale_KeyValue = "Saved Locale";
+    private static SharedPreferences sharedPreferences;
+    private static SharedPreferences.Editor editor;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +56,12 @@ public class SetDateActivity extends AppCompatActivity {
         lastDate = (EditText) findViewById(R.id.lastDate);
         dueDate = (EditText) findViewById(R.id.dueDate);
         greetings = (TextView) findViewById(R.id.greetings);
+         language = (Spinner)findViewById(R.id.spinner1);
+
+        sharedPreferences = getSharedPreferences(Locale_Preference, Activity.MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+
+        loadLocale();
 
 
         setDate.setOnClickListener(new View.OnClickListener() {
@@ -112,6 +131,52 @@ public class SetDateActivity extends AppCompatActivity {
 
         };
 
+        language.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                int pos =position ;
+
+                if(position==0) {
+                    changeLocale("en");
+
+                    //changeLocale("en");
+
+                    // PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("LANG", "en").commit();
+                    //setLangRecreate("en");
+                }
+                else if(position==1){
+
+                    changeLocale("fr");
+                }
+
+                else if(position==2){
+
+                    changeLocale("ar");
+                }
+                else if(position==3){
+
+                    changeLocale("ja");
+                }
+
+
+
+                else{
+
+                    changeLocale("en");
+                    // PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("LANG", "en").commit();
+                    //setLangRecreate("en");
+
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {
+
+            }
+        });
+
+
+
 
     }
 
@@ -139,6 +204,29 @@ public class SetDateActivity extends AppCompatActivity {
         myCalendar.add(Calendar.DATE, -294);
 
 
+    }
+
+    public void saveLocale(String lang) {
+        editor.putString(Locale_KeyValue, lang);
+        editor.commit();
+    }
+
+    //Get locale method in preferences
+    public void loadLocale() {
+        String language = sharedPreferences.getString(Locale_KeyValue, "");
+        changeLocale(language);
+    }
+
+    public void changeLocale(String lang) {
+        if (lang.equalsIgnoreCase(""))
+            return;
+        myLocale = new Locale(lang);//Set Selected Locale
+        saveLocale(lang);//Save the selected locale
+        Locale.setDefault(myLocale);//set new locale as default
+        Configuration config = new Configuration();//get Configuration
+        config.locale = myLocale;//set config locale as selected locale
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());//Update the config
+        //updateTexts();//Update texts according to locale
     }
 
 

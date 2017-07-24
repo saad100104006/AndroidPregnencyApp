@@ -2,8 +2,10 @@ package info.androidhive.instantapps.pregnency.fragments;
 
 
 import android.content.SharedPreferences;
+import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,17 +29,23 @@ import info.androidhive.instantapps.pregnency.utils.TextProgressBar;
 
 public class PregnantWomenFragment extends Fragment {
 
-    ImageButton imgBtn;
+    ImageButton next,previous;
     ImageView img1;
-    TextView text, today, week, month, expected;
+    TextView title,description, today, week, month, expected;
     TextProgressBar pb;
     private int[] textureArrayWin = {
             R.drawable.img1,
             R.drawable.ic_woman_white,
             R.drawable.ic_baby_white,
     };
-    int myProgress = 0;
+
     Calendar calendar2;
+
+    String[] mWeekArray,mLengthArray,mWeightArray,mSizeOfArray;
+    TypedArray fruitArray;
+
+    private  int myProgress = 1;
+    private int i = 0;
 
     String TAG = "AUTHENTICATION_FILE_NAME";
 
@@ -46,26 +54,143 @@ public class PregnantWomenFragment extends Fragment {
     }
 
 
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+
+        fruitArray = getResources().obtainTypedArray(R.array.pregnanncy_fruits);
+        mWeekArray =   getResources().getStringArray(R.array.note);
+        mLengthArray=   getResources().getStringArray(R.array.length);
+      //  mWeightArray=   getResources().getStringArray(R.array.weight);
+       // mSizeOfArray=   getResources().getStringArray(R.array.sizeof);
+
+
+        pb = new TextProgressBar(getActivity());
+        pb = (TextProgressBar) getActivity().findViewById(R.id.pb);
+        next = (ImageButton) getActivity().findViewById(R.id.next);
+        previous = (ImageButton) getActivity().findViewById(R.id.previous);
+        pb.setScaleY(3.5f);
+        Drawable draw = getResources().getDrawable(R.drawable.custom_progressbar);
+        pb.setProgressDrawable(draw);
+
+
+        img1.setImageResource(fruitArray.getResourceId(0, -1));
+        title.setText(mWeekArray[i]);
+        description.setText(mLengthArray[i]);
+       // weightCalc.setText(mWeightArray[i]);
+      //  sizeOfCalc.setText(mSizeOfArray[i]);
+
+
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+
+
+                if (i < 40 && i>=0) {
+                    img1.setImageResource(fruitArray.getResourceId(i, -1));
+                    title.setText(mWeekArray[i]);
+                    description.setText(mLengthArray[i]);
+                    pb.setProgress(myProgress);
+                    pb.setText("Selected week " + myProgress + "/40");
+
+
+                    myProgress++;
+                    i++;
+
+
+                    if(i==40 || i>40){
+                        i=40;
+                        myProgress=40;
+                    }
+                }
+                else {
+                    if (i >= 40) {
+
+                        i=39;
+                    }
+                    if (i < 0) {
+
+                        i = 0;
+                    }
+                }
+
+
+            }
+        });
+
+        previous.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+                if (i >= 0 && i<40) {
+                    img1.setImageResource(fruitArray.getResourceId(i, -1));
+                    title.setText(mWeekArray[i]);
+                    description.setText(mLengthArray[i]);
+                    pb.setProgress(myProgress);
+                    pb.setText("Selected week " + myProgress + "/40");
+
+                    myProgress--;
+                    i--;
+
+                    if(i==-1 || i<0){
+                        i=0;
+                        myProgress=0;
+                    }
+                }
+                else{
+
+                    if(i>=40){
+
+                        i=39;
+                    }
+                    if(i<0){
+
+                        i=0;
+                    }
+                }
+
+            }
+        });
+
+
+
+
+
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         //   return inflater.inflate(R.layout.fragment_test, container, false);
 
         View view = inflater.inflate(R.layout.fragment_women, container, false);
-        text = (TextView) view.findViewById(R.id.text1);
+        title = (TextView) view.findViewById(R.id.title);
+        description=(TextView) view.findViewById(R.id.description);
+        img1 = (ImageView) view.findViewById(R.id.image1);
+      //  next = (ImageButton) getActivity().findViewById(R.id.next);
+      //  previous = (ImageButton) getActivity().findViewById(R.id.previous);
+
+
         today = (TextView) view.findViewById(R.id.today);
         week = (TextView) view.findViewById(R.id.week);
         month = (TextView) view.findViewById(R.id.month);
         expected = (TextView) view.findViewById(R.id.expected);
 
-        img1 = (ImageView) view.findViewById(R.id.image1);
-        imgBtn = (ImageButton) getActivity().findViewById(R.id.next);
-        pb = new TextProgressBar(getActivity());
+
+
+    /*    pb = new TextProgressBar(getActivity());
         pb = (TextProgressBar) getActivity().findViewById(R.id.pb);
         pb.setScaleY(3.5f);
         Drawable draw = getResources().getDrawable(R.drawable.custom_progressbar);
 // set the drawable as progress drawable
-        pb.setProgressDrawable(draw);
+        pb.setProgressDrawable(draw);*/
 
 
         calendar2 = Calendar.getInstance(TimeZone.getDefault());
@@ -107,10 +232,10 @@ public class PregnantWomenFragment extends Fragment {
 
 
 
-        text.setText("jdhgewuhg");
-        img1.setImageDrawable(getActivity().getResources().getDrawable(R.drawable.ic_baby_white));
+       // text.setText("jdhgewuhg");
+       // img1.setImageDrawable(getActivity().getResources().getDrawable(R.drawable.ic_baby_white));
 
-        imgBtn.setOnClickListener(new View.OnClickListener() {
+      /*  next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -120,11 +245,11 @@ public class PregnantWomenFragment extends Fragment {
 
                 myProgress++;
                 pb.setProgress(myProgress);
-                pb.setText("week " + myProgress + "/42");
+                pb.setText("Selected week " + myProgress + "/42");
 
 
             }
-        });
+        });*/
 
 
         //   new Thread(myThread).start();
