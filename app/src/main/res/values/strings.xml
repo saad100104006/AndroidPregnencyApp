@@ -8,6 +8,7 @@
     <string name="add_note">Add Note</string>
 
     <string name="due_date">Due date set up</string>
+    <string name="due_date2">Due date</string>
 
     <string name="due_date_title">Set up due date or the last date of your first period</string>
 
@@ -204,6 +205,38 @@
     <string name="week_42size">big watermelon</string>
 
     <string name="note">Note</string>
+    <string name="close">Close</string>
+    <string name="Pregnancy">Pregnancy</string>
+    <string name="babydimentions">Baby dimentions:</string>
+    <string name="share">Share</string>
+    <string name="length">Length</string>
+    <string name="weight">Weight</string>
+    <string name="Sizeof">Size of</string>
+    <string name="today">today</string>
+    <string name="week">week</string>
+    <string name="month">month</string>
+    <string name="expected">expected</string>
+    <string name="Personalization">Personalization</string>
+
+
+
+    <string name="Feedback">Feedback</string>
+    <string name="Notifications">Notifications</string>
+    <string name="SelectLanguage"> Select Language</string>
+    <string name="Sendfeedback">Send feedback</string>
+    <string name="RateUs">Rate Us</string>
+
+    <string name="Lastperiod">Last period</string>
+
+    <string name="Duedate">Due date</string>
+
+    <string name="ok">OK</string>
+
+
+
+
+
+
 
     <string name="checked">Checked</string>
 

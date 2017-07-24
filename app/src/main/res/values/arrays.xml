@@ -8,6 +8,14 @@
     </array>
 
 
+    <array name="lang_select">
+        <item>English</item>
+        <item>French</item>
+        <item>Arab</item>
+        <item>Japanese</item>
+    </array>
+
+
     <array name="length">
 
         <item>@string/week_1</item>

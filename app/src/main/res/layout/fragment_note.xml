@@ -39,7 +39,7 @@
                     android:id="@+id/image1"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:text="Hello Card" />
+                  />
 
 
                 <RelativeLayout
@@ -54,7 +54,7 @@
                         android:id="@+id/pregnancyText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Pregnancy"
+                        android:text="@string/Pregnancy"
                         android:textColor="@color/colorPrimary" />
 
                     <TextView
@@ -114,7 +114,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight=".6"
-                        android:text="Baby dimentions:"
+                        android:text="@string/babydimentions"
                         android:textColor="@color/colorPrimary" />
 
                     <Button
@@ -127,7 +127,7 @@
                         android:background="@color/colorBlue"
                         android:drawableLeft="@drawable/fb"
                         android:paddingLeft="15dp"
-                        android:text="Share"
+                        android:text="@string/share"
                         android:textColor="@color/colorAccent" />
 
 
@@ -159,13 +159,13 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Length" />
+                                android:text="@string/length" />
 
                             <TextView
                               android:id="@+id/length"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Length" />
+                             />
 
 
 
@@ -189,7 +189,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Weight" />
+                                android:text="@string/weight" />
 
                             <TextView
                                 android:id="@+id/weight"
@@ -217,13 +217,13 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Size of" />
+                                android:text="@string/Sizeof" />
 
                             <TextView
                                 android:id="@+id/sizeof"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="bla" />
+                                />
 
 
                         </LinearLayout>

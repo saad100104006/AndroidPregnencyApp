@@ -2,9 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:padding="10dp"
     android:background="@color/colorAccent"
-    >
+    android:padding="10dp">
 
 
     <TextView
@@ -12,13 +11,11 @@
         android:id="@+id/date"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/image"
-        android:text="sadgsahjgdjsad"
-        android:textSize="18dp"
-        android:textStyle="bold"
-android:layout_marginBottom="10dp"
         android:layout_alignParentLeft="true"
-        />
+        android:layout_marginBottom="10dp"
+        android:layout_toRightOf="@+id/image"
+        android:textSize="18dp"
+        android:textStyle="bold" />
 
     <ImageView
 
@@ -26,9 +23,8 @@ android:layout_marginBottom="10dp"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_below="@+id/date"
-        android:src="@drawable/ic_note"
         android:layout_marginRight="10dp"
-        />
+        android:src="@drawable/ic_note" />
 
 
     <TextView
@@ -37,9 +33,9 @@ android:layout_marginBottom="10dp"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/date"
+        android:layout_marginTop="5dp"
         android:layout_toRightOf="@+id/image"
         android:text="@string/add_note"
-        android:layout_marginTop="5dp"
 
         />
 
@@ -47,16 +43,16 @@ android:layout_marginBottom="10dp"
     <Button
 
         android:id="@+id/close"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:textStyle="bold"
-        android:textColor="@color/colorRed"
         android:layout_below="@+id/image"
-        android:background="#e1c8ba"
         android:layout_marginRight="5dp"
         android:layout_marginTop="5dp"
-        style="?android:attr/borderlessButtonStyle"
-        android:text="close" />
+        android:background="#e1c8ba"
+        android:text="@string/close"
+        android:textColor="@color/colorRed"
+        android:textStyle="bold" />
 
 </RelativeLayout>

@@ -14,6 +14,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         app:layout_scrollFlags="scroll|enterAlways"
+        android:theme="@style/AppToolbar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <LinearLayout
@@ -59,7 +60,7 @@
                         android:layout_marginBottom="5dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
-                        android:text="Personalization"
+                        android:text="@string/Personalization"
                         android:textColor="@color/colorPrimary"
                         android:textSize="16dp"
                         android:textStyle="bold" />
@@ -72,6 +73,7 @@
 
                         <TextView
 
+                            android:id="@+id/textView"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/image1"
@@ -79,11 +81,10 @@
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="5dp"
                             android:layout_weight=".5"
-                            android:text="Due date"
+                            android:text="@string/due_date2"
                             android:textSize="16dp"
-                            android:textStyle="bold"
 
-                            />
+                            android:textStyle="bold" />
 
                         <EditText
 
@@ -122,7 +123,7 @@
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="5dp"
                             android:layout_weight=".5"
-                            android:text="Notifications"
+                            android:text="@string/Notifications"
                             android:textSize="16dp"
                             android:textStyle="bold"
 
@@ -155,26 +156,22 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/image1"
-
                             android:layout_marginBottom="5dp"
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="5dp"
                             android:layout_weight=".98"
-                            android:text="Start tracking pregnancy"
+                            android:text="@string/SelectLanguage"
                             android:textSize="16dp"
                             android:textStyle="bold"
 
                             />
 
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_weight=".01"
+                        <Spinner
+                            android:id="@+id/spinner1"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/right"
-                            android:layout_marginBottom="5dp"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="5dp"
-
+                            android:entries="@array/lang_select"
+                            android:padding="10dp"
                             />
 
 
@@ -216,7 +213,7 @@
                         android:layout_marginBottom="5dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
-                        android:text="Feedback"
+                        android:text="@string/Feedback"
                         android:textColor="@color/colorPrimary"
                         android:textSize="16dp"
                         android:textStyle="bold" />
@@ -240,7 +237,7 @@
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="5dp"
                             android:layout_weight=".98"
-                            android:text="Send feedback"
+                            android:text="@string/Sendfeedback"
                             android:textSize="16dp"
                             android:textStyle="bold"
 
@@ -278,7 +275,7 @@
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="5dp"
                             android:layout_weight=".98"
-                            android:text="Rate Us"
+                            android:text="@string/RateUs"
                             android:textSize="16dp"
                             android:textStyle="bold"
 

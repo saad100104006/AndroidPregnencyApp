@@ -35,48 +35,31 @@ public class BasicFragment extends Fragment implements OnDateSelectedListener, O
 
 
     MaterialCalendarView c;
-
-    //  @BindView(R.id.calendarView)
     MaterialCalendarView widget;
-   // TextView textView;
-    //2
+
     public static BasicFragment newInstance() {
         return new BasicFragment();
     }
 
-    //3
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.activity_basic, container, false);
-     //   textView=(TextView)view.findViewById(R.id.textView);
         widget=(MaterialCalendarView)view.findViewById(R.id.calendarView);
 
-
-     /*   Toolbar toolbar = (Toolbar)view. findViewById(R.id.toolbar);
-
-        setSupportActionBar(toolbar);
-
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setLogo(R.mipmap.ic_launcher);
-        getSupportActionBar().setDisplayUseLogoEnabled(true);*/
-
-        // ButterKnife.bind(this);
 
         widget.state().edit()
                 .setFirstDayOfWeek(Calendar.SUNDAY)
                // .setMinimumDate(CalendarDay.from(2016, 4, 3))
                 //.setMaximumDate(CalendarDay.from(2016, 5, 12))
-                .setCalendarDisplayMode(CalendarMode.WEEKS)
+                .setCalendarDisplayMode(CalendarMode.MONTHS)
                 //.setSaveCurrentPosition(true)
                 .commit();
 
         widget.setOnDateChangedListener(this);
         widget.setOnMonthChangedListener(this);
 
-        //Setup initial text
-      //  textView.setText(getSelectedDatesString());
         return view;
     }
 
@@ -122,13 +105,11 @@ public class BasicFragment extends Fragment implements OnDateSelectedListener, O
 
         dialog.show();
 
-        ////
     }
 
     @Override
     public void onMonthChanged(MaterialCalendarView widget, CalendarDay date) {
-        //noinspection ConstantConditions
-       // getSupportActionBar().setTitle(FORMATTER.format(date.getDate()));
+
     }
 
     private String getSelectedDatesString() {

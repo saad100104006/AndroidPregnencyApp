@@ -1,6 +1,7 @@
 package info.androidhive.instantapps.pregnency;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.viksaa.sssplash.lib.activity.AwesomeSplash;
@@ -13,6 +14,7 @@ import com.viksaa.sssplash.lib.model.ConfigSplash;
 
 
 public class StartActivity extends AwesomeSplash {
+    String TAG = "AUTHENTICATION_FILE_NAME";
 
     //DO NOT OVERRIDE onCreate()!
     //if you need to start some services do it in initSplash()!
@@ -61,7 +63,21 @@ public class StartActivity extends AwesomeSplash {
     @Override
     public void animationsFinished() {
 
-        Intent intent=new Intent(this,SetDateActivity.class);
+
+        SharedPreferences prfs = getSharedPreferences(TAG, MODE_PRIVATE);
+        String Astatus = prfs.getString("DATE", "");
+    //    long milliseconds1 = prfs.getLong("milliseconds1", 0);
+     //   String expected_date = prfs.getString("expected_date", "");
+
+        Intent intent;
+        if(Astatus.equals("")) {
+
+             intent = new Intent(this, SetDateActivity.class);
+        }
+        else{
+             intent = new Intent(this, MainActivity.class);
+
+        }
         startActivity(intent);
         finish();
 

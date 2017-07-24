@@ -25,8 +25,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/app_name"
             android:layout_marginTop="10dp"
+            android:text="@string/app_name"
             android:textColor="@color/colorAccent"
             android:textSize="20dp"
             android:textStyle="bold" />
@@ -34,11 +34,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/due_date"
             android:layout_marginTop="5dp"
+            android:text="@string/due_date"
             android:textColor="@color/colorAccent"
-            android:textSize="16dp"
-         />
+            android:textSize="16dp" />
 
 
     </LinearLayout>
@@ -73,7 +72,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
-                android:text="Last period"
+                android:text="@string/Lastperiod"
                 android:layout_marginTop="5dp"
                 android:textColor="@color/colorBlack"
                 android:textSize="16dp"
@@ -101,7 +100,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
-                android:text="Due date"
+                android:text="@string/due_date"
                 android:layout_marginTop="5dp"
                 android:textColor="@color/colorBlack"
                 android:textSize="16dp"
@@ -147,7 +146,7 @@
             android:layout_marginRight="5dp"
             android:layout_marginTop="5dp"
             style="?android:attr/borderlessButtonStyle"
-            android:text="Okay"
+            android:text="@string/ok"
             android:layout_gravity="right"
             />
 
