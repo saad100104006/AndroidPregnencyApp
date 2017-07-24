@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.CalendarMode;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
@@ -37,6 +39,9 @@ public class BasicFragment extends Fragment implements OnDateSelectedListener, O
     MaterialCalendarView c;
     MaterialCalendarView widget;
 
+    private AdView mAdView;
+    private Button btnFullscreenAd;
+
     public static BasicFragment newInstance() {
         return new BasicFragment();
     }
@@ -47,6 +52,11 @@ public class BasicFragment extends Fragment implements OnDateSelectedListener, O
 
         View view = inflater.inflate(R.layout.activity_basic, container, false);
         widget=(MaterialCalendarView)view.findViewById(R.id.calendarView);
+
+        mAdView = (AdView)view. findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder()
+                .build();
+        mAdView.loadAd(adRequest);
 
 
         widget.state().edit()

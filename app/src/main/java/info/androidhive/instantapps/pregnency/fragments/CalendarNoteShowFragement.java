@@ -10,8 +10,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +39,8 @@ public class CalendarNoteShowFragement extends Fragment {
     EditText textView;
     Toolbar toolbar;
     PregnancyDB db;
+    private AdView mAdView;
+    private Button btnFullscreenAd;
     //2
     public static CalendarFragment newInstance() {
         return new CalendarFragment();
@@ -47,6 +53,12 @@ public class CalendarNoteShowFragement extends Fragment {
 
 
         View view = inflater.inflate(R.layout.activity_note_show, container, false);
+
+
+        mAdView = (AdView) view.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder()
+                .build();
+        mAdView.loadAd(adRequest);
 
 
         db=new PregnancyDB(getActivity());
