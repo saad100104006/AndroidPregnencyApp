@@ -1,4 +1,4 @@
-package info.androidhive.instantapps.pregnency.model;
+package com.pregnancy.model;
 
 /**
  * Created by md.tanvirsaad on 7/20/17.

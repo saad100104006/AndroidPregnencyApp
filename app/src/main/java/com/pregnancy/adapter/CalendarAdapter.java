@@ -1,4 +1,4 @@
-package info.androidhive.instantapps.pregnency.adapter;
+package com.pregnancy.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import info.androidhive.instantapps.pregnency.R;
-import info.androidhive.instantapps.pregnency.model.Calendar;
+import com.pregnancy.model.Calendar;
 
 public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyViewHolder> {
 

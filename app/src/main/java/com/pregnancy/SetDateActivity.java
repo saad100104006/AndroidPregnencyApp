@@ -1,4 +1,4 @@
-package info.androidhive.instantapps.pregnency;
+package com.pregnancy;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
@@ -24,6 +24,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 import java.util.TimeZone;
+
+import info.androidhive.instantapps.pregnency.R;
 
 
 /**

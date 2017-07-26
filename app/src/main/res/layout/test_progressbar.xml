@@ -12,7 +12,7 @@
         android:layout_margin="10dp"
         />
 
-    <info.androidhive.instantapps.pregnency.utils.TextProgressBar
+    <com.pregnancy.utils.TextProgressBar
 
 
         android:id="@+id/pb"

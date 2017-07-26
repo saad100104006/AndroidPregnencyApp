@@ -1,11 +1,13 @@
-package info.androidhive.instantapps.pregnency;
+package com.pregnancy;
 
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 
-import info.androidhive.instantapps.pregnency.utils.TextProgressBar;
+import info.androidhive.instantapps.pregnency.R;
+
+import com.pregnancy.utils.TextProgressBar;
 
 /**
  * Created by Saad on 7/12/17.

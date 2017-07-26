@@ -1,4 +1,4 @@
-package info.androidhive.instantapps.pregnency.fragments;
+package com.pregnancy.fragments;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -24,7 +24,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import info.androidhive.instantapps.pregnency.CalendarNoteActivity;
+import com.pregnancy.CalendarNoteActivity;
 import info.androidhive.instantapps.pregnency.R;
 
 /**

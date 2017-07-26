@@ -1,15 +1,12 @@
-package info.androidhive.instantapps.pregnency;
+package com.pregnancy;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,7 +23,8 @@ import com.google.android.gms.ads.AdView;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
-import java.util.TimeZone;
+
+import info.androidhive.instantapps.pregnency.R;
 
 /**
  * Created by md.tanvirsaad on 7/21/17.

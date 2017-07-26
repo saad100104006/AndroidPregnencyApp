@@ -1,4 +1,4 @@
-package info.androidhive.instantapps.pregnency.utils;
+package com.pregnancy.utils;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -6,10 +6,7 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 
-/**
- * Created by Ravi Tamada on 03/09/16.
- * www.androidhive.info
- */
+
 public class RecyclerTouchListener implements RecyclerView.OnItemTouchListener {
 
     private GestureDetector gestureDetector;

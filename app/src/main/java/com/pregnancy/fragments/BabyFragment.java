@@ -1,4 +1,4 @@
-package info.androidhive.instantapps.pregnency.fragments;
+package com.pregnancy.fragments;
 
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
@@ -19,7 +19,7 @@ import com.google.android.gms.ads.InterstitialAd;
 import java.util.Calendar;
 
 import info.androidhive.instantapps.pregnency.R;
-import info.androidhive.instantapps.pregnency.utils.TextProgressBar;
+import com.pregnancy.utils.TextProgressBar;
 
 /**
  * Created by Saad on 7/12/17.

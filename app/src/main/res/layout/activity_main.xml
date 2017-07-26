@@ -55,7 +55,7 @@
                         android:src="@drawable/previous" />
 
 
-                    <info.androidhive.instantapps.pregnency.utils.TextProgressBar
+                    <com.pregnancy.utils.TextProgressBar
                         android:id="@+id/pb"
                         style="?android:attr/progressBarStyleHorizontal"
                         android:layout_width="0dp"

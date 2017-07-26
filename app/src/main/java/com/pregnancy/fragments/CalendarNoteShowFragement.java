@@ -1,4 +1,4 @@
-package info.androidhive.instantapps.pregnency.fragments;
+package com.pregnancy.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -20,11 +20,11 @@ import com.google.android.gms.ads.AdView;
 import java.util.ArrayList;
 import java.util.List;
 
-import info.androidhive.instantapps.pregnency.model.Calendar;
-import info.androidhive.instantapps.pregnency.adapter.CalendarAdapter;
-import info.androidhive.instantapps.pregnency.utils.PregnancyDB;
+import com.pregnancy.model.Calendar;
+import com.pregnancy.adapter.CalendarAdapter;
+import com.pregnancy.utils.PregnancyDB;
 import info.androidhive.instantapps.pregnency.R;
-import info.androidhive.instantapps.pregnency.utils.RecyclerTouchListener;
+import com.pregnancy.utils.RecyclerTouchListener;
 
 /**
  * Created by md.tanvirsaad on 7/19/17.

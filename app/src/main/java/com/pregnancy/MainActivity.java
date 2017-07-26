@@ -1,4 +1,4 @@
-package info.androidhive.instantapps.pregnency;
+package com.pregnancy;
 
 
 import android.content.Intent;
@@ -27,9 +27,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
-import info.androidhive.instantapps.pregnency.fragments.BabyFragment;
-import info.androidhive.instantapps.pregnency.fragments.NotesFragment;
-import info.androidhive.instantapps.pregnency.fragments.PregnantWomenFragment;
+import info.androidhive.instantapps.pregnency.R;
+
+import com.pregnancy.fragments.BabyFragment;
+import com.pregnancy.fragments.NotesFragment;
+import com.pregnancy.fragments.PregnantWomenFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

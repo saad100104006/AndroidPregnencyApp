@@ -1,4 +1,4 @@
-package info.androidhive.instantapps.pregnency.adapter;
+package com.pregnancy.adapter;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import info.androidhive.instantapps.pregnency.R;
-import info.androidhive.instantapps.pregnency.model.Shop;
+import com.pregnancy.model.Shop;
 
 /**
  * Created by md.tanvirsaad on 7/24/17.

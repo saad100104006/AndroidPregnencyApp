@@ -1,4 +1,4 @@
-package info.androidhive.instantapps.pregnency.fragments;
+package com.pregnancy.fragments;
 
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -17,11 +17,11 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import info.androidhive.instantapps.pregnency.adapter.BabyShopAdapter;
+import com.pregnancy.adapter.BabyShopAdapter;
 import info.androidhive.instantapps.pregnency.R;
-import info.androidhive.instantapps.pregnency.model.Shop;
-import info.androidhive.instantapps.pregnency.utils.PregnancyDB;
-import info.androidhive.instantapps.pregnency.utils.RecyclerTouchListener;
+import com.pregnancy.model.Shop;
+import com.pregnancy.utils.PregnancyDB;
+import com.pregnancy.utils.RecyclerTouchListener;
 
 
 /**

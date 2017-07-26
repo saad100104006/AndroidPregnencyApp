@@ -1,4 +1,4 @@
-package info.androidhive.instantapps.pregnency;
+package com.pregnancy;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +11,9 @@ import android.widget.Toast;
 
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 
-import info.androidhive.instantapps.pregnency.utils.PregnancyDB;
+import info.androidhive.instantapps.pregnency.R;
+
+import com.pregnancy.utils.PregnancyDB;
 
 /**
  * Created by Saad on 7/18/17.
