@@ -16,6 +16,10 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -46,6 +50,8 @@ public class SetDateActivity extends AppCompatActivity {
     private static SharedPreferences sharedPreferences;
     private static SharedPreferences.Editor editor;
 
+    InterstitialAd mInterstitialAd;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +73,10 @@ public class SetDateActivity extends AppCompatActivity {
         setDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+                showAd();
+
                 Intent intent = new Intent(SetDateActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
@@ -227,6 +237,33 @@ public class SetDateActivity extends AppCompatActivity {
         config.locale = myLocale;//set config locale as selected locale
         getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());//Update the config
         //updateTexts();//Update texts according to locale
+    }
+
+    public void showAd(){
+
+        mInterstitialAd = new InterstitialAd(this);
+
+        // set the ad unit ID
+        mInterstitialAd.setAdUnitId(getString(R.string.interstitial_full_screen));
+
+        AdRequest adRequest = new AdRequest.Builder()
+                .build();
+
+        // Load ads into Interstitial Ads
+        mInterstitialAd.loadAd(adRequest);
+
+        mInterstitialAd.setAdListener(new AdListener() {
+            public void onAdLoaded() {
+                showInterstitial();
+            }
+        });
+
+    }
+
+    private void showInterstitial() {
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        }
     }
 
 

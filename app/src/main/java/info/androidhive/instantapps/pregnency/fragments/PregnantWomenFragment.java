@@ -14,6 +14,10 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -47,6 +51,8 @@ public class PregnantWomenFragment extends Fragment {
     private  int myProgress = 1;
     private int i = 0;
 
+    InterstitialAd mInterstitialAd;
+
     String TAG = "AUTHENTICATION_FILE_NAME";
 
     public PregnantWomenFragment newInstance() {
@@ -57,6 +63,24 @@ public class PregnantWomenFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+
+        mInterstitialAd = new InterstitialAd(getActivity());
+
+        // set the ad unit ID
+        mInterstitialAd.setAdUnitId(getString(R.string.interstitial_full_screen));
+
+        AdRequest adRequest = new AdRequest.Builder()
+                .build();
+
+        // Load ads into Interstitial Ads
+        mInterstitialAd.loadAd(adRequest);
+
+        mInterstitialAd.setAdListener(new AdListener() {
+            public void onAdLoaded() {
+                showInterstitial();
+            }
+        });
 
 
         fruitArray = getResources().obtainTypedArray(R.array.pregnanncy_fruits);
@@ -165,6 +189,14 @@ public class PregnantWomenFragment extends Fragment {
 
 
     }
+
+    private void showInterstitial() {
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        }
+    }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

@@ -15,6 +15,10 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,6 +48,9 @@ public class WomenShopFragment extends Fragment {
     Toolbar toolbar;
     PregnancyDB db;
     TypedArray fruitArray;
+    InterstitialAd mInterstitialAd;
+
+
     //2
     public static WomenShopFragment newInstance() {
         return new WomenShopFragment();
@@ -51,8 +58,29 @@ public class WomenShopFragment extends Fragment {
 
     //3
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+
+
+        mInterstitialAd = new InterstitialAd(getActivity());
+
+        // set the ad unit ID
+        mInterstitialAd.setAdUnitId(getString(R.string.interstitial_full_screen));
+
+        AdRequest adRequest = new AdRequest.Builder()
+                .build();
+
+        // Load ads into Interstitial Ads
+        mInterstitialAd.loadAd(adRequest);
+
+        mInterstitialAd.setAdListener(new AdListener() {
+            public void onAdLoaded() {
+                showInterstitial();
+            }
+        });
 
 
         fruitArray = getActivity().getResources().obtainTypedArray(R.array.pregnanncy_fruits);
@@ -100,6 +128,12 @@ public class WomenShopFragment extends Fragment {
 
 
         return  view;
+    }
+
+    private void showInterstitial() {
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        }
     }
 
     private void prepareMovieData() {

@@ -12,6 +12,10 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+
 import java.util.Calendar;
 
 import info.androidhive.instantapps.pregnency.R;
@@ -33,6 +37,7 @@ public class BabyFragment extends Fragment {
             R.drawable.ic_woman_white,
             R.drawable.ic_baby_white,
     };
+    InterstitialAd mInterstitialAd;
 
     Calendar calendar2;
 
@@ -51,6 +56,27 @@ public class BabyFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+
+
+        mInterstitialAd = new InterstitialAd(getActivity());
+
+        // set the ad unit ID
+        mInterstitialAd.setAdUnitId(getString(R.string.interstitial_full_screen));
+
+        AdRequest adRequest = new AdRequest.Builder()
+                .build();
+
+        // Load ads into Interstitial Ads
+        mInterstitialAd.loadAd(adRequest);
+
+        mInterstitialAd.setAdListener(new AdListener() {
+            public void onAdLoaded() {
+                showInterstitial();
+            }
+        });
+
+
 
 
         fruitArray = getResources().obtainTypedArray(R.array.pregnanncy_fruits);
@@ -153,6 +179,12 @@ public class BabyFragment extends Fragment {
         });
 
 
+    }
+
+    private void showInterstitial() {
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        }
     }
 
 
