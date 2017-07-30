@@ -22,16 +22,12 @@ import android.widget.ImageView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import cn.pedant.SweetAlert.SweetAlertDialog;
-import info.androidhive.instantapps.pregnency.R;
-
 import com.pregnancy.fragments.BabyFragment;
 import com.pregnancy.fragments.NotesFragment;
 import com.pregnancy.fragments.PregnantWomenFragment;
+
+import cn.pedant.SweetAlert.SweetAlertDialog;
+import info.androidhive.instantapps.pregnency.R;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -44,6 +40,7 @@ public class MainActivity extends AppCompatActivity
     int myProgress = 0;
     PregnantWomenFragment myFragment;
     ImageView img1;
+    ViewPagerAdapter viewPagerAdapter;
     private int[] tabIcons = {
             R.drawable.ic_week_info,
             R.drawable.ic_woman_white,
@@ -66,22 +63,13 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+       // setSupportActionBar(toolbar);
         //ddd
 
         mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder()
                 .build();
         mAdView.loadAd(adRequest);
-
-        viewPager = (ViewPager) findViewById(R.id.viewpager);
-        setupViewPager(viewPager);
-
-        next = (ImageButton) findViewById(R.id.next);
-
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
-        tabLayout.setupWithViewPager(viewPager);
-        setupTabIcons();
 
   /*      pb = new TextProgressBar(this);
         pb = (TextProgressBar) findViewById(R.id.pb);
@@ -110,6 +98,21 @@ public class MainActivity extends AppCompatActivity
         /*getSupportFragmentManager().beginTransaction()
                 .add(R.id.viewpager, new NotesFragment())
                 .commit();*/
+
+
+        viewPager = (ViewPager) findViewById(R.id.viewpager);
+       // setupViewPager(viewPager);
+
+       // next = (ImageButton) findViewById(R.id.next);
+
+        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(viewPager);
+
+        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(viewPagerAdapter);
+
+        setupTabIcons();
+
 
 
     }
@@ -220,15 +223,73 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void setupViewPager(ViewPager viewPager) {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new NotesFragment(), "ONE");
-        adapter.addFragment(new PregnantWomenFragment(), "TWO");
-        adapter.addFragment(new BabyFragment(), "THREE");
+        MyPagerAdapter adapter = new MyPagerAdapter(getSupportFragmentManager());
+       // adapter.addFragment(new NotesFragment(), "ONE");
+      //  adapter.addFragment(new PregnantWomenFragment(), "TWO");
+      //  adapter.addFragment(new BabyFragment(), "THREE");
         viewPager.setAdapter(adapter);
     }
 
 
-    class ViewPagerAdapter extends FragmentPagerAdapter {
+
+
+    private void setupTabIcons() {
+        tabLayout.getTabAt(0).setIcon(tabIcons[0]);
+        tabLayout.getTabAt(1).setIcon(tabIcons[1]);
+        tabLayout.getTabAt(2).setIcon(tabIcons[2]);
+    }
+
+
+
+    public static class MyPagerAdapter extends FragmentPagerAdapter {
+        private static int NUM_ITEMS = 3;
+
+        public MyPagerAdapter(FragmentManager fragmentManager) {
+            super(fragmentManager);
+        }
+
+        // Returns total number of pages
+        @Override
+        public int getCount() {
+            return NUM_ITEMS;
+        }
+
+        // Returns the fragment to display for that page
+        @Override
+        public Fragment getItem(int position) {
+            switch (position) {
+                case 0: // Fragment # 0 - This will show FirstFragment
+                    return NotesFragment.newInstance();
+                case 1: // Fragment # 0 - This will show FirstFragment different title
+                    return PregnantWomenFragment.newInstance();
+                case 2: // Fragment # 1 - This will show SecondFragment
+                    return BabyFragment.newInstance();
+                default:
+                    return null;
+            }
+        }
+
+        // Returns the page title for the top indicator
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return " " + position;
+        }
+        @Override
+        public int getItemPosition(Object object) {
+            // this method will be called for every fragment in the ViewPager
+            if (object instanceof NotesFragment) {
+                return POSITION_UNCHANGED; // don't force a reload
+            } else {
+                // POSITION_NONE means something like: this fragment is no longer valid
+                // triggering the ViewPager to re-build the instance of this fragment.
+                return POSITION_NONE;
+            }
+        }
+
+    }
+
+/*
+    public class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();
 
@@ -257,13 +318,9 @@ public class MainActivity extends AppCompatActivity
 
             return null;
         }
-    }
+    }*/
 
-    private void setupTabIcons() {
-        tabLayout.getTabAt(0).setIcon(tabIcons[0]);
-        tabLayout.getTabAt(1).setIcon(tabIcons[1]);
-        tabLayout.getTabAt(2).setIcon(tabIcons[2]);
-    }
+
 
 
 }

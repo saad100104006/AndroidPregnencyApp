@@ -256,6 +256,8 @@
     <string name="womenshopdes3">womenshopdes3</string>
     <string name="womenshopdes4">womenshopdes4</string>
 
+    <string name="Selectedweek">Selected week 1/40</string>
+
     <!-- AdMob ad unit IDs -->
     <string name="banner_home_footer">ca-app-pub-0664570763252260/3326522424</string>
     <string name="interstitial_full_screen">ca-app-pub-0664570763252260/1769900428</string>

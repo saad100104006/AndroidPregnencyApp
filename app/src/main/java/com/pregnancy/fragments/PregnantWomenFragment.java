@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
+import com.pregnancy.utils.TextProgressBar44;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -24,7 +25,6 @@ import java.util.Locale;
 import java.util.TimeZone;
 
 import info.androidhive.instantapps.pregnency.R;
-import com.pregnancy.utils.TextProgressBar;
 
 /**
  * Created by Saad on 7/10/17.
@@ -33,10 +33,10 @@ import com.pregnancy.utils.TextProgressBar;
 
 public class PregnantWomenFragment extends Fragment {
 
-    ImageButton next,previous;
+    ImageButton next, previous;
     ImageView img1;
-    TextView title,description, today, week, month, expected;
-    TextProgressBar pb;
+    TextView title, description, today, week, month, expected;
+    TextProgressBar44 pb;
     private int[] textureArrayWin = {
             R.drawable.img1,
             R.drawable.ic_woman_white,
@@ -45,17 +45,17 @@ public class PregnantWomenFragment extends Fragment {
 
     Calendar calendar2;
 
-    String[] mWeekArray,mLengthArray,mWeightArray,mSizeOfArray;
+    String[] mWeekArray, mLengthArray, mWeightArray, mSizeOfArray;
     TypedArray fruitArray;
 
-    private  int myProgress = 1;
+    private int myProgress = 1;
     private int i = 0;
 
     InterstitialAd mInterstitialAd;
 
     String TAG = "AUTHENTICATION_FILE_NAME";
 
-    public PregnantWomenFragment newInstance() {
+    public static PregnantWomenFragment newInstance() {
         return new PregnantWomenFragment();
     }
 
@@ -63,127 +63,6 @@ public class PregnantWomenFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
-
-        mInterstitialAd = new InterstitialAd(getActivity());
-
-        // set the ad unit ID
-        mInterstitialAd.setAdUnitId(getString(R.string.interstitial_full_screen));
-
-        AdRequest adRequest = new AdRequest.Builder()
-                .build();
-
-        // Load ads into Interstitial Ads
-        mInterstitialAd.loadAd(adRequest);
-
-        mInterstitialAd.setAdListener(new AdListener() {
-            public void onAdLoaded() {
-                showInterstitial();
-            }
-        });
-
-
-        fruitArray = getResources().obtainTypedArray(R.array.pregnanncy_fruits);
-        mWeekArray =   getResources().getStringArray(R.array.note);
-        mLengthArray=   getResources().getStringArray(R.array.length);
-      //  mWeightArray=   getResources().getStringArray(R.array.weight);
-       // mSizeOfArray=   getResources().getStringArray(R.array.sizeof);
-
-
-        pb = new TextProgressBar(getActivity());
-        pb = (TextProgressBar) getActivity().findViewById(R.id.pb);
-        next = (ImageButton) getActivity().findViewById(R.id.next);
-        previous = (ImageButton) getActivity().findViewById(R.id.previous);
-        pb.setScaleY(3.5f);
-        Drawable draw = getResources().getDrawable(R.drawable.custom_progressbar);
-        pb.setProgressDrawable(draw);
-
-
-        img1.setImageResource(fruitArray.getResourceId(0, -1));
-        title.setText(mWeekArray[i]);
-        description.setText(mLengthArray[i]);
-       // weightCalc.setText(mWeightArray[i]);
-      //  sizeOfCalc.setText(mSizeOfArray[i]);
-
-
-
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-
-
-
-                if (i < 40 && i>=0) {
-                    img1.setImageResource(fruitArray.getResourceId(i, -1));
-                    title.setText(mWeekArray[i]);
-                    description.setText(mLengthArray[i]);
-                    pb.setProgress(myProgress);
-                    pb.setText("Selected week " + myProgress + "/40");
-
-
-                    myProgress++;
-                    i++;
-
-
-                    if(i==40 || i>40){
-                        i=40;
-                        myProgress=40;
-                    }
-                }
-                else {
-                    if (i >= 40) {
-
-                        i=39;
-                    }
-                    if (i < 0) {
-
-                        i = 0;
-                    }
-                }
-
-
-            }
-        });
-
-        previous.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-
-                if (i >= 0 && i<40) {
-                    img1.setImageResource(fruitArray.getResourceId(i, -1));
-                    title.setText(mWeekArray[i]);
-                    description.setText(mLengthArray[i]);
-                    pb.setProgress(myProgress);
-                    pb.setText("Selected week " + myProgress + "/40");
-
-                    myProgress--;
-                    i--;
-
-                    if(i==-1 || i<0){
-                        i=0;
-                        myProgress=0;
-                    }
-                }
-                else{
-
-                    if(i>=40){
-
-                        i=39;
-                    }
-                    if(i<0){
-
-                        i=0;
-                    }
-                }
-
-            }
-        });
-
-
 
 
 
@@ -197,17 +76,32 @@ public class PregnantWomenFragment extends Fragment {
     }
 
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         //   return inflater.inflate(R.layout.fragment_test, container, false);
 
         View view = inflater.inflate(R.layout.fragment_women, container, false);
+
+
+
+
+        return view;
+
+
+    }
+
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+
+
         title = (TextView) view.findViewById(R.id.title);
-        description=(TextView) view.findViewById(R.id.description);
+        description = (TextView) view.findViewById(R.id.description);
         img1 = (ImageView) view.findViewById(R.id.image1);
-      //  next = (ImageButton) getActivity().findViewById(R.id.next);
-      //  previous = (ImageButton) getActivity().findViewById(R.id.previous);
+        //  next = (ImageButton) getActivity().findViewById(R.id.next);
+        //  previous = (ImageButton) getActivity().findViewById(R.id.previous);
 
 
         today = (TextView) view.findViewById(R.id.today);
@@ -215,22 +109,32 @@ public class PregnantWomenFragment extends Fragment {
         month = (TextView) view.findViewById(R.id.month);
         expected = (TextView) view.findViewById(R.id.expected);
 
+        fruitArray = getResources().obtainTypedArray(R.array.pregnanncy_fruits);
+        mWeekArray = getResources().getStringArray(R.array.note);
+        mLengthArray = getResources().getStringArray(R.array.length);
+        //  mWeightArray=   getResources().getStringArray(R.array.weight);
+        // mSizeOfArray=   getResources().getStringArray(R.array.sizeof);
 
 
-    /*    pb = new TextProgressBar(getActivity());
-        pb = (TextProgressBar) getActivity().findViewById(R.id.pb);
+        pb = new TextProgressBar44(getActivity());
+        pb = (TextProgressBar44) getActivity().findViewById(R.id.pb5);
+        next = (ImageButton) getActivity().findViewById(R.id.pup);
+        previous = (ImageButton) getActivity().findViewById(R.id.tup);
         pb.setScaleY(3.5f);
         Drawable draw = getResources().getDrawable(R.drawable.custom_progressbar);
-// set the drawable as progress drawable
-        pb.setProgressDrawable(draw);*/
+        pb.setProgressDrawable(draw);
+
+
+
+
 
 
         calendar2 = Calendar.getInstance(TimeZone.getDefault());
-        int i = calendar2.get(Calendar.MONTH);
+        int i5 = calendar2.get(Calendar.MONTH);
         int j = calendar2.get(Calendar.DAY_OF_MONTH);
         int k = calendar2.get(Calendar.YEAR);
 
-        calendar2.set(k, i, j);
+        calendar2.set(k, i5, j);
 
 
         long milliseconds2 = calendar2.getTimeInMillis();
@@ -262,35 +166,109 @@ public class PregnantWomenFragment extends Fragment {
         expected.setText("Expected Delivery Date " + expected_date + " ");
 
 
+        mInterstitialAd = new InterstitialAd(getActivity());
+
+        // set the ad unit ID
+        mInterstitialAd.setAdUnitId(getString(R.string.interstitial_full_screen));
+
+        AdRequest adRequest = new AdRequest.Builder()
+                .build();
+
+        // Load ads into Interstitial Ads
+        mInterstitialAd.loadAd(adRequest);
+
+        mInterstitialAd.setAdListener(new AdListener() {
+            public void onAdLoaded() {
+                showInterstitial();
+            }
+        });
 
 
-       // text.setText("jdhgewuhg");
-       // img1.setImageDrawable(getActivity().getResources().getDrawable(R.drawable.ic_baby_white));
 
-      /*  next.setOnClickListener(new View.OnClickListener() {
+
+
+        img1.setImageResource(fruitArray.getResourceId(0, -1));
+        title.setText(mWeekArray[i]);
+        description.setText(mLengthArray[i]);
+        // weightCalc.setText(mWeightArray[i]);
+        //  sizeOfCalc.setText(mSizeOfArray[i]);
+
+
+        next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                System.out.println("Saad");
-                img1.setImageResource(textureArrayWin[0]);
-                text.setText("saaaad");
 
-                myProgress++;
-                pb.setProgress(myProgress);
-                pb.setText("Selected week " + myProgress + "/42");
+                if (i < 40 && i >= 0) {
+                    img1.setImageResource(fruitArray.getResourceId(i, -1));
+                    title.setText(mWeekArray[i]);
+                    description.setText(mLengthArray[i]);
+                    pb.setProgress(myProgress);
+                    pb.setText("Selected week " + myProgress + "/40");
+
+
+                    myProgress++;
+                    i++;
+
+
+                    if (i == 40 || i > 40) {
+                        i = 40;
+                        myProgress = 40;
+                    }
+                } else {
+                    if (i >= 40) {
+
+                        i = 39;
+                    }
+                    if (i < 0) {
+
+                        i = 0;
+                    }
+                }
 
 
             }
-        });*/
+        });
+
+        previous.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
 
-        //   new Thread(myThread).start();
+                if (i >= 0 && i < 40) {
+                    img1.setImageResource(fruitArray.getResourceId(i, -1));
+                    title.setText(mWeekArray[i]);
+                    description.setText(mLengthArray[i]);
+                    pb.setProgress(myProgress);
+                    pb.setText("Selected week " + myProgress + "/40");
 
-        return view;
+                    myProgress--;
+                    i--;
+
+                    if (i == -1 || i < 0) {
+                        i = 0;
+                        myProgress = 0;
+                    }
+                } else {
+
+                    if (i >= 40) {
+
+                        i = 39;
+                    }
+                    if (i < 0) {
+
+                        i = 0;
+                    }
+                }
+
+            }
+        });
+
 
 
     }
 
-
 }
+
+
 

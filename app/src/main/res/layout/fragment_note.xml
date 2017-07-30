@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card="http://schemas.android.com/tools"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="8dp"
+    android:weightSum="1"
 
     >
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".9"
+        >
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
 
@@ -31,15 +38,13 @@
                 android:id="@+id/top"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-               >
+                android:orientation="vertical">
 
 
                 <ImageView
                     android:id="@+id/image1"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                  />
+                    android:layout_height="200dp" />
 
 
                 <RelativeLayout
@@ -47,8 +52,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/image1"
-                    android:padding="8dp"
-                    >
+                    android:padding="8dp">
 
                     <TextView
                         android:id="@+id/pregnancyText"
@@ -70,31 +74,31 @@
                         android:textSize="18dp" />
 
 
-                   <!-- <TextView
-                        android:id="@+id/pregnancyText3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/pregnancyText2"
+                    <!-- <TextView
+                         android:id="@+id/pregnancyText3"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_below="@+id/pregnancyText2"
 
-                        android:layout_marginLeft="20dp"
-                        android:layout_toRightOf="@+id/pregnancyText"
-                        android:gravity="center"
-                        android:text="1st trimester"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="18dp" />
+                         android:layout_marginLeft="20dp"
+                         android:layout_toRightOf="@+id/pregnancyText"
+                         android:gravity="center"
+                         android:text="1st trimester"
+                         android:textColor="@color/colorBlack"
+                         android:textSize="18dp" />
 
-                    <TextView
-                        android:id="@+id/pregnancyText4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/pregnancyText3"
+                     <TextView
+                         android:id="@+id/pregnancyText4"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_below="@+id/pregnancyText3"
 
-                        android:layout_marginLeft="20dp"
-                        android:layout_toRightOf="@+id/pregnancyText"
-                        android:gravity="center"
-                        android:text="196 days left"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="18dp" />-->
+                         android:layout_marginLeft="20dp"
+                         android:layout_toRightOf="@+id/pregnancyText"
+                         android:gravity="center"
+                         android:text="196 days left"
+                         android:textColor="@color/colorBlack"
+                         android:textSize="18dp" />-->
 
                 </RelativeLayout>
 
@@ -105,9 +109,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/row1"
                     android:layout_marginBottom="10dp"
-                    android:weightSum="1.0"
                     android:padding="8dp"
-                    >
+                    android:weightSum="1.0">
 
                     <TextView
                         android:id="@+id/pregnancyText5"
@@ -116,8 +119,9 @@
                         android:layout_weight=".6"
                         android:text="@string/babydimentions"
                         android:textColor="@color/colorPrimary" />
-
+<!--
                     <Button
+                        android:id="@+id/fb"
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_alignParentRight="true"
@@ -128,12 +132,13 @@
                         android:drawableLeft="@drawable/fb"
                         android:paddingLeft="15dp"
                         android:text="@string/share"
-                        android:textColor="@color/colorAccent" />
+                        android:textColor="@color/colorAccent" />-->
 
 
                 </LinearLayout>
 
                 <RelativeLayout
+                    android:id="@+id/middle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/week"
@@ -144,17 +149,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:weightSum="1"
                         android:padding="8dp"
-                        >
+                        android:weightSum="1">
 
 
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight=".33"
-                            android:padding="5dp"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            android:padding="5dp">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -162,12 +166,9 @@
                                 android:text="@string/length" />
 
                             <TextView
-                              android:id="@+id/length"
+                                android:id="@+id/length"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                             />
-
-
+                                android:layout_height="wrap_content" />
 
 
                         </LinearLayout>
@@ -182,9 +183,9 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                          android:padding="5dp"
                             android:layout_weight=".33"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            android:padding="5dp">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -194,8 +195,7 @@
                             <TextView
                                 android:id="@+id/weight"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                />
+                                android:layout_height="wrap_content" />
 
 
                         </LinearLayout>
@@ -209,10 +209,10 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                           android:padding="5dp"
-
                             android:layout_weight=".33"
-                            android:orientation="vertical">
+
+                            android:orientation="vertical"
+                            android:padding="5dp">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -222,8 +222,7 @@
                             <TextView
                                 android:id="@+id/sizeof"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                />
+                                android:layout_height="wrap_content" />
 
 
                         </LinearLayout>
@@ -240,4 +239,47 @@
 
     </LinearLayout>
 
-</ScrollView>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".1"
+        android:layout_below="@+id/middle"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <ImageButton
+            android:id="@+id/dunu"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight=".2"
+            android:background="@color/colorAccent"
+            android:src="@drawable/previous" />
+
+
+        <com.pregnancy.utils.TextProgressBar
+            android:id="@+id/pb"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".6"
+            android:max="40"
+            android:maxHeight="80dip"
+            android:minHeight="50dip"
+            android:progress="1" />
+
+        <ImageButton
+            android:id="@+id/lulu2"
+            android:onClick="onClick_next"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight=".2"
+            android:background="@color/colorAccent"
+            android:src="@drawable/next" />
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

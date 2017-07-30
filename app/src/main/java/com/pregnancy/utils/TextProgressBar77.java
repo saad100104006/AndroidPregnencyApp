@@ -15,13 +15,11 @@ import android.widget.ProgressBar;
 
 import info.androidhive.instantapps.pregnency.R;
 
-public class TextProgressBar extends ProgressBar {
+public class TextProgressBar77 extends ProgressBar {
     private String text;
-
-
     private Paint textPaint;
 
-    public TextProgressBar(Context context) {
+    public TextProgressBar77(Context context) {
         super(context);
         text = getResources().getString(R.string.Selectedweek);
         textPaint = new Paint();
@@ -30,7 +28,7 @@ public class TextProgressBar extends ProgressBar {
 
     }
 
-    public TextProgressBar(Context context, AttributeSet attrs) {
+    public TextProgressBar77(Context context, AttributeSet attrs) {
         super(context, attrs);
         text = getResources().getString(R.string.Selectedweek);
         textPaint = new Paint();
@@ -41,7 +39,7 @@ public class TextProgressBar extends ProgressBar {
         textPaint.setTextSize(scaledSizeInPixels);*/
     }
 
-    public TextProgressBar(Context context, AttributeSet attrs, int defStyle) {
+    public TextProgressBar77(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         text = getResources().getString(R.string.Selectedweek);
         textPaint = new Paint();
