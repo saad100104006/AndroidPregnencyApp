@@ -236,14 +236,18 @@ public class PregnantWomenFragment extends Fragment {
 
 
                 if (i >= 0 && i < 40) {
+
+                    myProgress--;
+                    i--; 
+
+
                     img1.setImageResource(fruitArray.getResourceId(i, -1));
                     title.setText(mWeekArray[i]);
                     description.setText(mLengthArray[i]);
                     pb.setProgress(myProgress);
                     pb.setText("Selected week " + myProgress + "/40");
 
-                    myProgress--;
-                    i--;
+
 
                     if (i == -1 || i < 0) {
                         i = 0;

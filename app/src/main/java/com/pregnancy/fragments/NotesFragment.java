@@ -120,6 +120,10 @@ public class NotesFragment extends Fragment {
 
 
                 if (i >= 0 && i<40) {
+
+                    myProgress--;
+                    i--;
+
                     img1.setImageResource(fruitArray.getResourceId(i, 0));
                     weekCalc.setText(mWeekArray[i]);
                     lengthCalc.setText(mLengthArray[i]);
@@ -130,8 +134,6 @@ public class NotesFragment extends Fragment {
                     pb.setProgress(myProgress);
                     pb.setText("Selected week " + myProgress + "/40");
 
-                    myProgress--;
-                    i--;
 
                     if(i==-1 || i<0){
                         i=0;
