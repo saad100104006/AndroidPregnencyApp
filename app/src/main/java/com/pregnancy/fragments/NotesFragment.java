@@ -135,7 +135,7 @@ public class NotesFragment extends Fragment {
 
                     if(i==-1 || i<0){
                         i=0;
-                        myProgress=1;
+                        myProgress=0;
                     }
                 }
                 else{
