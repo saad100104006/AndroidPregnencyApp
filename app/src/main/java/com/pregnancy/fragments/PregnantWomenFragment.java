@@ -18,13 +18,14 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.pregnancy.utils.TextProgressBar44;
+import com.pregnency.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 import java.util.TimeZone;
 
-import info.androidhive.instantapps.pregnency.R;
+
 
 /**
  * Created by Saad on 7/10/17.
@@ -49,7 +50,7 @@ public class PregnantWomenFragment extends Fragment {
     TypedArray fruitArray;
 
     private int myProgress = 1;
-    private int i = 0;
+    private int indicator = 0;
 
     InterstitialAd mInterstitialAd;
 
@@ -188,10 +189,10 @@ public class PregnantWomenFragment extends Fragment {
 
 
         img1.setImageResource(fruitArray.getResourceId(0, -1));
-        title.setText(mWeekArray[i]);
-        description.setText(mLengthArray[i]);
-        // weightCalc.setText(mWeightArray[i]);
-        //  sizeOfCalc.setText(mSizeOfArray[i]);
+        title.setText(mWeekArray[indicator]);
+        description.setText(mLengthArray[indicator]);
+        // weightCalc.setText(mWeightArray[indicator]);
+        //  sizeOfCalc.setText(mSizeOfArray[indicator]);
 
 
         next.setOnClickListener(new View.OnClickListener() {
@@ -199,30 +200,30 @@ public class PregnantWomenFragment extends Fragment {
             public void onClick(View view) {
 
 
-                if (i < 40 && i >= 0) {
-                    img1.setImageResource(fruitArray.getResourceId(i, -1));
-                    title.setText(mWeekArray[i]);
-                    description.setText(mLengthArray[i]);
+                if (indicator < 40 && indicator >= 0) {
+                    img1.setImageResource(fruitArray.getResourceId(indicator, -1));
+                    title.setText(mWeekArray[indicator]);
+                    description.setText(mLengthArray[indicator]);
                     pb.setProgress(myProgress);
                     pb.setText("Selected week " + myProgress + "/40");
 
 
                     myProgress++;
-                    i++;
+                    indicator++;
 
 
-                    if (i == 40 || i > 40) {
-                        i = 40;
+                    if (indicator == 40 || indicator > 40) {
+                        indicator = 40;
                         myProgress = 40;
                     }
                 } else {
-                    if (i >= 40) {
+                    if (indicator >= 40) {
 
-                        i = 39;
+                        indicator = 39;
                     }
-                    if (i < 0) {
+                    if (indicator < 0) {
 
-                        i = 0;
+                        indicator = 0;
                     }
                 }
 
@@ -235,33 +236,35 @@ public class PregnantWomenFragment extends Fragment {
             public void onClick(View view) {
 
 
-                if (i >= 0 && i < 40) {
+                if (indicator >= 0 && indicator < 40) {
 
                     myProgress--;
-                    i--; 
+                    indicator--;
+
+                    if (indicator == -1 || indicator < 0) {
+                        indicator = 0;
+                        myProgress = 1;
+                    }
 
 
-                    img1.setImageResource(fruitArray.getResourceId(i, -1));
-                    title.setText(mWeekArray[i]);
-                    description.setText(mLengthArray[i]);
+                    img1.setImageResource(fruitArray.getResourceId(indicator, -1));
+                    title.setText(mWeekArray[indicator]);
+                    description.setText(mLengthArray[indicator]);
                     pb.setProgress(myProgress);
                     pb.setText("Selected week " + myProgress + "/40");
 
 
 
-                    if (i == -1 || i < 0) {
-                        i = 0;
-                        myProgress = 0;
-                    }
+
                 } else {
 
-                    if (i >= 40) {
+                    if (indicator >= 40) {
 
-                        i = 39;
+                        indicator = 39;
                     }
-                    if (i < 0) {
+                    if (indicator < 0) {
 
-                        i = 0;
+                        indicator = 0;
                     }
                 }
 

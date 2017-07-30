@@ -14,14 +14,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.pregnancy.adapter.BabyShopAdapter;
-import info.androidhive.instantapps.pregnency.R;
 import com.pregnancy.model.Shop;
 import com.pregnancy.utils.PregnancyDB;
 import com.pregnancy.utils.RecyclerTouchListener;
+import com.pregnency.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**

@@ -9,11 +9,9 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
-
-import info.androidhive.instantapps.pregnency.R;
-
 import com.pregnancy.utils.PregnancyDB;
+import com.pregnency.R;
+import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 
 /**
  * Created by Saad on 7/18/17.

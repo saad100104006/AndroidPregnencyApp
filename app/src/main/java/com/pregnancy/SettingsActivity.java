@@ -19,12 +19,12 @@ import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.pregnency.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-import info.androidhive.instantapps.pregnency.R;
 
 /**
  * Created by md.tanvirsaad on 7/21/17.

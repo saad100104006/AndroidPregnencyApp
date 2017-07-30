@@ -12,17 +12,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
-import java.util.ArrayList;
-import java.util.List;
-
-import info.androidhive.instantapps.pregnency.R;
 
 import com.pregnancy.adapter.CalendarAdapter;
 import com.pregnancy.fragments.BabyShopFragment;
-import com.pregnancy.fragments.BasicFragment;
-import com.pregnancy.fragments.CalendarNoteShowFragement;
 import com.pregnancy.fragments.WomenShopFragment;
 import com.pregnancy.model.Calendar;
+import com.pregnency.R;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 
 /**
@@ -54,6 +53,7 @@ public class PrenencyItemsActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);

@@ -18,16 +18,14 @@ import android.widget.Toast;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import info.androidhive.instantapps.pregnency.R;
-import com.pregnancy.adapter.BabyShopAdapter;
 import com.pregnancy.adapter.WomenShopAdapter;
 import com.pregnancy.model.Shop;
 import com.pregnancy.utils.PregnancyDB;
 import com.pregnancy.utils.RecyclerTouchListener;
+import com.pregnency.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by md.tanvirsaad on 7/24/17.

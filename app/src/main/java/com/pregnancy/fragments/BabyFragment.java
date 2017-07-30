@@ -16,10 +16,10 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.pregnancy.utils.TextProgressBar77;
+import com.pregnency.R;
 
 import java.util.Calendar;
 
-import info.androidhive.instantapps.pregnency.R;
 
 /**
  * Created by Saad on 7/12/17.
@@ -45,7 +45,7 @@ public class BabyFragment extends Fragment {
     TypedArray fruitArray;
 
   private  int myProgress = 1;
-   private int i = 0;
+   private int variable = 0;
 
 
     //2
@@ -116,10 +116,10 @@ public class BabyFragment extends Fragment {
 
 
         img1.setImageResource(fruitArray.getResourceId(0, -1));
-        title.setText(mWeekArray[i]);
-        description.setText(mLengthArray[i]);
-        // weightCalc.setText(mWeightArray[i]);
-        //  sizeOfCalc.setText(mSizeOfArray[i]);
+        title.setText(mWeekArray[variable]);
+        description.setText(mLengthArray[variable]);
+        // weightCalc.setText(mWeightArray[variable]);
+        //  sizeOfCalc.setText(mSizeOfArray[variable]);
 
 
         next.setOnClickListener(new View.OnClickListener() {
@@ -127,31 +127,31 @@ public class BabyFragment extends Fragment {
             public void onClick(View view) {
 
 
-                if (i < 40 && i>=0) {
-                    img1.setImageResource(fruitArray.getResourceId(i, -1));
-                    title.setText(mWeekArray[i]);
-                    description.setText(mLengthArray[i]);
+                if (variable < 40 && variable >=0) {
+                    img1.setImageResource(fruitArray.getResourceId(variable, -1));
+                    title.setText(mWeekArray[variable]);
+                    description.setText(mLengthArray[variable]);
                     pb.setProgress(myProgress);
                     pb.setText("Selected week " + myProgress + "/40");
 
 
                     myProgress++;
-                    i++;
+                    variable++;
 
 
-                    if(i==40 || i>40){
-                        i=40;
+                    if(variable ==40 || variable >40){
+                        variable =40;
                         myProgress=40;
                     }
                 }
                 else {
-                    if (i >= 40) {
+                    if (variable >= 40) {
 
-                        i=39;
+                        variable =39;
                     }
-                    if (i < 0) {
+                    if (variable < 0) {
 
-                        i = 0;
+                        variable = 0;
                     }
                 }
 
@@ -166,12 +166,18 @@ public class BabyFragment extends Fragment {
 
 
 
-                if (i >= 0 && i<40) {
+                if (variable >= 0 && variable <40) {
                     myProgress--;
-                    i--;
-                    img1.setImageResource(fruitArray.getResourceId(i, -1));
-                    title.setText(mWeekArray[i]);
-                    description.setText(mLengthArray[i]);
+                    variable--;
+
+                    if(variable ==-1 || variable <0){
+                        variable =0;
+                        myProgress=1;
+                    }
+
+                    img1.setImageResource(fruitArray.getResourceId(variable, -1));
+                    title.setText(mWeekArray[variable]);
+                    description.setText(mLengthArray[variable]);
 
 
                     pb.setProgress(myProgress);
@@ -179,20 +185,17 @@ public class BabyFragment extends Fragment {
 
 
 
-                    if(i==-1 || i<0){
-                        i=0;
-                        myProgress=0;
-                    }
+
                 }
                 else{
 
-                    if(i>=40){
+                    if(variable >=40){
 
-                        i=39;
+                        variable =39;
                     }
-                    if(i<0){
+                    if(variable <0){
 
-                        i=0;
+                        variable =0;
                     }
                 }
 

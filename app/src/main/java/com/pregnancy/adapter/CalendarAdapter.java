@@ -6,10 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.util.List;
-
-import info.androidhive.instantapps.pregnency.R;
 import com.pregnancy.model.Calendar;
+import com.pregnency.R;
+
+import java.util.List;
 
 public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.MyViewHolder> {
 

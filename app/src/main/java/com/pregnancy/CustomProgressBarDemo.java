@@ -5,9 +5,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 
-import info.androidhive.instantapps.pregnency.R;
-
 import com.pregnancy.utils.TextProgressBar;
+import com.pregnency.R;
 
 /**
  * Created by Saad on 7/12/17.

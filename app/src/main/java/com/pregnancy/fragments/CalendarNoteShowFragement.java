@@ -16,15 +16,14 @@ import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.pregnancy.adapter.CalendarAdapter;
+import com.pregnancy.model.Calendar;
+import com.pregnancy.utils.PregnancyDB;
+import com.pregnancy.utils.RecyclerTouchListener;
+import com.pregnency.R;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import com.pregnancy.model.Calendar;
-import com.pregnancy.adapter.CalendarAdapter;
-import com.pregnancy.utils.PregnancyDB;
-import info.androidhive.instantapps.pregnency.R;
-import com.pregnancy.utils.RecyclerTouchListener;
 
 /**
  * Created by md.tanvirsaad on 7/19/17.

@@ -13,7 +13,8 @@ import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.widget.ProgressBar;
 
-import info.androidhive.instantapps.pregnency.R;
+import com.pregnency.R;
+
 
 public class TextProgressBar77 extends ProgressBar {
     private String text;

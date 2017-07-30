@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.pregnancy.CalendarNoteActivity;
+import com.pregnency.R;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.CalendarMode;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
@@ -23,9 +25,6 @@ import com.prolificinteractive.materialcalendarview.OnMonthChangedListener;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-
-import com.pregnancy.CalendarNoteActivity;
-import info.androidhive.instantapps.pregnency.R;
 
 /**
  * Created by Saad on 7/12/17.

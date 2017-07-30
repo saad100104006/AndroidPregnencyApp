@@ -25,9 +25,10 @@ import com.google.android.gms.ads.AdView;
 import com.pregnancy.fragments.BabyFragment;
 import com.pregnancy.fragments.NotesFragment;
 import com.pregnancy.fragments.PregnantWomenFragment;
+import com.pregnency.R;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
-import info.androidhive.instantapps.pregnency.R;
+
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -63,6 +64,8 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        toolbar.setTitle(getResources().getString(R.string.app_name));
        // setSupportActionBar(toolbar);
         //ddd
 

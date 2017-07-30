@@ -13,8 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.pregnancy.utils.TextProgressBar;
+import com.pregnency.R;
 
-import info.androidhive.instantapps.pregnency.R;
 
 /**
  * Created by Saad on 7/16/17.
@@ -27,7 +27,7 @@ public class NotesFragment extends Fragment {
     ImageView img1;
     TextProgressBar pb;
     private  int myProgress = 1;
-    private int i = 0;
+    private int refactor = 0;
     TypedArray fruitArray;
     TextView weekCalc,lengthCalc,weightCalc,sizeOfCalc;
     String[] mWeekArray,mLengthArray,mWeightArray,mSizeOfArray;
@@ -96,10 +96,10 @@ public class NotesFragment extends Fragment {
 
 
         img1.setImageResource(fruitArray.getResourceId(0, -1));
-        weekCalc.setText(mWeekArray[i]);
-        lengthCalc.setText(mLengthArray[i]);
-        weightCalc.setText(mWeightArray[i]);
-        sizeOfCalc.setText(mSizeOfArray[i]);
+        weekCalc.setText(mWeekArray[refactor]);
+        lengthCalc.setText(mLengthArray[refactor]);
+        weightCalc.setText(mWeightArray[refactor]);
+        sizeOfCalc.setText(mSizeOfArray[refactor]);
 
 
 
@@ -113,42 +113,47 @@ public class NotesFragment extends Fragment {
         });
 
 
+
         previousBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
 
 
-                if (i >= 0 && i<40) {
+                if (refactor >= 0 && refactor <40 ) {
 
                     myProgress--;
-                    i--;
+                    refactor--;
 
-                    img1.setImageResource(fruitArray.getResourceId(i, 0));
-                    weekCalc.setText(mWeekArray[i]);
-                    lengthCalc.setText(mLengthArray[i]);
-                    weightCalc.setText(mWeightArray[i]);
-                    sizeOfCalc.setText(mSizeOfArray[i]);
+                    if(refactor ==-1 || refactor <0){
+                        refactor =0;
+                        myProgress=1;
+                    }
+
+
+
+                    img1.setImageResource(fruitArray.getResourceId(refactor, 0));
+                    weekCalc.setText(mWeekArray[refactor]);
+                    lengthCalc.setText(mLengthArray[refactor]);
+                    weightCalc.setText(mWeightArray[refactor]);
+                    sizeOfCalc.setText(mSizeOfArray[refactor]);
 
 
                     pb.setProgress(myProgress);
                     pb.setText("Selected week " + myProgress + "/40");
 
 
-                    if(i==-1 || i<0){
-                        i=0;
-                        myProgress=0;
-                    }
+
                 }
                 else{
 
-                    if(i>=40){
+                    if(refactor >=40){
 
-                        i=39;
+                        refactor =39;
                     }
-                    if(i<0){
+                    if(refactor <0){
 
-                        i=0;
+                        refactor =0;
                     }
                 }
 
@@ -169,33 +174,33 @@ public class NotesFragment extends Fragment {
 
 
 
-        if (i < 40 && i>=0) {
-            img1.setImageResource(fruitArray.getResourceId(i, 0));
-            weekCalc.setText(mWeekArray[i]);
-            lengthCalc.setText(mLengthArray[i]);
-            weightCalc.setText(mWeightArray[i]);
-            sizeOfCalc.setText(mSizeOfArray[i]);
+        if (refactor < 40 && refactor >=0) {
+            img1.setImageResource(fruitArray.getResourceId(refactor, 0));
+            weekCalc.setText(mWeekArray[refactor]);
+            lengthCalc.setText(mLengthArray[refactor]);
+            weightCalc.setText(mWeightArray[refactor]);
+            sizeOfCalc.setText(mSizeOfArray[refactor]);
           pb.setProgress(myProgress);
             pb.setText("Selected week " + myProgress + "/40");
 
 
             myProgress++;
-            i++;
+            refactor++;
 
 
-            if(i==40 || i>40){
-                i=40;
+            if(refactor ==40 || refactor >40){
+                refactor =40;
                 myProgress=40;
             }
         }
         else {
-            if (i >= 40) {
+            if (refactor >= 40) {
 
-                i=39;
+                refactor =39;
             }
-            if (i < 0) {
+            if (refactor < 0) {
 
-                i = 0;
+                refactor = 0;
             }
         }
 

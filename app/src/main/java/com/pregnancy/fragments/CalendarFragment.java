@@ -6,7 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import info.androidhive.instantapps.pregnency.R;
+import com.pregnency.R;
+
 
 /**
  * Created by md.tanvirsaad on 7/17/17.

@@ -4,11 +4,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 
 import com.daimajia.androidanimations.library.Techniques;
+import com.pregnency.R;
 import com.viksaa.sssplash.lib.activity.AwesomeSplash;
 import com.viksaa.sssplash.lib.cnst.Flags;
 import com.viksaa.sssplash.lib.model.ConfigSplash;
 
-import info.androidhive.instantapps.pregnency.R;
 
 /**
  * Created by md.tanvirsaad on 7/21/17.

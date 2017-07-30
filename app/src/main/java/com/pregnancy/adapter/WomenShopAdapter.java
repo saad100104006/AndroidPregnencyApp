@@ -9,10 +9,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.List;
-
-import info.androidhive.instantapps.pregnency.R;
 import com.pregnancy.model.Shop;
+import com.pregnency.R;
+
+import java.util.List;
 
 /**
  * Created by md.tanvirsaad on 7/24/17.
