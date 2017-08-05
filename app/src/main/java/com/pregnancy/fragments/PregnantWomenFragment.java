@@ -110,7 +110,7 @@ public class PregnantWomenFragment extends Fragment {
         month = (TextView) view.findViewById(R.id.month);
         expected = (TextView) view.findViewById(R.id.expected);
 
-        fruitArray = getResources().obtainTypedArray(R.array.pregnanncy);
+        fruitArray = getResources().obtainTypedArray(R.array.pregnant_women);
         mWeekArray = getResources().getStringArray(R.array.pregnant_women_string_title);
         mLengthArray = getResources().getStringArray(R.array.pregnant_women_string);
         //  mWeightArray=   getResources().getStringArray(R.array.weight);

@@ -515,6 +515,63 @@
     </array>
 
 
+    <array name="pregnant_women">
+
+        <item>@drawable/img1</item>
+        <item>@drawable/p1</item>
+        <item>@drawable/p2</item>
+        <item>@drawable/p3</item>
+        <item>@drawable/p4</item>
+        <item>@drawable/img1</item>
+        <item>@drawable/p1</item>
+        <item>@drawable/p2</item>
+        <item>@drawable/p3</item>
+        <item>@drawable/p4</item>
+
+
+        <item>@drawable/img1</item>
+        <item>@drawable/p1</item>
+        <item>@drawable/p2</item>
+        <item>@drawable/p3</item>
+        <item>@drawable/p4</item>
+        <item>@drawable/img1</item>
+        <item>@drawable/p1</item>
+        <item>@drawable/p2</item>
+        <item>@drawable/p3</item>
+        <item>@drawable/p4</item>
+
+
+        <item>@drawable/img1</item>
+        <item>@drawable/p1</item>
+        <item>@drawable/p2</item>
+        <item>@drawable/p3</item>
+        <item>@drawable/p4</item>
+
+        <item>@drawable/img1</item>
+        <item>@drawable/p1</item>
+        <item>@drawable/p2</item>
+        <item>@drawable/p3</item>
+        <item>@drawable/p4</item>
+
+
+        <item>@drawable/img1</item>
+        <item>@drawable/p1</item>
+        <item>@drawable/p2</item>
+        <item>@drawable/p3</item>
+        <item>@drawable/p4</item>
+        <item>@drawable/img1</item>
+        <item>@drawable/p1</item>
+        <item>@drawable/p2</item>
+        <item>@drawable/p3</item>
+        <item>@drawable/p4</item>
+        <!--  <item>@drawable/week40_42_watermelon_101995878</item>
+          <item>@drawable/week40_42_watermelon_101995878</item>-->
+
+
+
+    </array>
+
+
     <array name="babyshop">
         <item>@drawable/babyshop1</item>
         <item>@drawable/babyshop2</item>
