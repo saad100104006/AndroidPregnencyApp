@@ -100,8 +100,8 @@ public class BabyFragment extends Fragment {
 
 
         fruitArray = getResources().obtainTypedArray(R.array.pregnanncy_fruits);
-        mWeekArray = getResources().getStringArray(R.array.note);
-        mLengthArray = getResources().getStringArray(R.array.length);
+        mWeekArray = getResources().getStringArray(R.array.baby_string_title);
+        mLengthArray = getResources().getStringArray(R.array.baby_string);
         // mWeightArray = getResources().getStringArray(R.array.weight);
         // mSizeOfArray = getResources().getStringArray(R.array.sizeof);
 

@@ -357,6 +357,101 @@ Your baby should be in a head-down position by this time, but if not, there is n
     <string name="fourty_week_b">Your baby is pretty much done developing by this last week of pregnancy, and is waiting for its arrival in the new world. All internal organs are functioning, although the lungs and brain will continue to form and develop even after birth.Your baby is now developing immunities that will be needed for survival after birth. At this point, if you have not given birth, your baby can weigh up to ten pounds and may be as long as 21 inches. All of his or her bones have hardened except for the skull, which remains soft for delivery. As he or she continues to move around in a small space, your pains may increase. Hang in there, Mom!</string>
 
 
+
+
+
+<!--pregnant women title-->
+
+
+    <string name="first_week_title">1 week pregnant</string>
+    <string name="second_week_title">2 weeks pregnant</string>
+    <string name="third_week_title">3 weeks pregnant</string>
+    <string name="fourth_week_title">4 weeks pregnant</string>
+    <string name="fifth_week_title">5 weeks pregnant</string>
+    <string name="sixth_week_title">6 weeks pregnant</string>
+    <string name="seventh_week_title">7 weeks pregnant</string>
+    <string name="eight_week_title">8 weeks pregnant</string>
+    <string name="nineth_week_title">9 weeks pregnant</string>
+    <string name="ten_week_title">10 weeks pregnant</string>
+    <string name="eleven_week_title">11 weeks pregnant</string>
+    <string name="twelve_week_title">12 weeks pregnant</string>
+    <string name="thirteen_week_title">13 weeks pregnant</string>
+    <string name="fourteen_week_title">14 weeks pregnant</string>
+    <string name="fifteen_week_title">15 weeks pregnant</string>
+    <string name="sixteen_week_title">16 weeks pregnant</string>
+    <string name="seventeen_week_title">17 weeks pregnant</string>
+    <string name="eighteen_week_title">18 weeks pregnant</string>
+    <string name="nineteen_week_title">19 weeks pregnant</string>
+    <string name="twenty_week_title">20 weeks pregnant</string>
+    <string name="twentyone_week_title">21 weeks pregnant</string>
+    <string name="twentytwo_week_title">22 weeks pregnant</string>
+    <string name="twentythree_week_title">23 weeks pregnant</string>
+    <string name="twentyfour_week_title">24 weeks pregnant </string>
+    <string name="twentyfive_week_title">25 weeks pregnant</string>
+    <string name="twentysix_week_title">26 weeks pregnant</string>
+    <string name="twentyseven_week_title">27 weeks pregnant</string>
+    <string name="twentyeight_week_title">28 weeks pregnant</string>
+    <string name="twentynine_week_title">29 weeks pregnant</string>
+    <string name="thirty_week_title">30 weeks pregnant</string>
+    <string name="thirtyone_week_title">31 weeks pregnant</string>
+    <string name="thirtytwo_week_title">32 weeks pregnant</string>
+    <string name="thirtythree_week_title">33 weeks pregnant</string>
+    <string name="thirtyfour_week_title">34 weeks pregnant</string>
+    <string name="thirtyfive_week_title">35 weeks pregnant</string>
+    <string name="thirtysix_week_title">36 weeks pregnant</string>
+    <string name="thirtyseven_week_title">37 weeks pregnant</string>
+    <string name="thirtyeight_week_title">38 weeks pregnant</string>
+    <string name="thirtynine_week_title">39 weeks pregnant</string>
+    <string name="fourty_week_title">40 weeks pregnant</string>
+
+
+
+
+
+    <string name="baby_week_1">Baby devlopment at week 1</string>
+    <string name="baby_week_2">Baby devlopment at week 2</string>
+    <string name="baby_week_3">Baby devlopment at week 3</string>
+    <string name="baby_week_4">Baby devlopment at week 4</string>
+    <string name="baby_week_5">Baby devlopment at week 5</string>
+    <string name="baby_week_6">Baby devlopment at week 6</string>
+    <string name="baby_week_7">Baby devlopment at week 7</string>
+    <string name="baby_week_8">Baby devlopment at week 8</string>
+    <string name="baby_week_9">Baby devlopment at week 9</string>
+    <string name="baby_week_10">Baby devlopment at week 10</string>
+    <string name="baby_week_11">Baby devlopment at week 11</string>
+    <string name="baby_week_12">Baby devlopment at week 12</string>
+    <string name="baby_week_13">Baby devlopment at week 13</string>
+    <string name="baby_week_14">Baby devlopment at week 14</string>
+    <string name="baby_week_15">Baby devlopment at week 15</string>
+    <string name="baby_week_16">Baby devlopment at week 16</string>
+    <string name="baby_week_17">Baby devlopment at week 17</string>
+    <string name="baby_week_18">Baby devlopment at week 18</string>
+    <string name="baby_week_19">Baby devlopment at week 19</string>
+    <string name="baby_week_20">Baby devlopment at week 20</string>
+    <string name="baby_week_21">Baby devlopment at week 21</string>
+    <string name="baby_week_22">Baby devlopment at week 22</string>
+    <string name="baby_week_23">Baby devlopment at week 23</string>
+    <string name="baby_week_24">Baby devlopment at week 24</string>
+    <string name="baby_week_25">Baby devlopment at week 25</string>
+    <string name="baby_week_26">Baby devlopment at week 26</string>
+    <string name="baby_week_27">Baby devlopment at week 27</string>
+    <string name="baby_week_28">Baby devlopment at week 28</string>
+    <string name="baby_week_29">Baby devlopment at week 29</string>
+    <string name="baby_week_30">Baby devlopment at week 30</string>
+    <string name="baby_week_31">Baby devlopment at week 31</string>
+    <string name="baby_week_32">Baby devlopment at week 32</string>
+    <string name="baby_week_33">Baby devlopment at week 33</string>
+    <string name="baby_week_34">Baby devlopment at week 34</string>
+    <string name="baby_week_35">Baby devlopment at week 35</string>
+    <string name="baby_week_36">Baby devlopment at week 36</string>
+    <string name="baby_week_37">Baby devlopment at week 37</string>
+    <string name="baby_week_38">Baby devlopment at week 38</string>
+    <string name="baby_week_39">Baby devlopment at week 39</string>
+    <string name="baby_week_40">Baby devlopment at week 40</string>
+
+
+
+
     <string name="note">Note</string>
     <string name="close">Close</string>
     <string name="Pregnancy">Pregnancy</string>

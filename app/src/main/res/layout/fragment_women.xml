@@ -142,7 +142,9 @@
                     android:layout_alignStart="@+id/text2"
                     android:layout_below="@+id/image1"
                     android:text="sahjdjsadsgjdgjsagdj"
-                    android:textSize="16dp"
+                    android:textColor="@color/colorBlack"
+
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView

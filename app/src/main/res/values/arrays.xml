@@ -208,97 +208,191 @@
 
     </array>
 
+    <array name="pregnant_women_string_title">
 
-    <array name="pregnant_women_string">
-
-        <item>@string/first_week</item>
-        <item>@string/second_week</item>
-        <item>@string/third_week</item>
-        <item>@string/fourth_week</item>
-        <item>@string/fifth_week</item>
-        <item>@string/sixth_week</item>
-        <item>@string/seventh_week</item>
-        <item>@string/eight_week</item>
-        <item>@string/nineth_week</item>
-        <item>@string/ten_week</item>
-        <item>@string/eleven_week</item>
-        <item>@string/twelve_week</item>
-        <item>@string/thirteen_week</item>
-        <item>@string/fourteen_week</item>
-        <item>@string/fifteen_week</item>
-        <item>@string/sixteen_week</item>
-        <item>@string/seventeen_week</item>
-        <item>@string/eighteen_week</item>
-        <item>@string/nineteen_week</item>
-        <item>@string/twenty_week</item>
-        <item>@string/twentyone_week</item>
-        <item>@string/twentytwo_week</item>
-        <item>@string/twentythree_week</item>
-        <item>@string/twentyfour_week</item>
-        <item>@string/twentyfive_week</item>
-        <item>@string/twentysix_week</item>
-        <item>@string/twentyseven_week</item>
-        <item>@string/twentyeight_week</item>
-        <item>@string/twentynine_week</item>
-        <item>@string/thirty_week</item>
-        <item>@string/thirtyone_week</item>
-        <item>@string/thirtytwo_week</item>
-        <item>@string/thirtythree_week</item>
-        <item>@string/thirtyfour_week</item>
-        <item>@string/thirtyfive_week</item>
-        <item>@string/thirtysix_week</item>
-        <item>@string/thirtyseven_week</item>
-        <item>@string/thirtyeight_week</item>
-        <item>@string/thirtynine_week</item>
-        <item>@string/fourty_week</item>
+        <item>@string/first_week_title</item>
+        <item>@string/second_week_title</item>
+        <item>@string/third_week_title</item>
+        <item>@string/fourth_week_title</item>
+        <item>@string/fifth_week_title</item>
+        <item>@string/sixth_week_title</item>
+        <item>@string/seventh_week_title</item>
+        <item>@string/eight_week_title</item>
+        <item>@string/nineth_week_title</item>
+        <item>@string/ten_week_title</item>
+        <item>@string/eleven_week_title</item>
+        <item>@string/twelve_week_title</item>
+        <item>@string/thirteen_week_title</item>
+        <item>@string/fourteen_week_title</item>
+        <item>@string/fifteen_week_title</item>
+        <item>@string/sixteen_week_title</item>
+        <item>@string/seventeen_week_title</item>
+        <item>@string/eighteen_week_title</item>
+        <item>@string/nineteen_week_title</item>
+        <item>@string/twenty_week_title</item>
+        <item>@string/twentyone_week_title</item>
+        <item>@string/twentytwo_week_title</item>
+        <item>@string/twentythree_week_title</item>
+        <item>@string/twentyfour_week_title</item>
+        <item>@string/twentyfive_week_title</item>
+        <item>@string/twentysix_week_title</item>
+        <item>@string/twentyseven_week_title</item>
+        <item>@string/twentyeight_week_title</item>
+        <item>@string/twentynine_week_title</item>
+        <item>@string/thirty_week_title</item>
+        <item>@string/thirtyone_week_title</item>
+        <item>@string/thirtytwo_week_title</item>
+        <item>@string/thirtythree_week_title</item>
+        <item>@string/thirtyfour_week_title</item>
+        <item>@string/thirtyfive_week_title</item>
+        <item>@string/thirtysix_week_title</item>
+        <item>@string/thirtyseven_week_title</item>
+        <item>@string/thirtyeight_week_title</item>
+        <item>@string/thirtynine_week_title</item>
+        <item>@string/fourty_week_title</item>
         <!--   <item>@string/fourtyone_week</item>
            <item>@string/fourtytwo_week</item>-->
 
     </array>
 
 
+    <array name="pregnant_women_string">
+
+        <item>@string/first_week_p</item>
+        <item>@string/second_week_p</item>
+        <item>@string/third_week_p</item>
+        <item>@string/fourth_week_p</item>
+        <item>@string/fifth_week_p</item>
+        <item>@string/sixth_week_p</item>
+        <item>@string/seventh_week_p</item>
+        <item>@string/eight_week_p</item>
+        <item>@string/nineth_week_p</item>
+        <item>@string/ten_week_p</item>
+        <item>@string/eleven_week_p</item>
+        <item>@string/twelve_week_p</item>
+        <item>@string/thirteen_week_p</item>
+        <item>@string/fourteen_week_p</item>
+        <item>@string/fifteen_week_p</item>
+        <item>@string/sixteen_week_p</item>
+        <item>@string/seventeen_week_p</item>
+        <item>@string/eighteen_week_p</item>
+        <item>@string/nineteen_week_p</item>
+        <item>@string/twenty_week_p</item>
+        <item>@string/twentyone_week_p</item>
+        <item>@string/twentytwo_week_p</item>
+        <item>@string/twentythree_week_p</item>
+        <item>@string/twentyfour_week_p</item>
+        <item>@string/twentyfive_week_p</item>
+        <item>@string/twentysix_week_p</item>
+        <item>@string/twentyseven_week_p</item>
+        <item>@string/twentyeight_week_p</item>
+        <item>@string/twentynine_week_p</item>
+        <item>@string/thirty_week_p</item>
+        <item>@string/thirtyone_week_p</item>
+        <item>@string/thirtytwo_week_p</item>
+        <item>@string/thirtythree_week_p</item>
+        <item>@string/thirtyfour_week_p</item>
+        <item>@string/thirtyfive_week_p</item>
+        <item>@string/thirtysix_week_p</item>
+        <item>@string/thirtyseven_week_p</item>
+        <item>@string/thirtyeight_week_P</item>
+        <item>@string/thirtynine_week_p</item>
+        <item>@string/fourty_week_p</item>
+        <!--   <item>@string/fourtyone_week</item>
+           <item>@string/fourtytwo_week</item>-->
+
+    </array>
+
+    <array name="baby_string_title">
+
+
+        <item>@string/baby_week_1</item>
+        <item>@string/baby_week_2</item>
+        <item>@string/baby_week_3</item>
+        <item>@string/baby_week_4</item>
+        <item>@string/baby_week_5</item>
+        <item>@string/baby_week_6</item>
+        <item>@string/baby_week_7</item>
+        <item>@string/baby_week_8</item>
+        <item>@string/baby_week_9</item>
+        <item>@string/baby_week_10</item>
+        <item>@string/baby_week_11</item>
+        <item>@string/baby_week_12</item>
+        <item>@string/baby_week_13</item>
+        <item>@string/baby_week_14</item>
+        <item>@string/baby_week_15</item>
+        <item>@string/baby_week_16</item>
+        <item>@string/baby_week_17</item>
+        <item>@string/baby_week_18</item>
+        <item>@string/baby_week_19</item>
+        <item>@string/baby_week_20</item>
+        <item>@string/baby_week_21</item>
+        <item>@string/baby_week_22</item>
+        <item>@string/baby_week_23</item>
+        <item>@string/baby_week_24</item>
+        <item>@string/baby_week_25</item>
+        <item>@string/baby_week_26</item>
+        <item>@string/baby_week_27</item>
+        <item>@string/baby_week_28</item>
+        <item>@string/baby_week_29</item>
+        <item>@string/baby_week_30</item>
+        <item>@string/baby_week_31</item>
+        <item>@string/baby_week_32</item>
+        <item>@string/baby_week_33</item>
+        <item>@string/baby_week_34</item>
+        <item>@string/baby_week_35</item>
+        <item>@string/baby_week_36</item>
+        <item>@string/baby_week_37</item>
+        <item>@string/baby_week_38</item>
+        <item>@string/baby_week_39</item>
+        <item>@string/baby_week_40</item>
+
+    </array>
+
+
+
     <array name="baby_string">
 
-        <item>@string/first_week</item>
-        <item>@string/second_week</item>
-        <item>@string/third_week</item>
-        <item>@string/fourth_week</item>
-        <item>@string/fifth_week</item>
-        <item>@string/sixth_week</item>
-        <item>@string/seventh_week</item>
-        <item>@string/eight_week</item>
-        <item>@string/nineth_week</item>
-        <item>@string/ten_week</item>
-        <item>@string/eleven_week</item>
-        <item>@string/twelve_week</item>
-        <item>@string/thirteen_week</item>
-        <item>@string/fourteen_week</item>
-        <item>@string/fifteen_week</item>
-        <item>@string/sixteen_week</item>
-        <item>@string/seventeen_week</item>
-        <item>@string/eighteen_week</item>
-        <item>@string/nineteen_week</item>
-        <item>@string/twenty_week</item>
-        <item>@string/twentyone_week</item>
-        <item>@string/twentytwo_week</item>
-        <item>@string/twentythree_week</item>
-        <item>@string/twentyfour_week</item>
-        <item>@string/twentyfive_week</item>
-        <item>@string/twentysix_week</item>
-        <item>@string/twentyseven_week</item>
-        <item>@string/twentyeight_week</item>
-        <item>@string/twentynine_week</item>
-        <item>@string/thirty_week</item>
-        <item>@string/thirtyone_week</item>
-        <item>@string/thirtytwo_week</item>
-        <item>@string/thirtythree_week</item>
-        <item>@string/thirtyfour_week</item>
-        <item>@string/thirtyfive_week</item>
-        <item>@string/thirtysix_week</item>
-        <item>@string/thirtyseven_week</item>
-        <item>@string/thirtyeight_week</item>
-        <item>@string/thirtynine_week</item>
-        <item>@string/fourty_week</item>
+        <item>@string/first_week_b</item>
+        <item>@string/second_week_b</item>
+        <item>@string/third_week_b</item>
+        <item>@string/fourth_week_b</item>
+        <item>@string/fifth_week_b</item>
+        <item>@string/sixth_week_b</item>
+        <item>@string/seventh_week_b</item>
+        <item>@string/eight_week_b</item>
+        <item>@string/nineth_week_b</item>
+        <item>@string/ten_week_b</item>
+        <item>@string/eleven_week_b</item>
+        <item>@string/twelve_week_b</item>
+        <item>@string/thirteen_week_b</item>
+        <item>@string/fourteen_week_b</item>
+        <item>@string/fifteen_week_b</item>
+        <item>@string/sixteen_week_b</item>
+        <item>@string/seventeen_week_b</item>
+        <item>@string/eighteen_week_b</item>
+        <item>@string/nineteen_week_b</item>
+        <item>@string/twenty_week_b</item>
+        <item>@string/twentyone_week_b</item>
+        <item>@string/twentytwo_week_b</item>
+        <item>@string/twentythree_week_b</item>
+        <item>@string/twentyfour_week_b</item>
+        <item>@string/twentyfive_week_b</item>
+        <item>@string/twentysix_week_b</item>
+        <item>@string/twentyseven_week_b</item>
+        <item>@string/twentyeight_week_b</item>
+        <item>@string/twentynine_week_b</item>
+        <item>@string/thirty_week_b</item>
+        <item>@string/thirtyone_week_b</item>
+        <item>@string/thirtytwo_week_b</item>
+        <item>@string/thirtythree_week_b</item>
+        <item>@string/thirtyfour_week_b</item>
+        <item>@string/thirtyfive_week_b</item>
+        <item>@string/thirtysix_week_b</item>
+        <item>@string/thirtyseven_week_b</item>
+        <item>@string/thirtyeight_week_b</item>
+        <item>@string/thirtynine_week_b</item>
+        <item>@string/fourty_week_b</item>
         <!--   <item>@string/fourtyone_week</item>
            <item>@string/fourtytwo_week</item>-->
 

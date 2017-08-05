@@ -49,10 +49,10 @@
                     android:id="@+id/title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
+android:textColor="@color/colorBlack"
                     android:layout_below="@+id/image1"
                     android:text="How many weeks is a normal term pregnancy?"
-                    android:textSize="16dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
