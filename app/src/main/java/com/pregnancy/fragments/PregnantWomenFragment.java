@@ -110,7 +110,7 @@ public class PregnantWomenFragment extends Fragment {
         month = (TextView) view.findViewById(R.id.month);
         expected = (TextView) view.findViewById(R.id.expected);
 
-        fruitArray = getResources().obtainTypedArray(R.array.pregnanncy_fruits);
+        fruitArray = getResources().obtainTypedArray(R.array.pregnanncy);
         mWeekArray = getResources().getStringArray(R.array.note);
         mLengthArray = getResources().getStringArray(R.array.length);
         //  mWeightArray=   getResources().getStringArray(R.array.weight);
@@ -124,8 +124,6 @@ public class PregnantWomenFragment extends Fragment {
         pb.setScaleY(3.5f);
         Drawable draw = getResources().getDrawable(R.drawable.custom_progressbar);
         pb.setProgressDrawable(draw);
-
-
 
 
 

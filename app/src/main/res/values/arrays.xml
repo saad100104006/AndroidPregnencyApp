@@ -209,6 +209,108 @@
     </array>
 
 
+    <array name="pregnant_women_string">
+
+        <item>@string/first_week</item>
+        <item>@string/second_week</item>
+        <item>@string/third_week</item>
+        <item>@string/fourth_week</item>
+        <item>@string/fifth_week</item>
+        <item>@string/sixth_week</item>
+        <item>@string/seventh_week</item>
+        <item>@string/eight_week</item>
+        <item>@string/nineth_week</item>
+        <item>@string/ten_week</item>
+        <item>@string/eleven_week</item>
+        <item>@string/twelve_week</item>
+        <item>@string/thirteen_week</item>
+        <item>@string/fourteen_week</item>
+        <item>@string/fifteen_week</item>
+        <item>@string/sixteen_week</item>
+        <item>@string/seventeen_week</item>
+        <item>@string/eighteen_week</item>
+        <item>@string/nineteen_week</item>
+        <item>@string/twenty_week</item>
+        <item>@string/twentyone_week</item>
+        <item>@string/twentytwo_week</item>
+        <item>@string/twentythree_week</item>
+        <item>@string/twentyfour_week</item>
+        <item>@string/twentyfive_week</item>
+        <item>@string/twentysix_week</item>
+        <item>@string/twentyseven_week</item>
+        <item>@string/twentyeight_week</item>
+        <item>@string/twentynine_week</item>
+        <item>@string/thirty_week</item>
+        <item>@string/thirtyone_week</item>
+        <item>@string/thirtytwo_week</item>
+        <item>@string/thirtythree_week</item>
+        <item>@string/thirtyfour_week</item>
+        <item>@string/thirtyfive_week</item>
+        <item>@string/thirtysix_week</item>
+        <item>@string/thirtyseven_week</item>
+        <item>@string/thirtyeight_week</item>
+        <item>@string/thirtynine_week</item>
+        <item>@string/fourty_week</item>
+        <!--   <item>@string/fourtyone_week</item>
+           <item>@string/fourtytwo_week</item>-->
+
+    </array>
+
+
+    <array name="baby_string">
+
+        <item>@string/first_week</item>
+        <item>@string/second_week</item>
+        <item>@string/third_week</item>
+        <item>@string/fourth_week</item>
+        <item>@string/fifth_week</item>
+        <item>@string/sixth_week</item>
+        <item>@string/seventh_week</item>
+        <item>@string/eight_week</item>
+        <item>@string/nineth_week</item>
+        <item>@string/ten_week</item>
+        <item>@string/eleven_week</item>
+        <item>@string/twelve_week</item>
+        <item>@string/thirteen_week</item>
+        <item>@string/fourteen_week</item>
+        <item>@string/fifteen_week</item>
+        <item>@string/sixteen_week</item>
+        <item>@string/seventeen_week</item>
+        <item>@string/eighteen_week</item>
+        <item>@string/nineteen_week</item>
+        <item>@string/twenty_week</item>
+        <item>@string/twentyone_week</item>
+        <item>@string/twentytwo_week</item>
+        <item>@string/twentythree_week</item>
+        <item>@string/twentyfour_week</item>
+        <item>@string/twentyfive_week</item>
+        <item>@string/twentysix_week</item>
+        <item>@string/twentyseven_week</item>
+        <item>@string/twentyeight_week</item>
+        <item>@string/twentynine_week</item>
+        <item>@string/thirty_week</item>
+        <item>@string/thirtyone_week</item>
+        <item>@string/thirtytwo_week</item>
+        <item>@string/thirtythree_week</item>
+        <item>@string/thirtyfour_week</item>
+        <item>@string/thirtyfive_week</item>
+        <item>@string/thirtysix_week</item>
+        <item>@string/thirtyseven_week</item>
+        <item>@string/thirtyeight_week</item>
+        <item>@string/thirtynine_week</item>
+        <item>@string/fourty_week</item>
+        <!--   <item>@string/fourtyone_week</item>
+           <item>@string/fourtytwo_week</item>-->
+
+    </array>
+
+
+
+
+
+
+
+
     <array name="pregnanncy">
 
     <item>@drawable/one_week_pregnant</item>
